@@ -42,7 +42,7 @@ const founder = {
   name: "Md. Rahenur Islam Sourov",
   role: "Founder & CEO",
   bio: "Md. Rahenur Islam Sourov is a wildlife conservation enthusiast and researcher with an MSc in Wildlife and Conservation from the University of Chittagong. His work is driven by a deep commitment to biodiversity protection, scientific research, and long-term environmental sustainability through education, advocacy, and community action.",
-  image: "/image/rahhenur.jpg",
+  image: "/images/rahenur.jpeg",
   university: "University of Chittagong",
   degree: "MSc in Wildlife and Conservation",
 }
@@ -61,19 +61,18 @@ export default function AboutPage() {
       <Header />
 
       <main className="min-h-screen bg-background">
-        {/* Page Header */}
         <section
           ref={headerRef}
           className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(120,119,198,0.08),transparent_45%)]" />
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-            <div className="max-w-3xl mx-auto text-center">
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6 }}
-                className="text-sm font-medium text-accent tracking-widest uppercase mb-4"
+                className="mb-4 text-sm font-medium uppercase tracking-widest text-accent"
               >
                 Our Story
               </motion.p>
@@ -82,7 +81,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1, duration: 0.7 }}
-                className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight"
+                className="font-serif text-4xl font-bold leading-tight text-foreground md:text-6xl lg:text-7xl"
               >
                 About WildlifeScope
               </motion.h1>
@@ -91,19 +90,18 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.2, duration: 0.7 }}
-                className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed"
+                className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-xl"
               >
-                Since 2024, we have been dedicated to wildlife conservation in
-                Bangladesh, protecting endangered species and their natural habitats.
+                Since 2024, we have been dedicated to wildlife conservation in Bangladesh,
+                protecting endangered species and their natural habitats.
               </motion.p>
             </div>
           </div>
         </section>
 
-        {/* Mission, Vision, Values */}
         <section className="pb-20 lg:pb-28">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid gap-8 md:grid-cols-3">
               {values.map((value, index) => {
                 const Icon = value.icon
 
@@ -114,17 +112,17 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="group rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="group rounded-3xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                   >
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6">
-                      <Icon className="w-7 h-7" />
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <Icon className="h-7 w-7" />
                     </div>
 
-                    <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
+                    <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
                       {value.title}
                     </h2>
 
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="leading-relaxed text-muted-foreground">
                       {value.description}
                     </p>
                   </motion.div>
@@ -134,48 +132,41 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Our Story */}
-        <section ref={storyRef} className="py-20 lg:py-28 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <section ref={storyRef} className="bg-muted/30 py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-start gap-16 lg:grid-cols-2">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={isStoryInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.7 }}
               >
-                <p className="text-sm font-medium text-accent tracking-widest uppercase mb-4">
+                <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent">
                   Our Journey
                 </p>
 
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                <h2 className="font-serif text-3xl font-bold leading-tight text-foreground md:text-4xl">
                   A Legacy of Conservation
                 </h2>
 
-                <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
+                <div className="mt-6 space-y-5 leading-relaxed text-muted-foreground">
                   <p>
                     WildlifeScope was founded in 2024 in Chittagong, Bangladesh, by
                     passionate conservationists dedicated to protecting the rich
-                    biodiversity of Bangladesh. From the majestic Royal Bengal tigers
-                    of the Sundarbans to the endangered Ganges river dolphins, our
-                    mission is to preserve Bangladesh&apos;s unique wildlife heritage
-                    for future generations.
+                    biodiversity of Bangladesh.
                   </p>
 
                   <p>
-                    Today, we employ cutting-edge technology, partner with local
-                    communities, and work alongside governments to protect over 150
-                    species and preserve millions of acres of critical habitat. Our
-                    work is driven by science, guided by compassion, and fueled by the
-                    belief that every species matters.
+                    Today, we employ technology, partner with local communities, and
+                    work alongside governments to protect wildlife and preserve critical habitat.
                   </p>
                 </div>
 
                 <Link
                   href="/donate"
-                  className="inline-flex items-center gap-2 mt-8 text-primary font-medium hover:gap-3 transition-all"
+                  className="mt-8 inline-flex items-center gap-2 font-medium text-primary transition-all hover:gap-3"
                 >
                   Join Our Mission
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </motion.div>
 
@@ -185,7 +176,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.1, duration: 0.7 }}
                 className="relative"
               >
-                <div className="absolute left-4 top-0 bottom-0 w-px bg-border" />
+                <div className="absolute bottom-0 left-4 top-0 w-px bg-border" />
 
                 <div className="space-y-10">
                   {timeline.map((item, index) => (
@@ -196,15 +187,13 @@ export default function AboutPage() {
                       transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
                       className="relative flex items-start gap-6 pl-12"
                     >
-                      <div className="absolute left-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                        <div className="w-3 h-3 rounded-full bg-primary-foreground" />
+                      <div className="absolute left-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary">
+                        <div className="h-3 w-3 rounded-full bg-primary-foreground" />
                       </div>
 
                       <div>
-                        <span className="text-sm font-medium text-accent">
-                          {item.year}
-                        </span>
-                        <p className="text-foreground mt-1">{item.event}</p>
+                        <span className="text-sm font-medium text-accent">{item.year}</span>
+                        <p className="mt-1 text-foreground">{item.event}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -214,15 +203,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Founder Spotlight */}
-        <section ref={founderRef} className="py-20 lg:py-28 bg-[#0f0f0c]">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
+        <section ref={founderRef} className="bg-[#0f0f0c] py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mb-16 text-center">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={isFounderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6 }}
-                className="text-sm font-medium text-[#f4c542] tracking-widest uppercase mb-4"
+                className="mb-4 text-sm font-medium uppercase tracking-widest text-[#f4c542]"
               >
                 Our Leadership
               </motion.p>
@@ -231,7 +219,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isFounderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1, duration: 0.6 }}
-                className="font-serif text-3xl md:text-4xl font-bold text-white"
+                className="font-serif text-3xl font-bold text-white md:text-4xl"
               >
                 Founder Spotlight
               </motion.h2>
@@ -244,7 +232,6 @@ export default function AboutPage() {
               className="overflow-hidden rounded-3xl border border-white/10 bg-[#171712] shadow-2xl"
             >
               <div className="grid lg:grid-cols-2">
-                {/* Image Side */}
                 <div className="relative min-h-[420px] lg:min-h-[720px]">
                   <Image
                     src={founder.image}
@@ -254,7 +241,6 @@ export default function AboutPage() {
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                   <div className="absolute left-0 top-0 h-full w-2 bg-[#f4c542]" />
 
@@ -272,7 +258,7 @@ export default function AboutPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={isFounderInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ delay: 0.35, duration: 0.6 }}
-                      className="mt-5 font-serif text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-2xl"
+                      className="mt-5 max-w-2xl font-serif text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
                     >
                       {founder.name}
                     </motion.h3>
@@ -281,14 +267,13 @@ export default function AboutPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={isFounderInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ delay: 0.45, duration: 0.6 }}
-                      className="mt-3 text-sm md:text-base uppercase tracking-[0.3em] text-white/75"
+                      className="mt-3 text-sm uppercase tracking-[0.3em] text-white/75 md:text-base"
                     >
                       {founder.role}
                     </motion.p>
                   </div>
                 </div>
 
-                {/* Content Side */}
                 <div className="flex items-center bg-[#171712]">
                   <div className="w-full p-8 md:p-10 lg:p-14 xl:p-16">
                     <motion.div
@@ -302,16 +287,16 @@ export default function AboutPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={isFounderInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ delay: 0.35, duration: 0.6 }}
-                      className="mt-6 text-sm font-medium text-[#f4c542] tracking-[0.3em] uppercase"
+                      className="mt-6 text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
                     >
-                      National Geographic Style
+                      Founder
                     </motion.p>
 
                     <motion.h3
                       initial={{ opacity: 0, y: 20 }}
                       animate={isFounderInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ delay: 0.45, duration: 0.6 }}
-                      className="mt-4 font-serif text-3xl md:text-4xl font-bold leading-tight text-white"
+                      className="mt-4 font-serif text-3xl font-bold leading-tight text-white md:text-4xl"
                     >
                       Leading WildlifeScope with vision, science, and purpose
                     </motion.h3>
@@ -320,7 +305,7 @@ export default function AboutPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={isFounderInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ delay: 0.55, duration: 0.6 }}
-                      className="mt-6 text-base md:text-lg leading-8 text-white/80"
+                      className="mt-6 text-base leading-8 text-white/80 md:text-lg"
                     >
                       {founder.bio}
                     </motion.p>
@@ -337,9 +322,7 @@ export default function AboutPage() {
                       <p className="mt-3 text-xl font-semibold text-white">
                         {founder.university}
                       </p>
-                      <p className="mt-1 text-white/70 text-base">
-                        {founder.degree}
-                      </p>
+                      <p className="mt-1 text-base text-white/70">{founder.degree}</p>
                     </motion.div>
 
                     <motion.div
