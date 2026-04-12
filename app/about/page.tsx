@@ -42,7 +42,7 @@ const founder = {
   name: "Md. Rahenur Islam Sourov",
   role: "Founder & CEO",
   bio: "Md. Rahenur Islam Sourov is a wildlife conservation enthusiast and researcher with an MSc in Wildlife and Conservation from the University of Chittagong. His work is driven by a deep commitment to biodiversity protection, scientific research, and long-term environmental sustainability through education, advocacy, and community action.",
-  image: "/team/rahhenur.jpg",
+  image: "/image/rahhenur.jpg",
   university: "University of Chittagong",
   degree: "MSc in Wildlife and Conservation",
 }
