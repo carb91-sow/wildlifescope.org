@@ -8,6 +8,11 @@ export const metadata = {
     "nature protection",
     "biodiversity",
   ],
+export const metadata = {
+  title: "WildlifeScope - Wildlife Conservation & Species Protection",
+  description:
+    "WildlifeScope is dedicated to protecting endangered species and preserving biodiversity through conservation efforts, education, and action.",
+};
 };import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
