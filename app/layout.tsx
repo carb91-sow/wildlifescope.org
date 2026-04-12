@@ -1,6 +1,37 @@
 export const metadata = {
   title: "WildlifeScope - Wildlife Conservation & Species Protection",
   description:
+    "WildlifeScope is dedicated to protecting endangered species, preserving biodiversity, and promoting wildlife conservation worldwide.",
+  keywords: [
+    "wildlife conservation",
+    "endangered species",
+    "biodiversity",
+    "nature protection",
+    "wildlife foundation",
+    "environment protection",
+  ],
+  authors: [{ name: "WildlifeScope" }],
+  openGraph: {
+    title: "WildlifeScope - Protecting Our Natural World",
+    description:
+      "Join WildlifeScope in protecting endangered species and preserving biodiversity.",
+    url: "https://wildlifescope.org",
+    siteName: "WildlifeScope",
+    images: [
+      {
+        url: "https://wildlifescope.org/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "WildlifeScope",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+export const metadata = {
+  title: "WildlifeScope - Wildlife Conservation & Species Protection",
+  description:
     "WildlifeScope is dedicated to protecting endangered species and preserving biodiversity.",
   keywords: [
     "wildlife conservation",
