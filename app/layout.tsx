@@ -1,4 +1,14 @@
-import type { Metadata } from 'next'
+export const metadata = {
+  title: "WildlifeScope - Wildlife Conservation & Species Protection",
+  description:
+    "WildlifeScope is dedicated to protecting endangered species and preserving biodiversity.",
+  keywords: [
+    "wildlife conservation",
+    "endangered species",
+    "nature protection",
+    "biodiversity",
+  ],
+};import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
