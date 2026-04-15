@@ -6,15 +6,18 @@ import Link from "next/link"
 import { motion, useInView } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ArrowRight, MapPin, Check } from "lucide-react"
+import { ArrowRight, MapPin, Clock3 } from "lucide-react"
 
 const featuredStory = {
-  label: "Featured Success Story",
+  label: "Featured Field Story",
   title: "Tracking Bengal Slow Loris in Bangladesh’s forest landscapes",
   summary:
-    "Field-based radio telemetry and ecological monitoring helped build deeper understanding of movement ecology, habitat use, and conservation planning for one of Bangladesh’s lesser-known nocturnal primates.",
+    "Field-based radio telemetry and ecological monitoring helped build a deeper understanding of movement ecology, habitat use, and conservation planning for one of Bangladesh’s lesser-known nocturnal primates.",
   image: "/images/conservation-hero.jpg",
-  href: "#slow-loris",
+  href: "/stories/tracking-bengal-slow-loris",
+  date: "May 2025",
+  readTime: "6 min read",
+  location: "Sreemangal, Bangladesh",
 }
 
 const stories = [
@@ -23,78 +26,72 @@ const stories = [
     label: "Field Research",
     title: "Radio telemetry monitoring of Bengal Slow Loris",
     image: "/images/conservation-hero.jpg",
-    description:
-      "Supported wildlife tracking and movement ecology work in Sreemangal through field monitoring, ecological datasets, and habitat-use research.",
-    points: [
-      "Field-based wildlife tracking",
-      "Movement ecology insights",
-      "Support for evidence-based conservation",
-    ],
+    excerpt:
+      "Following nocturnal movement through forest habitats to better understand ecology, behavior, and habitat use in one of Bangladesh’s most lesser-known primates.",
+    href: "/stories/radio-telemetry-bengal-slow-loris",
+    date: "May 2025",
+    readTime: "5 min read",
+    location: "Sreemangal",
   },
   {
     id: "camera-trap",
     label: "Biodiversity Monitoring",
     title: "Camera trap surveys across forest habitats",
     image: "/images/habitat-restoration.jpg",
-    description:
-      "Coordinated camera trap implementation and survey logistics to strengthen biodiversity documentation and long-term ecological monitoring.",
-    points: [
-      "Multi-site survey coordination",
-      "Forest biodiversity documentation",
-      "Monitoring for conservation planning",
-    ],
+    excerpt:
+      "Using camera trap networks to strengthen biodiversity documentation, monitor species presence, and support long-term ecological observation.",
+    href: "/stories/camera-trap-surveys-forest-habitats",
+    date: "April 2025",
+    readTime: "4 min read",
+    location: "Forest Landscapes, Bangladesh",
   },
   {
     id: "conflict-response",
     label: "Human–Wildlife Conflict",
     title: "Community response and wildlife rescue awareness",
     image: "/images/team.jpg",
-    description:
-      "Worked on awareness and rapid response activities that helped reduce wildlife conflict and improve community understanding of conservation.",
-    points: [
-      "Conflict mitigation awareness",
-      "Community engagement",
-      "Wildlife rescue support",
-    ],
+    excerpt:
+      "Exploring how awareness, rapid response, and local engagement can reduce conflict and build stronger support for wildlife protection.",
+    href: "/stories/community-response-wildlife-rescue-awareness",
+    date: "March 2025",
+    readTime: "4 min read",
+    location: "Bangladesh",
   },
   {
     id: "pittachhara",
     label: "Landscape Conservation",
     title: "Pittachhara forest and biodiversity conservation work",
     image: "/images/education.jpg",
-    description:
-      "Supported field coordination, ecological documentation, and conservation planning connected to long-term biodiversity protection in forest landscapes.",
-    points: [
-      "Field logistics and team coordination",
-      "Habitat and biodiversity focus",
-      "Conservation framework development",
-    ],
+    excerpt:
+      "Field coordination, ecological documentation, and long-term conservation planning in a landscape shaped by biodiversity richness and environmental pressure.",
+    href: "/stories/pittachhara-forest-biodiversity-conservation",
+    date: "February 2025",
+    readTime: "5 min read",
+    location: "Pittachhara",
   },
   {
     id: "gis-analysis",
     label: "Ecological Analysis",
     title: "GIS and spatial ecology for wildlife research",
     image: "/images/marine-conservation.jpg",
-    description:
-      "Used R, QGIS, and ecological datasets to support habitat assessment, home range analysis, and data-driven conservation understanding.",
-    points: [
-      "Spatial ecology workflow",
-      "Habitat-use analysis",
-      "Conservation data interpretation",
-    ],
+    excerpt:
+      "How spatial tools like R, QGIS, and ArcGIS help turn raw ecological observations into stronger habitat understanding and conservation insight.",
+    href: "/stories/gis-spatial-ecology-wildlife-research",
+    date: "January 2025",
+    readTime: "6 min read",
+    location: "Bangladesh",
   },
   {
     id: "awareness",
     label: "Education & Outreach",
     title: "Conservation awareness through public engagement",
     image: "/images/habitat-restoration.jpg",
-    description:
-      "Promoted wildlife protection through awareness activities that connect people, species, and ecosystems in Bangladesh.",
-    points: [
-      "Public conservation education",
-      "Local engagement",
-      "Long-term awareness building",
-    ],
+    excerpt:
+      "Connecting people with species, habitats, and environmental responsibility through public awareness and long-term conservation communication.",
+    href: "/stories/conservation-awareness-public-engagement",
+    date: "December 2024",
+    readTime: "4 min read",
+    location: "Bangladesh",
   },
 ]
 
@@ -131,53 +128,62 @@ function StoryCard({
   story: typeof stories[number]
   index: number
 }) {
-  const cardRef = useRef<HTMLDivElement>(null)
+  const cardRef = useRef<HTMLArticleElement>(null)
   const isInView = useInView(cardRef, { once: true, margin: "-80px" })
 
   return (
     <motion.article
       ref={cardRef}
-      id={story.id}
       initial={{ opacity: 0, y: 28 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.06, duration: 0.6 }}
-      className="overflow-hidden rounded-[28px] border border-white/10 bg-[#141611] shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#f4c542]/35"
+      className="group overflow-hidden rounded-[28px] border border-white/10 bg-[#141611] shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#f4c542]/35"
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <Image
-          src={story.image}
-          alt={story.title}
-          fill
-          className="object-cover transition-transform duration-700 hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-        <div className="absolute left-0 top-0 h-full w-2 bg-[#f4c542]" />
+      <Link href={story.href} className="block">
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <Image
+            src={story.image}
+            alt={story.title}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+          <div className="absolute left-0 top-0 h-full w-2 bg-[#f4c542]" />
 
-        <div className="absolute bottom-0 left-0 p-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#f4c542]">
-            {story.label}
-          </p>
-          <h3 className="mt-3 max-w-xl font-serif text-2xl font-bold leading-tight text-white">
-            {story.title}
-          </h3>
+          <div className="absolute bottom-0 left-0 p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#f4c542]">
+              {story.label}
+            </p>
+            <h3 className="mt-3 max-w-xl font-serif text-2xl font-bold leading-tight text-white">
+              {story.title}
+            </h3>
+          </div>
         </div>
-      </div>
 
-      <div className="p-6">
-        <p className="text-sm leading-7 text-white/72">{story.description}</p>
+        <div className="p-6">
+          <div className="flex flex-wrap items-center gap-4 text-[11px] font-medium uppercase tracking-[0.22em] text-white/50">
+            <span>{story.date}</span>
+            <span className="inline-flex items-center gap-2">
+              <Clock3 className="h-3.5 w-3.5 text-[#f4c542]" />
+              {story.readTime}
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <MapPin className="h-3.5 w-3.5 text-[#f4c542]" />
+              {story.location}
+            </span>
+          </div>
 
-        <ul className="mt-5 space-y-3">
-          {story.points.map((point) => (
-            <li key={point} className="flex items-start gap-3">
-              <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f4c542]/10">
-                <Check className="h-3 w-3 text-[#f4c542]" />
-              </div>
-              <span className="text-sm text-white/82">{point}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+          <p className="mt-5 text-sm leading-7 text-white/72">
+            {story.excerpt}
+          </p>
+
+          <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#f4c542] transition-all duration-300 group-hover:gap-3">
+            Read Story
+            <ArrowRight className="h-4 w-4" />
+          </div>
+        </div>
+      </Link>
     </motion.article>
   )
 }
@@ -217,7 +223,7 @@ export default function ConservationPage() {
 
           <div
             ref={heroRef}
-            className="relative mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pt-28 pb-20 lg:px-8 lg:pt-36 lg:pb-24"
+            className="relative mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pb-20 pt-28 lg:px-8 lg:pb-24 lg:pt-36"
           >
             <div className="max-w-4xl">
               <motion.p
@@ -226,7 +232,7 @@ export default function ConservationPage() {
                 transition={{ duration: 0.6 }}
                 className="text-sm font-medium uppercase tracking-[0.35em] text-[#f4c542]"
               >
-                Success Stories
+                Conservation Stories
               </motion.p>
 
               <motion.h1
@@ -235,7 +241,7 @@ export default function ConservationPage() {
                 transition={{ delay: 0.1, duration: 0.7 }}
                 className="mt-5 max-w-5xl font-serif text-5xl font-bold leading-[0.98] text-white md:text-7xl lg:text-8xl"
               >
-                Stories from the front lines of wildlife conservation
+                Editorial stories from the front lines of wildlife conservation
               </motion.h1>
 
               <motion.p
@@ -244,9 +250,8 @@ export default function ConservationPage() {
                 transition={{ delay: 0.2, duration: 0.7 }}
                 className="mt-8 max-w-3xl text-lg leading-8 text-white/85 md:text-xl"
               >
-                Field research, biodiversity monitoring, rescue response, and
-                conservation stories shaping a deeper understanding of wildlife
-                in Bangladesh.
+                Field research, biodiversity monitoring, wildlife rescue, and conservation
+                awareness brought together through story-driven documentation from Bangladesh.
               </motion.p>
 
               <motion.div
@@ -277,7 +282,7 @@ export default function ConservationPage() {
         {/* Featured Story */}
         <section ref={featuredRef} className="bg-[#11130f] py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <motion.div
+            <motion.article
               initial={{ opacity: 0, y: 28 }}
               animate={featuredInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7 }}
@@ -306,14 +311,21 @@ export default function ConservationPage() {
                     {featuredStory.title}
                   </h2>
 
+                  <div className="mt-6 flex flex-wrap items-center gap-4 text-[11px] font-medium uppercase tracking-[0.22em] text-white/50">
+                    <span>{featuredStory.date}</span>
+                    <span className="inline-flex items-center gap-2">
+                      <Clock3 className="h-3.5 w-3.5 text-[#f4c542]" />
+                      {featuredStory.readTime}
+                    </span>
+                    <span className="inline-flex items-center gap-2">
+                      <MapPin className="h-3.5 w-3.5 text-[#f4c542]" />
+                      {featuredStory.location}
+                    </span>
+                  </div>
+
                   <p className="mt-6 text-lg leading-8 text-white/74">
                     {featuredStory.summary}
                   </p>
-
-                  <div className="mt-8 flex items-center gap-2 text-sm text-white/60">
-                    <MapPin className="h-4 w-4 text-[#f4c542]" />
-                    Bangladesh field research and biodiversity monitoring
-                  </div>
 
                   <div className="mt-10">
                     <Link
@@ -326,7 +338,7 @@ export default function ConservationPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           </div>
         </section>
 
@@ -341,7 +353,7 @@ export default function ConservationPage() {
                   transition={{ duration: 0.6 }}
                   className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
                 >
-                  Learn More About Our Stories
+                  Editorial Archive
                 </motion.p>
 
                 <motion.h2
@@ -350,7 +362,7 @@ export default function ConservationPage() {
                   transition={{ delay: 0.1, duration: 0.6 }}
                   className="mt-4 font-serif text-3xl font-bold text-white md:text-4xl"
                 >
-                  Conservation work across research, rescue, and awareness
+                  Conservation stories across research, rescue, and awareness
                 </motion.h2>
               </div>
 
@@ -374,8 +386,7 @@ export default function ConservationPage() {
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-white/72">
                 A growing body of conservation work shaped by field ecology,
-                biodiversity monitoring, and environmental awareness in
-                Bangladesh.
+                biodiversity monitoring, and environmental awareness in Bangladesh.
               </p>
             </div>
 
