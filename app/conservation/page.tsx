@@ -7,7 +7,101 @@ import { motion, useInView } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ArrowRight, MapPin, Clock3 } from "lucide-react"
-import { stories } from "@/data/stories"
+
+type Story = {
+  slug: string
+  title: string
+  label: string
+  excerpt: string
+  summary: string
+  image: string
+  date: string
+  readTime: string
+  location: string
+  featured?: boolean
+}
+
+const stories: Story[] = [
+  {
+    slug: "radio-telemetry-bengal-slow-loris",
+    title: "Radio telemetry monitoring of Bengal Slow Loris",
+    label: "Field Research",
+    excerpt:
+      "Following nocturnal movement through forest habitats to better understand ecology, behavior, and habitat use in one of Bangladesh’s lesser-known primates.",
+    summary:
+      "Field-based radio telemetry work in Sreemangal helped support movement ecology research, habitat-use understanding, and long-term conservation planning for Bengal Slow Loris.",
+    image: "/images/conservation-hero.jpg",
+    date: "May 2025",
+    readTime: "5 min read",
+    location: "Sreemangal, Bangladesh",
+    featured: true,
+  },
+  {
+    slug: "camera-trap-surveys-forest-habitats",
+    title: "Camera trap surveys across forest habitats",
+    label: "Biodiversity Monitoring",
+    excerpt:
+      "Using camera trap networks to strengthen biodiversity documentation, monitor species presence, and support long-term ecological observation.",
+    summary:
+      "Camera trap implementation across forest habitats supported biodiversity documentation, ecological monitoring, and stronger conservation understanding.",
+    image: "/images/habitat-restoration.jpg",
+    date: "April 2025",
+    readTime: "4 min read",
+    location: "Forest Landscapes, Bangladesh",
+  },
+  {
+    slug: "community-response-wildlife-rescue-awareness",
+    title: "Community response and wildlife rescue awareness",
+    label: "Human–Wildlife Conflict",
+    excerpt:
+      "Exploring how awareness, rapid response, and local engagement can reduce conflict and build stronger support for wildlife protection.",
+    summary:
+      "Awareness activities and community response efforts helped improve understanding of wildlife conservation and reduce conflict pressures.",
+    image: "/images/team.jpg",
+    date: "March 2025",
+    readTime: "4 min read",
+    location: "Bangladesh",
+  },
+  {
+    slug: "pittachhara-forest-biodiversity-conservation",
+    title: "Pittachhara forest and biodiversity conservation work",
+    label: "Landscape Conservation",
+    excerpt:
+      "Field coordination, ecological documentation, and long-term conservation planning in a landscape shaped by biodiversity richness and environmental pressure.",
+    summary:
+      "Conservation work in Pittachhara supported ecological documentation, field coordination, and landscape-focused biodiversity protection.",
+    image: "/images/education.jpg",
+    date: "February 2025",
+    readTime: "5 min read",
+    location: "Pittachhara, Bangladesh",
+  },
+  {
+    slug: "gis-spatial-ecology-wildlife-research",
+    title: "GIS and spatial ecology for wildlife research",
+    label: "Ecological Analysis",
+    excerpt:
+      "How spatial tools like R, QGIS, and ArcGIS help turn raw ecological observations into stronger habitat understanding and conservation insight.",
+    summary:
+      "Spatial ecology tools supported habitat assessment, home range interpretation, and stronger ecological understanding for conservation research.",
+    image: "/images/marine-conservation.jpg",
+    date: "January 2025",
+    readTime: "6 min read",
+    location: "Bangladesh",
+  },
+  {
+    slug: "conservation-awareness-public-engagement",
+    title: "Conservation awareness through public engagement",
+    label: "Education & Outreach",
+    excerpt:
+      "Connecting people with species, habitats, and environmental responsibility through public awareness and long-term conservation communication.",
+    summary:
+      "Public engagement helps build a stronger conservation culture by linking ecological understanding with awareness and responsibility.",
+    image: "/images/habitat-restoration.jpg",
+    date: "December 2024",
+    readTime: "4 min read",
+    location: "Bangladesh",
+  },
+]
 
 const featuredStory = stories.find((story) => story.featured) ?? stories[0]
 
@@ -41,7 +135,7 @@ function StoryCard({
   story,
   index,
 }: {
-  story: (typeof stories)[number]
+  story: Story
   index: number
 }) {
   const cardRef = useRef<HTMLElement>(null)
