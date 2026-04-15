@@ -7,93 +7,9 @@ import { motion, useInView } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ArrowRight, MapPin, Clock3 } from "lucide-react"
+import { stories } from "@/data/stories"
 
-const featuredStory = {
-  label: "Featured Field Story",
-  title: "Tracking Bengal Slow Loris in Bangladesh’s forest landscapes",
-  summary:
-    "Field-based radio telemetry and ecological monitoring helped build a deeper understanding of movement ecology, habitat use, and conservation planning for one of Bangladesh’s lesser-known nocturnal primates.",
-  image: "/images/conservation-hero.jpg",
-  href: "/stories/tracking-bengal-slow-loris",
-  date: "May 2025",
-  readTime: "6 min read",
-  location: "Sreemangal, Bangladesh",
-}
-
-const stories = [
-  {
-    id: "slow-loris",
-    label: "Field Research",
-    title: "Radio telemetry monitoring of Bengal Slow Loris",
-    image: "/images/conservation-hero.jpg",
-    excerpt:
-      "Following nocturnal movement through forest habitats to better understand ecology, behavior, and habitat use in one of Bangladesh’s most lesser-known primates.",
-    href: "/stories/radio-telemetry-bengal-slow-loris",
-    date: "May 2025",
-    readTime: "5 min read",
-    location: "Sreemangal",
-  },
-  {
-    id: "camera-trap",
-    label: "Biodiversity Monitoring",
-    title: "Camera trap surveys across forest habitats",
-    image: "/images/habitat-restoration.jpg",
-    excerpt:
-      "Using camera trap networks to strengthen biodiversity documentation, monitor species presence, and support long-term ecological observation.",
-    href: "/stories/camera-trap-surveys-forest-habitats",
-    date: "April 2025",
-    readTime: "4 min read",
-    location: "Forest Landscapes, Bangladesh",
-  },
-  {
-    id: "conflict-response",
-    label: "Human–Wildlife Conflict",
-    title: "Community response and wildlife rescue awareness",
-    image: "/images/team.jpg",
-    excerpt:
-      "Exploring how awareness, rapid response, and local engagement can reduce conflict and build stronger support for wildlife protection.",
-    href: "/stories/community-response-wildlife-rescue-awareness",
-    date: "March 2025",
-    readTime: "4 min read",
-    location: "Bangladesh",
-  },
-  {
-    id: "pittachhara",
-    label: "Landscape Conservation",
-    title: "Pittachhara forest and biodiversity conservation work",
-    image: "/images/education.jpg",
-    excerpt:
-      "Field coordination, ecological documentation, and long-term conservation planning in a landscape shaped by biodiversity richness and environmental pressure.",
-    href: "/stories/pittachhara-forest-biodiversity-conservation",
-    date: "February 2025",
-    readTime: "5 min read",
-    location: "Pittachhara",
-  },
-  {
-    id: "gis-analysis",
-    label: "Ecological Analysis",
-    title: "GIS and spatial ecology for wildlife research",
-    image: "/images/marine-conservation.jpg",
-    excerpt:
-      "How spatial tools like R, QGIS, and ArcGIS help turn raw ecological observations into stronger habitat understanding and conservation insight.",
-    href: "/stories/gis-spatial-ecology-wildlife-research",
-    date: "January 2025",
-    readTime: "6 min read",
-    location: "Bangladesh",
-  },
-  {
-    id: "awareness",
-    label: "Education & Outreach",
-    title: "Conservation awareness through public engagement",
-    image: "/images/habitat-restoration.jpg",
-    excerpt:
-      "Connecting people with species, habitats, and environmental responsibility through public awareness and long-term conservation communication.",
-    href: "/stories/conservation-awareness-public-engagement",
-    date: "December 2024",
-    readTime: "4 min read",
-    location: "Bangladesh",
-  },
-]
+const featuredStory = stories.find((story) => story.featured) ?? stories[0]
 
 const impactStats = [
   { value: "3+", label: "Years of field-based conservation experience" },
@@ -125,10 +41,10 @@ function StoryCard({
   story,
   index,
 }: {
-  story: typeof stories[number]
+  story: (typeof stories)[number]
   index: number
 }) {
-  const cardRef = useRef<HTMLArticleElement>(null)
+  const cardRef = useRef<HTMLElement>(null)
   const isInView = useInView(cardRef, { once: true, margin: "-80px" })
 
   return (
@@ -139,7 +55,7 @@ function StoryCard({
       transition={{ delay: index * 0.06, duration: 0.6 }}
       className="group overflow-hidden rounded-[28px] border border-white/10 bg-[#141611] shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#f4c542]/35"
     >
-      <Link href={story.href} className="block">
+      <Link href={`/stories/${story.slug}`} className="block">
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={story.image}
@@ -174,9 +90,7 @@ function StoryCard({
             </span>
           </div>
 
-          <p className="mt-5 text-sm leading-7 text-white/72">
-            {story.excerpt}
-          </p>
+          <p className="mt-5 text-sm leading-7 text-white/72">{story.excerpt}</p>
 
           <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#f4c542] transition-all duration-300 group-hover:gap-3">
             Read Story
@@ -207,7 +121,7 @@ export default function ConservationPage() {
         {/* Hero */}
         <section className="relative min-h-[92vh] overflow-hidden border-b border-white/10">
           <Image
-            src="/images/conservation-hero.jpg"
+            src={featuredStory.image}
             alt="Conservation fieldwork in Bangladesh"
             fill
             priority
@@ -304,7 +218,7 @@ export default function ConservationPage() {
 
                 <div className="p-8 md:p-10 lg:p-14">
                   <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
-                    {featuredStory.label}
+                    Featured Story
                   </p>
 
                   <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white md:text-5xl">
@@ -329,7 +243,7 @@ export default function ConservationPage() {
 
                   <div className="mt-10">
                     <Link
-                      href={featuredStory.href}
+                      href={`/stories/${featuredStory.slug}`}
                       className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#f4c542] transition hover:gap-3"
                     >
                       Read Featured Story
@@ -371,7 +285,7 @@ export default function ConservationPage() {
 
             <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
               {stories.map((story, index) => (
-                <StoryCard key={story.id} story={story} index={index} />
+                <StoryCard key={story.slug} story={story} index={index} />
               ))}
             </div>
           </div>
