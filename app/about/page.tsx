@@ -240,7 +240,7 @@ export default function AboutPage() {
                 >
                   <p>
                     WildlifeScope was founded in Chittagong, Bangladesh, to protect
-                    the country’s remarkable biodiversity and support a future where
+                    the country&apos;s remarkable biodiversity and support a future where
                     ecosystems, species, and communities can thrive together.
                   </p>
                   <p>
@@ -373,7 +373,7 @@ export default function AboutPage() {
                     <div className="h-1 w-20 bg-[#f4c542]" />
 
                     <p className="mt-6 text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
-                      National Geographic Theme
+                      Conservation Leadership
                     </p>
 
                     <h3 className="mt-4 font-serif text-3xl font-bold leading-tight text-white md:text-4xl">
