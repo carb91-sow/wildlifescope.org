@@ -13,7 +13,7 @@ const featuredStory = {
   title: "Tracking Bengal Slow Loris in Bangladesh’s forest landscapes",
   summary:
     "Field-based radio telemetry and ecological monitoring helped build deeper understanding of movement ecology, habitat use, and conservation planning for one of Bangladesh’s lesser-known nocturnal primates.",
-  image: "/images/rahenur.jpeg",
+  image: "/images/conservation-hero.jpg",
   href: "#slow-loris",
 }
 
@@ -22,7 +22,7 @@ const stories = [
     id: "slow-loris",
     label: "Field Research",
     title: "Radio telemetry monitoring of Bengal Slow Loris",
-    image: "/images/rahenur.jpeg",
+    image: "/images/conservation-hero.jpg",
     description:
       "Supported wildlife tracking and movement ecology work in Sreemangal through field monitoring, ecological datasets, and habitat-use research.",
     points: [
@@ -199,64 +199,78 @@ export default function ConservationPage() {
 
       <main className="bg-[#0b0d09] pt-20 text-white">
         {/* Hero */}
-        <section className="relative overflow-hidden border-b border-white/10 bg-[#0b0d09]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(244,197,66,0.10),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.04),transparent_28%)]" />
-          <div className="absolute inset-0 opacity-[0.05] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:44px_44px]" />
+        <section className="relative min-h-[92vh] overflow-hidden border-b border-white/10">
+          <Image
+            src="/images/conservation-hero.jpg"
+            alt="Conservation fieldwork in Bangladesh"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_left_center,rgba(244,197,66,0.18),transparent_32%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0b0d09] to-transparent" />
+          <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(0,0,0,0.55)]" />
 
           <div
             ref={heroRef}
-            className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28"
+            className="relative mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pt-28 pb-20 lg:px-8 lg:pt-36 lg:pb-24"
           >
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
-            >
-              Success Stories
-            </motion.p>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1, duration: 0.7 }}
-              className="mt-4 max-w-5xl font-serif text-4xl font-bold leading-[1.04] text-white md:text-6xl lg:text-7xl"
-            >
-              Conservation success stories from Bangladesh
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              className="mt-6 max-w-3xl text-lg leading-8 text-white/72 md:text-xl"
-            >
-              Explore real field experiences, wildlife research, biodiversity
-              monitoring, and conservation stories that reflect WildlifeScope’s
-              work across species, habitats, and communities in Bangladesh.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3, duration: 0.7 }}
-              className="mt-10 flex flex-wrap gap-4"
-            >
-              <Link
-                href="#stories"
-                className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+            <div className="max-w-4xl">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6 }}
+                className="text-sm font-medium uppercase tracking-[0.35em] text-[#f4c542]"
               >
-                Explore Stories
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+                Success Stories
+              </motion.p>
 
-              <Link
-                href="/species"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.1, duration: 0.7 }}
+                className="mt-5 max-w-5xl font-serif text-5xl font-bold leading-[0.98] text-white md:text-7xl lg:text-8xl"
               >
-                View Species
-              </Link>
-            </motion.div>
+                Stories from the front lines of wildlife conservation
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 24 }}
+                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2, duration: 0.7 }}
+                className="mt-8 max-w-3xl text-lg leading-8 text-white/85 md:text-xl"
+              >
+                Field research, biodiversity monitoring, rescue response, and
+                conservation stories shaping a deeper understanding of wildlife
+                in Bangladesh.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.3, duration: 0.7 }}
+                className="mt-10 flex flex-wrap gap-4"
+              >
+                <Link
+                  href="#stories"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+                >
+                  Explore Stories
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+
+                <Link
+                  href="/species"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-[#f4c542] hover:text-[#f4c542]"
+                >
+                  View Species
+                </Link>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -360,7 +374,8 @@ export default function ConservationPage() {
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-white/72">
                 A growing body of conservation work shaped by field ecology,
-                biodiversity monitoring, and environmental awareness in Bangladesh.
+                biodiversity monitoring, and environmental awareness in
+                Bangladesh.
               </p>
             </div>
 
