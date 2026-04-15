@@ -164,7 +164,7 @@ export default function AboutPage() {
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0b0d09] to-transparent" />
           <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(0,0,0,0.55)]" />
 
-          <div className="relative mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pt-28 pb-20 lg:px-8 lg:pt-36 lg:pb-24">
+          <div className="relative mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pb-20 pt-28 lg:px-8 lg:pb-24 lg:pt-36">
             <div className="grid w-full items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
               <div>
                 <motion.div
@@ -396,11 +396,38 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Timeline */}
-        <section ref={timelineRef} className="bg-[#0d0f0c] py-20 lg:py-28">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid items-start gap-16 lg:grid-cols-[0.9fr_1.1fr]">
-              <div>
+        {/* Timeline - Cinematic Background */}
+        <section
+          ref={timelineRef}
+          className="relative overflow-hidden py-20 lg:py-28"
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/about-timeline-bg.jpg"
+              alt="Night fieldwork in dense forest landscape"
+              fill
+              priority
+              className="object-cover object-center scale-105 brightness-[0.55] contrast-[1.08] saturate-[1.08]"
+              sizes="100vw"
+            />
+
+            {/* Cinematic layered overlays */}
+            <div className="absolute inset-0 bg-black/55" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/60 to-black/72" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/85" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_40%,rgba(244,197,66,0.10),transparent_22%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_30%,rgba(255,255,255,0.05),transparent_20%)]" />
+            <div className="absolute inset-0 shadow-[inset_0_0_220px_rgba(0,0,0,0.9)]" />
+          </div>
+
+          {/* Subtle atmosphere */}
+          <div className="absolute inset-0 opacity-[0.06] mix-blend-screen [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:120px_120px]" />
+
+          {/* Content */}
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-start gap-16 lg:grid-cols-[0.92fr_1.08fr]">
+              <div className="lg:pr-8">
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={timelineInView ? { opacity: 1, y: 0 } : {}}
@@ -414,7 +441,7 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={timelineInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.1, duration: 0.65 }}
-                  className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl"
+                  className="mt-4 max-w-3xl font-serif text-4xl font-bold leading-[1.02] text-white md:text-6xl"
                 >
                   A growing path in wildlife conservation and biodiversity research
                 </motion.h2>
@@ -423,24 +450,40 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={timelineInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.2, duration: 0.65 }}
-                  className="mt-8 text-lg leading-8 text-white/74"
+                  className="mt-8 max-w-xl text-lg leading-8 text-white/78"
                 >
                   This journey reflects academic training, field ecology experience,
                   biodiversity monitoring, wildlife rescue engagement, and the
                   long-term development of a conservation platform focused on
                   Bangladesh.
                 </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={timelineInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.3, duration: 0.65 }}
+                  className="mt-10 flex items-center gap-4"
+                >
+                  <div className="h-px w-16 bg-[#f4c542]" />
+                  <span className="text-xs uppercase tracking-[0.32em] text-white/65">
+                    Field experience • research • conservation action
+                  </span>
+                </motion.div>
               </div>
 
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={timelineInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.15, duration: 0.75 }}
-                className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#151813] p-8 md:p-10"
+                className="relative overflow-hidden rounded-[32px] border border-white/10 bg-black/35 p-8 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-10"
               >
-                <div className="absolute left-8 top-10 bottom-10 w-px bg-white/12 md:left-10" />
+                {/* Card glow */}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(244,197,66,0.12),transparent_28%)]" />
+                <div className="pointer-events-none absolute inset-0 rounded-[32px] ring-1 ring-white/5" />
 
-                <div className="space-y-8">
+                <div className="absolute bottom-10 left-8 top-10 w-px bg-white/12 md:left-10" />
+
+                <div className="relative space-y-8">
                   {timeline.map((item, index) => (
                     <motion.div
                       key={`${item.year}-${item.event}`}
@@ -449,11 +492,11 @@ export default function AboutPage() {
                       transition={{ delay: 0.25 + index * 0.08, duration: 0.5 }}
                       className="relative pl-12 md:pl-16"
                     >
-                      <div className="absolute left-[23px] top-1.5 h-4 w-4 rounded-full border-4 border-[#151813] bg-[#f4c542] md:left-[31px]" />
+                      <div className="absolute left-[23px] top-1.5 h-4 w-4 rounded-full border-4 border-black bg-[#f4c542] shadow-[0_0_24px_rgba(244,197,66,0.35)] md:left-[31px]" />
                       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f4c542]">
                         {item.year}
                       </p>
-                      <p className="mt-2 text-base leading-7 text-white/80">
+                      <p className="mt-2 text-base leading-8 text-white/88">
                         {item.event}
                       </p>
                     </motion.div>
