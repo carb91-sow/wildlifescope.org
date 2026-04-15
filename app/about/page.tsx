@@ -147,13 +147,25 @@ export default function AboutPage() {
         {/* Hero */}
         <section
           ref={heroRef}
-          className="relative overflow-hidden border-b border-white/10 bg-[#0b0d09]"
+          className="relative min-h-[92vh] overflow-hidden border-b border-white/10"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(244,197,66,0.12),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.04),transparent_28%)]" />
-          <div className="absolute inset-0 opacity-[0.05] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:48px_48px]" />
+          <Image
+            src="/images/about-hero.jpeg"
+            alt="Wildlife conservation fieldwork in Bangladesh"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
 
-          <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-32 lg:px-8 lg:pb-28 lg:pt-40">
-            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_left_center,rgba(244,197,66,0.18),transparent_32%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0b0d09] to-transparent" />
+          <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(0,0,0,0.55)]" />
+
+          <div className="relative mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pt-28 pb-20 lg:px-8 lg:pt-36 lg:pb-24">
+            <div className="grid w-full items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
               <div>
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
@@ -171,7 +183,7 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={heroInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.1, duration: 0.75 }}
-                  className="max-w-5xl font-serif text-4xl font-bold leading-[1.02] text-white md:text-6xl lg:text-7xl"
+                  className="max-w-5xl font-serif text-5xl font-bold leading-[0.98] text-white md:text-7xl lg:text-8xl"
                 >
                   Wildlife conservation in Bangladesh through research, field ecology, and community action
                 </motion.h1>
@@ -180,13 +192,11 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 28 }}
                   animate={heroInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.2, duration: 0.75 }}
-                  className="mt-6 max-w-3xl text-lg leading-8 text-white/75 md:text-xl"
+                  className="mt-8 max-w-3xl text-lg leading-8 text-white/85 md:text-xl"
                 >
-                  WildlifeScope is a Bangladesh-based conservation platform founded to
-                  promote biodiversity conservation, endangered species protection,
-                  ecological awareness, and science-driven environmental stewardship.
-                  It reflects a founder-led vision shaped by real field experience,
-                  wildlife research, and long-term commitment to nature.
+                  WildlifeScope is a Bangladesh-based conservation platform focused on
+                  biodiversity conservation, endangered species protection, ecological
+                  awareness, and science-driven environmental stewardship.
                 </motion.p>
 
                 <motion.div
@@ -205,7 +215,7 @@ export default function AboutPage() {
 
                   <Link
                     href="/species"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-[#f4c542] hover:text-[#f4c542]"
                   >
                     View Species
                   </Link>
@@ -221,7 +231,7 @@ export default function AboutPage() {
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm"
+                    className="rounded-3xl border border-white/10 bg-black/25 p-6 backdrop-blur-md"
                   >
                     <p className="text-xs uppercase tracking-[0.28em] text-[#f4c542]">
                       {stat.label}
