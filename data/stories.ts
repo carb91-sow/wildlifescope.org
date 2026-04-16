@@ -111,7 +111,7 @@ export const stories: Story[] = [
       ],
     },
   ],
-}
+},
   {
     slug: "pittachhara-red-junglefowl-rescue",
     title: "Protecting Pittachhara Forest: A Wildlife Rescue in Bangladesh and the Fight Against Poaching",
