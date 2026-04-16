@@ -108,10 +108,7 @@ const stats = [
 ]
 
 const founder = {
-  name: "Md. Rahenur Islam Sourov",
-  role: "Wildlife Conservation Researcher • Field Ecologist • Founder of WildlifeScope",
-  image: "/images/rahenur.png", // your main/cutout photo
-  bgImage: "/images/about-founder-bg.jpg", // the screenshot you provided
+  image: "/images/rahenur.png", 
   location: "Chattogram, Bangladesh",
   university: "University of Chittagong",
   degree: "MSc in Wildlife and Conservation Biology",
