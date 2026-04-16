@@ -23,136 +23,95 @@ export type Story = {
 
 export const stories: Story[] = [
   {
-    slug: "radio-telemetry-bengal-slow-loris",
-    title: "Radio telemetry monitoring of Bengal Slow Loris",
-    label: "Field Research",
-    excerpt:
-      "Following nocturnal movement through forest habitats to better understand ecology, behavior, and habitat use in one of Bangladesh’s lesser-known primates.",
-    summary:
-      "Field-based radio telemetry work in Sreemangal helped support movement ecology research, habitat-use understanding, and long-term conservation planning for Bengal Slow Loris.",
-    image: "/images/conservation-hero.jpg",
-    date: "May 2025",
-    readTime: "5 min read",
-    location: "Sreemangal, Bangladesh",
-    author: "Md. Rahenur Islam Sourov",
-    featured: true,
-    relatedSlugs: [
-      "camera-trap-surveys-forest-habitats",
-      "gis-spatial-ecology-wildlife-research",
-    ],
-    sections: [
-      {
-        heading: "Background",
-        content: [
-          "The Bengal Slow Loris is one of the lesser-known nocturnal primates of Bangladesh, yet its ecology and habitat use are critically important for effective conservation planning.",
-          "Field-based radio telemetry creates opportunities to follow animal movement, understand habitat preference, and build evidence that supports stronger species protection.",
-        ],
-      },
-      {
-        heading: "Field Context",
-        content: [
-          "This work took place in the forest landscapes of Sreemangal, where dense vegetation, variable terrain, and nocturnal conditions shaped the pace and difficulty of monitoring.",
-          "Tracking at night required patience, repeated observation, and consistent movement through forest trails and edge habitats.",
-        ],
-      },
-      {
-        heading: "Methods and Monitoring",
-        content: [
-          "Radio telemetry was used to support the monitoring of movement patterns and habitat use. Field observations were paired with ecological note-taking, landscape awareness, and location-based interpretation.",
-          "This process helped connect individual movements with broader ecological questions related to space use, behavior, and conservation planning.",
-        ],
-      },
-      {
-        heading: "Why It Matters",
-        content: [
-          "Understanding where a species moves, rests, and forages is essential for identifying habitat priorities and long-term conservation needs.",
-          "Research like this helps translate fieldwork into practical knowledge that can guide protection strategies for vulnerable wildlife populations.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "camera-trap-surveys-forest-habitats",
-    title: "Camera trap surveys across forest habitats",
-    label: "Biodiversity Monitoring",
-    excerpt:
-      "Using camera trap networks to strengthen biodiversity documentation, monitor species presence, and support long-term ecological observation.",
-    summary:
-      "Camera trap implementation across forest habitats supported biodiversity documentation, ecological monitoring, and stronger conservation understanding.",
-    image: "/images/habitat-restoration.jpg",
-    date: "April 2025",
-    readTime: "4 min read",
-    location: "Forest Landscapes, Bangladesh",
-    author: "Md. Rahenur Islam Sourov",
-    relatedSlugs: [
-      "radio-telemetry-bengal-slow-loris",
-      "gis-spatial-ecology-wildlife-research",
-    ],
-    sections: [
-      {
-        heading: "Overview",
-        content: [
-          "Camera trapping provides a non-invasive way to document species presence and activity across landscapes that are difficult to observe continuously.",
-          "It is one of the most effective tools for building long-term ecological records in forest environments.",
-        ],
-      },
-      {
-        heading: "Field Implementation",
-        content: [
-          "Survey work included placement planning, camera deployment, logistical coordination, and repeated monitoring across multiple sites.",
-          "The process required balancing field practicality with ecological reasoning to maximize the value of each survey station.",
-        ],
-      },
-      {
-        heading: "Conservation Value",
-        content: [
-          "Camera trap records strengthen biodiversity documentation and help reveal patterns that may otherwise remain hidden.",
-          "This supports future planning, research communication, and broader understanding of forest wildlife communities.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "community-response-wildlife-rescue-awareness",
-    title: "Community response and wildlife rescue awareness",
-    label: "Human–Wildlife Conflict",
-    excerpt:
-      "Exploring how awareness, rapid response, and local engagement can reduce conflict and build stronger support for wildlife protection.",
-    summary:
-      "Awareness activities and community response efforts helped improve understanding of wildlife conservation and reduce conflict pressures.",
-    image: "/images/team.jpg",
-    date: "March 2025",
-    readTime: "4 min read",
-    location: "Bangladesh",
-    author: "Md. Rahenur Islam Sourov",
-    relatedSlugs: [
-      "conservation-awareness-public-engagement",
-      "pittachhara-red-junglefowl-rescue",
-    ],
-    sections: [
-      {
-        heading: "Human and Wildlife in Shared Landscapes",
-        content: [
-          "Conservation is not only about species in remote habitats. It also involves the everyday realities of people and wildlife sharing space.",
-          "Where misunderstanding or fear exists, conflict can grow quickly.",
-        ],
-      },
-      {
-        heading: "Awareness and Response",
-        content: [
-          "Community engagement, rescue awareness, and response support can help reduce tension while promoting safer outcomes for both people and wildlife.",
-          "These actions are especially important in places where conservation depends on public trust and local participation.",
-        ],
-      },
-      {
-        heading: "Why Community Matters",
-        content: [
-          "Long-term conservation becomes stronger when people are included as informed participants rather than distant observers.",
-          "Awareness work helps connect ecological protection with daily human experience.",
-        ],
-      },
-    ],
-  },
+  slug: "nigel-marven-slow-loris-conservation-bangladesh",
+  title: "Nigel Marven Documents Slow Loris Conservation in Bangladesh: A Rare Field Interview from the Frontline",
+  label: "Field Documentation",
+  excerpt:
+    "On January 10, 2026, wildlife presenter Nigel Marven visited Bangladesh to document the Plumploris e.V. Slow Loris conservation project, revealing real field challenges and conservation realities.",
+  summary:
+    "A field-based interview with Nigel Marven during his visit to Bangladesh highlights the challenges, research importance, and conservation efforts behind protecting Slow Loris populations.",
+  image: "/images/conservation-hero.jpg",
+  date: "January 10, 2026",
+  readTime: "6 min read",
+  location: "Sreemangal, Bangladesh",
+  author: "Md. Rahenur Islam Sourov",
+  relatedSlugs: [
+    "radio-telemetry-bengal-slow-loris",
+    "gis-spatial-ecology-wildlife-research",
+  ],
+  sections: [
+    {
+      heading: "A Rare Visit to the Field",
+      content: [
+        "On January 10, 2026, renowned wildlife presenter Nigel Marven visited Bangladesh to document the Plumploris e.V. Slow Loris conservation project.",
+        "This visit brought international attention to one of the most important yet underrepresented wildlife conservation efforts in South Asia.",
+      ],
+      image: "/images/conservation-hero.jpg",
+      imageCaption:
+        "Nigel Marven documenting Slow Loris conservation work during his visit to Bangladesh.",
+    },
+
+    {
+      heading: "Field Interview with Nigel Marven",
+      content: [
+        "As a Research Assistant working on the project, I had the opportunity to interview Nigel Marven directly during his field visit.",
+        "We discussed what we do, why Slow Loris conservation matters, and the real conditions faced by researchers working in forest environments.",
+        "The conversation highlighted not only scientific goals but also the physical and logistical challenges of conservation in Bangladesh.",
+      ],
+    },
+
+    {
+      heading: "Key Insight from the Field",
+      content: [
+        "“Conservation is not just about protecting animals — it is about understanding their world and the pressures they face every day.”",
+      ],
+    },
+
+    {
+      heading: "Understanding the Slow Loris Conservation Project",
+      content: [
+        "The Plumploris e.V. project focuses on monitoring and protecting Slow Loris populations through field research, ecological observation, and conservation planning.",
+        "In Bangladesh, Slow Loris species face increasing threats from habitat loss, illegal wildlife trade, and lack of awareness.",
+        "Research-based conservation is essential to understand their behavior, habitat use, and long-term survival.",
+      ],
+    },
+
+    {
+      heading: "Challenges of Field-Based Conservation",
+      content: [
+        "Conservation work in forest environments is physically demanding and often unpredictable.",
+        "Night tracking, dense vegetation, weather conditions, and limited infrastructure create continuous challenges for field researchers.",
+        "These realities were emphasized during the interview, showing that conservation is not theoretical but deeply practical and demanding.",
+      ],
+    },
+
+    {
+      heading: "Why International Documentation Matters",
+      content: [
+        "Documentation by global wildlife presenters like Nigel Marven helps bring visibility to conservation efforts that often remain unnoticed.",
+        "Such exposure strengthens awareness, encourages support, and highlights the importance of protecting species like the Bengal Slow Loris.",
+      ],
+    },
+
+    {
+      heading: "Why Slow Loris Conservation Is Important",
+      content: [
+        "Slow Loris are ecologically important primates that contribute to forest ecosystem balance.",
+        "Their survival depends on habitat protection, scientific research, and reducing illegal wildlife trade.",
+        "Protecting Slow Loris populations helps preserve biodiversity and supports long-term ecological stability.",
+      ],
+    },
+
+    {
+      heading: "Field Insight and Future Direction",
+      content: [
+        "This interaction reinforced the importance of combining research, fieldwork, and storytelling in conservation.",
+        "Effective conservation requires long-term monitoring, collaboration, and awareness at both local and global levels.",
+        "Documenting real field experiences helps bridge the gap between science and public understanding.",
+      ],
+    },
+  ],
+}
   {
     slug: "pittachhara-red-junglefowl-rescue",
     title: "Protecting Pittachhara Forest: A Wildlife Rescue in Bangladesh and the Fight Against Poaching",
@@ -245,40 +204,6 @@ export const stories: Story[] = [
           "Raise awareness about biodiversity protection.",
           "Follow WildlifeScope for real field updates and research.",
           "Protecting wildlife is not just the responsibility of conservationists. It requires collective awareness and action.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "pittachhara-forest-biodiversity-conservation",
-    title: "Pittachhara forest and biodiversity conservation work",
-    label: "Landscape Conservation",
-    excerpt:
-      "Field coordination, ecological documentation, and long-term conservation planning in a landscape shaped by biodiversity richness and environmental pressure.",
-    summary:
-      "Conservation work in Pittachhara supported ecological documentation, field coordination, and landscape-focused biodiversity protection.",
-    image: "/images/education.jpg",
-    date: "February 2025",
-    readTime: "5 min read",
-    location: "Pittachhara, Bangladesh",
-    author: "Md. Rahenur Islam Sourov",
-    relatedSlugs: [
-      "pittachhara-red-junglefowl-rescue",
-      "camera-trap-surveys-forest-habitats",
-    ],
-    sections: [
-      {
-        heading: "Landscape Perspective",
-        content: [
-          "Forest conservation requires looking beyond single species and considering the ecological integrity of the wider landscape.",
-          "Pittachhara represents the importance of place-based biodiversity protection rooted in long-term observation and coordination.",
-        ],
-      },
-      {
-        heading: "Field Coordination",
-        content: [
-          "This work involved practical support for ecological documentation, logistics, and conservation-focused field organization.",
-          "Such coordination often makes the difference between isolated effort and meaningful long-term impact.",
         ],
       },
     ],
