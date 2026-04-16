@@ -560,72 +560,70 @@ export const stories: Story[] = [
   ],
 },
   {
-  slug: "amphibian-survey-pittachhara-rainy-morning-return",
+  slug: "amphibian-survey-pittachhara-forest-field-return",
   title:
-    "Amphibian Survey in Pittachhara Forest: A Night of Field Research and a Rain-Soaked Return",
+    "Amphibian Survey in Pittachhara Forest: Field Research and a Rain-Soaked Return",
   label: "Field Research",
   excerpt:
-    "A night survey of amphibians in Pittachhara Forest highlights field challenges, nocturnal research, and the realities of biodiversity monitoring in Bangladesh.",
+    "A nocturnal amphibian survey in Pittachhara Forest highlights field challenges, biodiversity monitoring, and the realities of ecological research in Bangladesh.",
   summary:
-    "On April 27, 2025, a field survey of amphibians in Pittachhara Forest extended through the night, ending with a rain-soaked return at dawn, reflecting the realities of ecological research in Bangladesh.",
-  image: "/images/amphibian-field-return.jpg",
+    "On April 27, 2025, a night-long amphibian survey in Pittachhara Forest concluded with a rain-soaked return at dawn, reflecting both the challenges and importance of field-based biodiversity research.",
+  image: "/images/amphibian-morning-return.jpg",
   date: "April 27, 2025",
   readTime: "5 min read",
   location: "Pittachhara Forest, Bangladesh",
   author: "Md. Rahenur Islam Sourov",
   relatedSlugs: [
-    "bengal-slow-loris-radio-telemetry-pittachhara",
+    "gis-spatial-ecology-wildlife-research",
     "pittachhara-forest-biodiversity-conservation",
   ],
   sections: [
     {
-      heading: "A Night in Search of Amphibians",
+      heading: "Nocturnal Survey of Amphibians",
       content: [
-        "On April 27, 2025, we conducted a nocturnal field survey of amphibians in an area adjacent to Pittachhara Forest. Amphibian research requires working at night, when most species become active and detectable.",
-        "The survey focused on identifying species presence, observing habitat conditions, and recording ecological indicators that reflect amphibian diversity in the region.",
+        "On April 27, 2025, we conducted a nocturnal field survey of amphibians in an area adjacent to Pittachhara Forest. Amphibian surveys are typically carried out at night, when most species are active and easier to detect.",
+        "The objective of the survey was to document species presence, observe habitat conditions, and understand amphibian diversity within the forest ecosystem.",
       ],
       image: "/images/amphibian-night.jpg",
       imageCaption:
-        "Field team during a nocturnal amphibian survey near Pittachhara Forest.",
+        "Field team conducting a nocturnal amphibian survey near Pittachhara Forest.",
     },
     {
-      heading: "Field Conditions and Challenges",
+      heading: "Field Conditions and Observation",
       content: [
-        "Working at night in forest environments presents continuous challenges. Limited visibility, uneven terrain, and constant environmental noise make detection and movement more difficult.",
-        "Amphibians are often identified through subtle cues such as calls, moisture-rich microhabitats, and brief visual encounters, requiring patience and careful observation.",
+        "The survey required careful movement through forest trails under low visibility conditions. Amphibians are often identified through subtle indicators such as vocalizations, moisture-rich microhabitats, and brief visual encounters.",
+        "These conditions demand patience and attention, as even small environmental changes can influence amphibian activity.",
       ],
     },
     {
-      heading: "Data Collection in the Dark",
+      heading: "Data Collection and Ecological Significance",
       content: [
-        "Throughout the night, we documented species observations, habitat conditions, and environmental parameters. Each record contributes to understanding amphibian distribution and ecosystem health.",
-        "Amphibians are sensitive indicators of environmental change, making their presence or absence important for assessing forest biodiversity.",
+        "Throughout the night, we recorded observations related to species presence, habitat features, and environmental conditions. Such data contribute to understanding amphibian distribution and overall ecosystem health.",
+        "Amphibians are widely recognized as bioindicators, meaning their presence reflects the quality and stability of the environment.",
       ],
     },
     {
-      heading: "The Return at Dawn",
+      heading: "Return at Dawn in Rain",
       content: [
-        "By early morning, the survey concluded. As we began returning to our station, light rain started to fall across the landscape.",
-        "The narrow trails became muddy and difficult to navigate. The forest, quiet during the night, shifted again with the arrival of morning.",
-        "Walking back through wet terrain, carrying equipment after hours of fieldwork, reflected the physical reality behind ecological research.",
+        "After completing the survey, we began our return to the station in the early morning. Light rain started as we moved through narrow trails, making the path muddy and more difficult to navigate.",
+        "The transition from night to morning, combined with physical fatigue and wet conditions, highlighted the practical challenges of field-based research.",
       ],
       image: "/images/amphibian-morning-return.jpg",
       imageCaption:
-        "Field team returning at dawn after an overnight amphibian survey in Pittachhara Forest.",
+        "Returning at dawn through muddy trails after a night-long amphibian survey in Pittachhara Forest.",
     },
     {
-      heading: "Why Amphibian Surveys Matter",
+      heading: "Why Amphibian Research Matters",
       content: [
-        "Amphibians play a critical role in ecosystems as both predators and prey, helping maintain ecological balance.",
-        "They are also highly sensitive to environmental changes, making them key indicators of habitat quality and ecosystem health.",
-        "Monitoring amphibian populations helps identify conservation priorities and supports long-term biodiversity protection in forest ecosystems like Pittachhara.",
+        "Amphibians play an essential role in maintaining ecological balance, acting as both predators and prey within forest ecosystems.",
+        "Their sensitivity to environmental changes makes them important indicators of habitat quality, particularly in biodiversity-rich areas like Pittachhara Forest.",
       ],
     },
     {
       heading: "Field Insight",
       content: [
-        "Field-based research is often quiet, physically demanding, and repetitive. Yet it provides the data necessary for understanding ecosystems and guiding conservation decisions.",
-        "Experiences like this highlight that conservation is built on consistent effort, careful observation, and the willingness to work in challenging conditions.",
+        "Field research is often physically demanding and requires working under unpredictable conditions. However, it provides essential data that supports conservation planning and ecological understanding.",
+        "Experiences like this emphasize that effective conservation depends on consistent field effort, observation, and long-term monitoring.",
       ],
     },
   ],
