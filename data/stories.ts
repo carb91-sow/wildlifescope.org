@@ -236,7 +236,7 @@ export const stories: Story[] = [
           "On June 15, 2025, while working as a Field Manager with Plumploris e.V., we tracked a radio-collared slow loris deep inside Pittachhara Forest. What began as a routine telemetry session became a powerful reminder of how fragile, and how extraordinary, this species really is.",
           "We started before dusk with the essential equipment ready: radio telemetry receiver, directional antenna, GPS logging tools, and the goal of locating and monitoring a radio-collared Bengal Slow Loris.",
         ],
-        image: "/images/conservation-hero.jpg",
+        image: "/images/conservation-hero 1.jpg",
         imageCaption:
           "Field team after an all-night Bengal Slow Loris tracking session in Pittachhara Forest, Bangladesh.",
       },
