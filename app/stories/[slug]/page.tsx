@@ -15,6 +15,7 @@ import {
   MapPin,
   Camera,
   Leaf,
+  Quote,
 } from "lucide-react"
 
 export function generateStaticParams() {
@@ -130,7 +131,7 @@ export default async function StoryPage({
                           {section.heading}
                         </h2>
 
-                        {"image" in section && section.image && (
+                        {section.image && (
                           <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[#10120f]">
                             <div className="relative aspect-[16/10] w-full overflow-hidden">
                               <Image
@@ -143,7 +144,7 @@ export default async function StoryPage({
                               <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
                             </div>
 
-                            {("imageCaption" in section && section.imageCaption) && (
+                            {section.imageCaption && (
                               <div className="flex items-start gap-3 border-t border-white/10 px-5 py-4">
                                 <Camera className="mt-0.5 h-4 w-4 shrink-0 text-[#f4c542]" />
                                 <p className="text-sm leading-7 text-white/60">
@@ -156,9 +157,30 @@ export default async function StoryPage({
 
                         <div className="space-y-6">
                           {section.content.map((paragraph, i) => {
+                            const trimmed = paragraph.trim()
+                            const isQuote =
+                              trimmed.startsWith("“") ||
+                              trimmed.startsWith('"')
                             const isShortLine =
-                              paragraph.length < 110 &&
-                              !paragraph.includes(". ")
+                              trimmed.length < 110 &&
+                              !trimmed.includes(". ") &&
+                              !isQuote
+
+                            if (isQuote) {
+                              return (
+                                <div
+                                  key={i}
+                                  className="my-10 overflow-hidden rounded-[24px] border border-[#f4c542]/25 bg-[#1a1d17]"
+                                >
+                                  <div className="flex items-start gap-4 px-6 py-6 md:px-8 md:py-8">
+                                    <Quote className="mt-1 h-5 w-5 shrink-0 text-[#f4c542]" />
+                                    <p className="font-serif text-xl italic leading-9 text-white/90 md:text-2xl">
+                                      {trimmed}
+                                    </p>
+                                  </div>
+                                </div>
+                              )
+                            }
 
                             if (isShortLine) {
                               return (
@@ -167,7 +189,7 @@ export default async function StoryPage({
                                   className="rounded-2xl border border-white/8 bg-[#171a15] px-5 py-4"
                                 >
                                   <p className="text-base leading-8 text-white/78">
-                                    {paragraph}
+                                    {trimmed}
                                   </p>
                                 </div>
                               )
@@ -178,7 +200,7 @@ export default async function StoryPage({
                                 key={i}
                                 className="text-lg leading-9 text-white/76"
                               >
-                                {paragraph}
+                                {trimmed}
                               </p>
                             )
                           })}
