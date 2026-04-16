@@ -298,6 +298,101 @@ export const stories: Story[] = [
       },
     ],
   },
+  {
+  slug: "bengal-slow-loris-rescue-dighinala-pittachhara",
+  title:
+    "We Rescued an Injured Bengal Slow Loris from Poaching in Bangladesh and Returned It to the Forest",
+  label: "Wildlife Rescue",
+  excerpt:
+    "A Bengal Slow Loris rescued from poaching in Dighinala, Khagrachari was treated at Pittachhara and successfully released back into the wild.",
+  summary:
+    "On May 6, 2025, a Bengal Slow Loris rescued from illegal capture in Dighinala was brought to Pittachhara for treatment. After careful rehabilitation and monitoring, the animal recovered and was released back into its natural forest habitat.",
+  image: "/images/slow-loris-rescue.jpg",
+  date: "May 6, 2025",
+  readTime: "6 min read",
+  location: "Dighinala, Khagrachari, Bangladesh",
+  author: "Md. Rahenur Islam Sourov",
+  featured: true,
+  relatedSlugs: [
+    "nigel-marven-slow-loris-conservation-bangladesh",
+    "pittachhara-red-junglefowl-rescue",
+  ],
+  sections: [
+    {
+      heading: "A Rescue That Started with a Call",
+      content: [
+        "Wildlife rescue in Bangladesh often begins quietly, through local networks and urgent calls. On May 6, 2025, we received information from a volunteer about a Bengal Slow Loris captured by a poacher in Dighinala, Khagrachari.",
+        "By the time the animal reached our Pittachhara rehabilitation center, it was already showing signs of stress and injury. Cases like this are common but rarely documented, making each rescue both critical and urgent.",
+      ],
+      image: "/images/slow-loris-rescue.jpg",
+      imageCaption:
+        "Rescued Bengal Slow Loris after being recovered from illegal poaching in Dighinala, Khagrachari.",
+    },
+    {
+      heading: "First Condition: Injured and Stressed",
+      content: [
+        "The Bengal Slow Loris (Nycticebus bengalensis) is an endangered primate, highly sensitive to stress and handling. Upon arrival, the animal showed visible injuries likely caused during capture, along with signs of dehydration and trauma.",
+        "Wild animals under these conditions often deteriorate quickly. Immediate intervention is essential to prevent further decline and increase the chances of survival.",
+      ],
+    },
+    {
+      heading: "Emergency First Aid and Stabilization",
+      content: [
+        "We began first aid treatment immediately. Using protective handling techniques, we carefully cleaned wounds, assessed the extent of injuries, and provided supportive care.",
+        "Handling a slow loris requires caution, not only because of its fragile condition but also because it is one of the few venomous primates. Every step was controlled to minimize stress while ensuring proper treatment.",
+      ],
+      image: "/images/slow-loris-treatment.jpg",
+      imageCaption:
+        "Providing first aid treatment to an injured Bengal Slow Loris during rehabilitation at Pittachhara.",
+    },
+    {
+      heading: "Monitoring Recovery in Rehabilitation",
+      content: [
+        "After initial treatment, the focus shifted to monitoring. Recovery in wildlife is not immediate, especially for nocturnal species like the slow loris.",
+        "We observed feeding behavior, movement, grip strength, and overall activity. Over time, the animal began to show signs of improvement, becoming more stable and responsive to its environment.",
+        "This stage is often the most important, as it determines whether the animal can survive independently in the wild.",
+      ],
+    },
+    {
+      heading: "The Decision to Release",
+      content: [
+        "Once the loris showed consistent signs of recovery, we prepared for release. The goal of any wildlife rescue is not long-term captivity, but a safe return to natural habitat.",
+        "We selected a suitable forest area adjacent to Pittachhara, ensuring the environment matched the species’ ecological needs.",
+      ],
+    },
+    {
+      heading: "Return to the Forest",
+      content: [
+        "The release was quiet and deliberate. As the loris moved back into the forest, it quickly disappeared into the trees, returning to the environment it belongs to.",
+        "Moments like this define conservation work. There is no celebration, only a quiet confirmation that the effort was worth it.",
+      ],
+    },
+    {
+      heading: "Why Slow Loris Conservation Matters",
+      content: [
+        "The Bengal Slow Loris faces ongoing threats in Bangladesh, including poaching, habitat loss, and illegal wildlife trade. Many individuals are captured for sale or local use, and few survive long enough to be rescued.",
+        "Each successful rehabilitation and release contributes to maintaining wild populations and protecting biodiversity in forest ecosystems.",
+      ],
+    },
+    {
+      heading: "The Role of Local Conservation Efforts",
+      content: [
+        "This rescue highlights the importance of local volunteers, rapid response, and field-based conservation networks.",
+        "Without timely information and coordinated action, many wildlife cases would go unnoticed. Conservation is not only about research but also about immediate intervention and community involvement.",
+      ],
+    },
+    {
+      heading: "What You Can Do",
+      content: [
+        "Report illegal wildlife activities in your area.",
+        "Support conservation organizations and local initiatives.",
+        "Raise awareness about endangered species like the Bengal Slow Loris.",
+        "Avoid supporting any form of wildlife trade.",
+        "Protecting biodiversity requires both field action and public awareness.",
+      ],
+    },
+  ],
+},
 ]
 
 export function getStoryBySlug(slug: string) {
