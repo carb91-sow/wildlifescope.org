@@ -108,7 +108,9 @@ const stats = [
 ]
 
 const founder = {
-  image: "/images/rahenur.png", 
+  name: "Md. Rahenur Islam Sourov",
+  role: "Wildlife Conservation Researcher • Field Ecologist • Founder of WildlifeScope",
+  image: "/images/rahenur.jpeg",
   location: "Chattogram, Bangladesh",
   university: "University of Chittagong",
   degree: "MSc in Wildlife and Conservation Biology",
@@ -142,7 +144,7 @@ export default function AboutPage() {
       <Header />
 
       <main className="bg-[#0b0d09] text-white">
-        {/* Hero - KEEPING YOUR ORIGINAL HERO */}
+        {/* Hero */}
         <section
           ref={heroRef}
           className="relative min-h-[92vh] overflow-hidden border-b border-white/10"
@@ -244,31 +246,10 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* NEW FOUNDER PROFILE SECTION WITH YOUR PROVIDED SCREENSHOT + YOUR PHOTO */}
-        <section
-          ref={introRef}
-          className="relative overflow-hidden py-20 lg:py-24"
-        >
-          {/* Background screenshot */}
-          <div className="absolute inset-0">
-            <Image
-              src={founder.bgImage}
-              alt="Conservation awareness event background"
-              fill
-              priority
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-black/55" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/82 via-black/55 to-black/72" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-[#0b0d09]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_35%,rgba(244,197,66,0.12),transparent_30%)]" />
-            <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(0,0,0,0.42)]" />
-          </div>
-
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid items-center gap-14 lg:grid-cols-[1fr_1fr]">
-              {/* Left side text */}
+        {/* Intro / Founder Summary */}
+        <section ref={introRef} className="bg-[#11130f] py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
               <div>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -283,7 +264,7 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={introInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.1, duration: 0.65 }}
-                  className="mt-4 max-w-3xl font-serif text-4xl font-bold leading-[1.02] text-white md:text-6xl"
+                  className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl"
                 >
                   A wildlife conservation researcher building impact through field experience and science
                 </motion.h2>
@@ -292,7 +273,7 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={introInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.2, duration: 0.65 }}
-                  className="mt-8 flex flex-wrap gap-6 text-sm text-white/80"
+                  className="mt-8 flex flex-wrap gap-6 text-sm text-white/70"
                 >
                   <div className="inline-flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-[#f4c542]" />
@@ -303,77 +284,19 @@ export default function AboutPage() {
                     Wildlife conservation Bangladesh
                   </div>
                 </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={introInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.24, duration: 0.65 }}
-                  className="mt-8 max-w-3xl space-y-6 text-lg leading-8 text-white/82"
-                >
-                  <p>{founder.shortBio}</p>
-                  <p>{founder.longBio1}</p>
-                </motion.div>
               </div>
 
-              {/* Right side image */}
               <motion.div
-                initial={{ opacity: 0, x: 28 }}
-                animate={introInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.15, duration: 0.75 }}
-                className="relative"
+                initial={{ opacity: 0, y: 24 }}
+                animate={introInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2, duration: 0.65 }}
+                className="space-y-6 text-lg leading-8 text-white/74"
               >
-                <div className="relative mx-auto max-w-[480px] overflow-hidden rounded-[34px] border border-white/10 bg-black/30 shadow-[0_30px_90px_rgba(0,0,0,0.4)] backdrop-blur-md">
-                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                  <div className="absolute left-0 top-0 z-20 h-full w-2 bg-[#f4c542]" />
-
-                  <div className="relative h-[640px] w-full">
-                    <Image
-                      src={founder.image}
-                      alt={founder.name}
-                      fill
-                      priority
-                      className="object-cover object-center"
-                      sizes="(max-width: 1024px) 100vw, 480px"
-                    />
-                  </div>
-
-                  <div className="absolute inset-x-0 bottom-0 z-20 p-8 md:p-10">
-                    <div className="inline-flex items-center gap-3 rounded-full border border-[#f4c542]/35 bg-black/25 px-4 py-2 backdrop-blur-sm">
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#f4c542]" />
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-[#f4c542]">
-                        WildlifeScope
-                      </span>
-                    </div>
-
-                    <h3 className="mt-5 font-serif text-3xl font-bold text-white md:text-4xl">
-                      {founder.name}
-                    </h3>
-
-                    <p className="mt-3 text-sm uppercase tracking-[0.28em] text-white/72">
-                      {founder.role}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="absolute -left-4 bottom-8 hidden w-52 rounded-3xl border border-white/10 bg-black/45 p-5 backdrop-blur-md lg:block">
-                  <p className="text-xs uppercase tracking-[0.28em] text-[#f4c542]">
-                    Experience
-                  </p>
-                  <p className="mt-2 font-serif text-3xl font-bold text-white">3+ Years</p>
-                  <p className="mt-2 text-sm leading-6 text-white/70">
-                    Field-based conservation, biodiversity monitoring, and ecological work.
-                  </p>
-                </div>
-
-                <div className="absolute -right-4 top-10 hidden w-56 rounded-3xl border border-white/10 bg-black/45 p-5 backdrop-blur-md lg:block">
-                  <p className="text-xs uppercase tracking-[0.28em] text-[#f4c542]">
-                    Academic
-                  </p>
-                  <p className="mt-2 font-serif text-2xl font-bold text-white">MSc</p>
-                  <p className="mt-2 text-sm leading-6 text-white/70">
-                    Wildlife and Conservation Biology, University of Chittagong.
-                  </p>
-                </div>
+                <p>{founder.shortBio}</p>
+                <p>{founder.longBio1}</p>
+                <p>{founder.longBio2}</p>
+                <p>{founder.longBio3}</p>
+                <p>{founder.longBio4}</p>
               </motion.div>
             </div>
           </div>
@@ -473,11 +396,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Timeline */}
+        {/* Timeline - Brighter Real Photo Look */}
         <section
           ref={timelineRef}
           className="relative overflow-hidden py-20 lg:py-28"
         >
+          {/* Background Image */}
           <div className="absolute inset-0">
             <Image
               src="/images/about-timeline-bg.jpg"
@@ -488,6 +412,7 @@ export default function AboutPage() {
               sizes="100vw"
             />
 
+            {/* More natural, less dark overlays */}
             <div className="absolute inset-0 bg-black/28" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/56 via-black/22 to-black/38" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-transparent to-black/45" />
@@ -495,10 +420,12 @@ export default function AboutPage() {
             <div className="absolute inset-0 shadow-[inset_0_0_110px_rgba(0,0,0,0.32)]" />
           </div>
 
+          {/* Very subtle texture */}
           <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:120px_120px]" />
 
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid items-start gap-16 lg:grid-cols-[0.92fr_1.08fr]">
+              {/* Left Content */}
               <div className="lg:pr-8">
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -543,6 +470,7 @@ export default function AboutPage() {
                 </motion.div>
               </div>
 
+              {/* Timeline Card */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={timelineInView ? { opacity: 1, x: 0 } : {}}
@@ -610,7 +538,7 @@ export default function AboutPage() {
               <div className="grid lg:grid-cols-2">
                 <div className="relative min-h-[460px] lg:min-h-[760px]">
                   <Image
-                    src="/images/rahenur.jpeg"
+                    src={founder.image}
                     alt={founder.name}
                     fill
                     priority
