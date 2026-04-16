@@ -212,7 +212,7 @@ export const stories: Story[] = [
       "A night of radio telemetry in Pittachhara Forest revealed the movement, habitat use, and fragile reality of one of Bangladesh’s most elusive nocturnal primates.",
     summary:
       "On June 15, 2025, an all-night radio telemetry session in Pittachhara Forest followed a radio-collared Bengal Slow Loris through dense forest, offering critical field insight into movement ecology and conservation in Bangladesh.",
-    image: "/images/conservation-hero.jpg",
+    image: "/images/loris-team-field.jpg",
     date: "June 15, 2025",
     readTime: "7 min read",
     location: "Pittachhara Forest, Bangladesh",
