@@ -38,7 +38,7 @@ export const stories: Story[] = [
     featured: true,
     relatedSlugs: [
       "camera-trap-surveys-forest-habitats",
-      "community-response-wildlife-rescue-awareness",
+      "gis-spatial-ecology-wildlife-research",
     ],
     sections: [
       {
@@ -125,7 +125,10 @@ export const stories: Story[] = [
     readTime: "4 min read",
     location: "Bangladesh",
     author: "Md. Rahenur Islam Sourov",
-    relatedSlugs: ["conservation-awareness-public-engagement"],
+    relatedSlugs: [
+      "conservation-awareness-public-engagement",
+      "pittachhara-red-junglefowl-rescue",
+    ],
     sections: [
       {
         heading: "Human and Wildlife in Shared Landscapes",
@@ -151,6 +154,102 @@ export const stories: Story[] = [
     ],
   },
   {
+    slug: "pittachhara-red-junglefowl-rescue",
+    title: "Protecting Pittachhara Forest: A Wildlife Rescue in Bangladesh and the Fight Against Poaching",
+    label: "Wildlife Rescue",
+    excerpt:
+      "A field rescue of a Red Junglefowl in Pittachhara Forest reveals how small-scale poaching threatens biodiversity in Bangladesh and why rapid response matters.",
+    summary:
+      "On January 27, 2024, a field intervention in Pittachhara Forest led to the rescue, treatment, and release of a Red Junglefowl captured by a poacher, highlighting the urgency of wildlife protection in Bangladesh.",
+    image: "/images/pittachhara-rescue.jpg",
+    date: "January 27, 2024",
+    readTime: "6 min read",
+    location: "Pittachhara Forest, Bangladesh",
+    author: "Md. Rahenur Islam Sourov",
+    relatedSlugs: [
+      "community-response-wildlife-rescue-awareness",
+      "pittachhara-forest-biodiversity-conservation",
+    ],
+    sections: [
+      {
+        heading: "A Rescue in Real Time",
+        content: [
+          "A wildlife rescue in Bangladesh is not just about saving one animal. It is about protecting an entire ecosystem under pressure.",
+          "On January 27, 2024, in the biodiverse Pittachhara Forest, I led a field operation to rescue a Red Junglefowl captured by a poacher for consumption. What followed was a reminder that conservation is not theory. It is immediate, physical, and often urgent.",
+        ],
+        image: "/images/pittachhara-rescue.jpg",
+        imageCaption:
+          "Field rescue operation after intercepting a Red Junglefowl captured by a poacher in Pittachhara Forest.",
+      },
+      {
+        heading: "What Happened",
+        content: [
+          "A local poacher had captured a female Red Junglefowl with the intent to sell or consume it. Acting on field intelligence, we intervened before the bird could enter the illegal wildlife chain.",
+          "The rescue operation involved locating and intercepting the bird, safely securing it from the poacher, assessing visible injuries caused during capture, providing immediate first aid, and releasing the bird back into Pittachhara Forest after stabilization.",
+          "This kind of rapid-response wildlife rescue is critical in regions where small-scale poaching often goes undocumented.",
+        ],
+      },
+      {
+        heading: "The Condition of the Bird",
+        content: [
+          "The bird had visible injuries caused during capture. Immediate intervention was necessary to prevent further stress and possible death.",
+          "We carefully handled the individual, cleaned the wound, and applied basic first aid in the field before preparing it for release.",
+        ],
+        image: "/images/pittachhara-treatment.jpg",
+        imageCaption:
+          "Providing first aid to the injured Red Junglefowl during the rescue operation.",
+      },
+      {
+        heading: "Why Red Junglefowl Conservation Matters",
+        content: [
+          "The Red Junglefowl is more than a wild bird. It is the genetic ancestor of all domestic chickens and plays a key role in forest ecosystems.",
+          "In forests like Pittachhara, they contribute to seed dispersal, insect population control, and maintaining forest floor biodiversity balance.",
+          "While globally listed as Least Concern, local populations in Bangladesh face increasing pressure from illegal hunting, habitat fragmentation, and weak enforcement in remote areas.",
+        ],
+      },
+      {
+        heading: "The Real Threat: Poaching in Bangladesh Forests",
+        content: [
+          "Poaching in Bangladesh is often underestimated because it is small-scale and local. But its cumulative impact is severe.",
+          "In regions like the Chittagong Hill Tracts, wildlife is frequently hunted for meat consumption, informal trade networks exist at the village level, and many incidents go unreported.",
+          "Even pressure on a single species can disrupt broader ecosystem balance.",
+        ],
+      },
+      {
+        heading: "Why Pittachhara Forest Matters",
+        content: [
+          "Pittachhara Forest is one of Bangladesh’s lesser-documented yet ecologically important areas. It acts as a biodiversity corridor, supporting birds, mammals, and plant species critical to regional ecological stability.",
+          "Protecting species like the Red Junglefowl helps preserve habitat integrity, food chain stability, and the long-term conservation value of the forest.",
+        ],
+      },
+      {
+        heading: "Field Insight: What Effective Wildlife Rescue Requires",
+        content: [
+          "Successful conservation depends on active field monitoring, community-based conservation, and data-driven decision-making.",
+          "Field presence matters because boots on the ground can stop poaching before greater damage is done.",
+          "Community awareness is equally important. When local people understand the ecological value of wildlife, hunting pressure can decrease.",
+          "Every rescue operation can also contribute to conservation knowledge by helping identify poaching hotspots, species vulnerability patterns, and habitat trends.",
+        ],
+      },
+      {
+        heading: "How Wildlife Poaching Can Be Reduced",
+        content: [
+          "Wildlife poaching can be reduced through active field monitoring, community education, stronger enforcement of the Bangladesh Wildlife Act, and data-driven conservation strategies that track and prevent illegal activities.",
+        ],
+      },
+      {
+        heading: "What You Can Do",
+        content: [
+          "Report illegal hunting activities in your area.",
+          "Support local conservation initiatives.",
+          "Raise awareness about biodiversity protection.",
+          "Follow WildlifeScope for real field updates and research.",
+          "Protecting wildlife is not just the responsibility of conservationists. It requires collective awareness and action.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "pittachhara-forest-biodiversity-conservation",
     title: "Pittachhara forest and biodiversity conservation work",
     label: "Landscape Conservation",
@@ -163,7 +262,10 @@ export const stories: Story[] = [
     readTime: "5 min read",
     location: "Pittachhara, Bangladesh",
     author: "Md. Rahenur Islam Sourov",
-    relatedSlugs: ["camera-trap-surveys-forest-habitats"],
+    relatedSlugs: [
+      "pittachhara-red-junglefowl-rescue",
+      "camera-trap-surveys-forest-habitats",
+    ],
     sections: [
       {
         heading: "Landscape Perspective",
