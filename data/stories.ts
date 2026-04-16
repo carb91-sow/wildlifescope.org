@@ -393,6 +393,95 @@ export const stories: Story[] = [
     },
   ],
 },
+  {
+  slug: "entomological-day-pittachhara-children-awareness",
+  title:
+    "A Night of Light and Learning in Bangladesh: Teaching Forest Children the Hidden World of Insects",
+  label: "Education & Outreach",
+  excerpt:
+    "An entomological awareness night in Pittachhara brought Tripura and Chakma children face-to-face with moths, light traps, and the unseen importance of insects.",
+  summary:
+    "On April 14, 2025, an entomological awareness program in Pittachhara Forest introduced local children to moths, insects, and their ecological importance through light trapping, visual learning, and interactive engagement.",
+  image: "/images/entomology-hero.jpg",
+  date: "April 14, 2025",
+  readTime: "5 min read",
+  location: "Pittachhara Forest, Bangladesh",
+  author: "Md. Rahenur Islam Sourov",
+  featured: false,
+  relatedSlugs: [
+    "conservation-awareness-public-engagement",
+    "pittachhara-forest-biodiversity-conservation",
+  ],
+  sections: [
+    {
+      heading: "A Night That Began with Light",
+      content: [
+        "On April 14, 2025, in a village near Pittachhara Forest, we gathered with children from Tripura and Chakma communities for something simple, yet powerful: an entomological awareness night.",
+        "As darkness settled, we set up a light trap under a tree. Within minutes, the glowing sheet began to attract insects from the surrounding forest. What started as curiosity quickly turned into fascination.",
+      ],
+      image: "/images/entomology-hero.jpg",
+      imageCaption:
+        "Children gathered around a light trap during an entomological awareness night near Pittachhara Forest.",
+    },
+    {
+      heading: "Curiosity Turns into Discovery",
+      content: [
+        "The children sat closely, watching insects arrive one by one. Moths, beetles, and other nocturnal species appeared under the light, each one becoming a subject of curiosity.",
+        "We guided them through simple explanations, showing the names of visible insects and helping them observe differences in shape, size, and color.",
+        "For many of them, it was the first time seeing these creatures not as something to fear, but as something to understand.",
+      ],
+    },
+    {
+      heading: "Learning Through Seeing",
+      content: [
+        "Using visual materials, we showed images of different moth species and explained how to identify them. The children compared what they saw on the sheet with the images in hand.",
+        "We also explained the difference between moths and butterflies, helping them understand how these species behave, when they are active, and why they matter.",
+        "Learning was not one-sided. The children asked questions, pointed at insects, and tried to identify them themselves.",
+      ],
+      image: "/images/entomology-learning.jpg",
+      imageCaption:
+        "Children engaging with insect visuals and learning to identify moths during the awareness session.",
+    },
+    {
+      heading: "Why Insects Matter More Than We Think",
+      content: [
+        "We explained that insects are not just small creatures in the forest. They are essential to ecosystems.",
+        "Moths and other insects contribute to pollination, act as food sources for birds and mammals, and play a role in maintaining ecological balance.",
+        "Understanding insects is one of the first steps toward understanding biodiversity itself.",
+      ],
+    },
+    {
+      heading: "More Than a Children’s Program",
+      content: [
+        "Although the program was designed for children, adults from the community also joined. They stood around, observed, and listened.",
+        "This unexpected participation made the experience more meaningful. Awareness does not stay limited to one group; it spreads through shared experience.",
+      ],
+    },
+    {
+      heading: "Learning Through Interaction",
+      content: [
+        "To make the session more engaging, we organized a simple quiz. Using images of moths, we asked the children to identify features and recall what they had learned.",
+        "Their responses showed something important: they were not just watching, they were understanding.",
+      ],
+    },
+    {
+      heading: "Why Community Awareness Matters",
+      content: [
+        "Conservation is not only about research or fieldwork. It begins with awareness.",
+        "When children understand the value of insects, forests, and biodiversity, they grow into individuals who are more likely to protect them.",
+        "Programs like this create a connection between people and nature that cannot be built through theory alone.",
+      ],
+    },
+    {
+      heading: "A Quiet Impact",
+      content: [
+        "That night ended without any formal conclusion. The light dimmed, the insects disappeared, and people slowly returned home.",
+        "But something stayed.",
+        "A new way of seeing the forest, not just as a place, but as a living system filled with small, important lives.",
+      ],
+    },
+  ],
+},
 ]
 
 export function getStoryBySlug(slug: string) {
