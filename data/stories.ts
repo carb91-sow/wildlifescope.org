@@ -482,6 +482,83 @@ export const stories: Story[] = [
     },
   ],
 },
+  {
+  slug: "lawachara-national-park-mammal-survey-fieldwork",
+  title:
+    "Field Study in Lawachara National Park: Exploring Mammal Diversity in Bangladesh’s Forest Ecosystem",
+  label: "Field Research",
+  excerpt:
+    "An academic field visit to Lawachara National Park focused on surveying mammal diversity and gaining practical insights into wildlife research in Bangladesh.",
+  summary:
+    "On March 13, 2025, an academic field visit to Lawachara National Park in Sylhet explored mammalian diversity through direct observation and field-based learning under expert guidance.",
+  image: "/images/lawachara-field.jpg",
+  date: "March 13, 2025",
+  readTime: "6 min read",
+  location: "Lawachara National Park, Sylhet, Bangladesh",
+  author: "Md. Rahenur Islam Sourov",
+  relatedSlugs: [
+    "gis-spatial-ecology-wildlife-research",
+    "nigel-marven-slow-loris-conservation-bangladesh",
+  ],
+  sections: [
+    {
+      heading: "Entering the Forest Landscape",
+      content: [
+        "On March 13, 2025, we visited the Sylhet region as part of our academic fieldwork, focusing on the ecological richness of Lawachara National Park.",
+        "The forest presented a complex landscape of dense vegetation, narrow trails, and layered canopy structures, offering an ideal environment for studying wildlife diversity, particularly mammals.",
+      ],
+      image: "/images/lawachara-field.jpg",
+      imageCaption:
+        "Academic field team observing forest canopy and habitat structure in Lawachara National Park.",
+    },
+    {
+      heading: "Understanding Mammal Diversity in the Field",
+      content: [
+        "The primary objective of the field visit was to survey mammalian diversity within the park. Lawachara is known for its rich assemblage of species, including primates, small carnivores, and arboreal mammals.",
+        "Field observation focused on identifying habitat features, movement signs, and ecological indicators that suggest the presence of different mammalian groups.",
+      ],
+    },
+    {
+      heading: "Learning Through Direct Observation",
+      content: [
+        "Unlike classroom learning, field-based study requires interpreting subtle signs such as tracks, sounds, and vegetation patterns.",
+        "We examined forest structure, canopy connectivity, and understory density, all of which influence mammal distribution and behavior.",
+      ],
+      image: "/images/lawachara-trail.jpg",
+      imageCaption:
+        "Field discussion on habitat structure and mammal ecology along forest trails in Lawachara.",
+    },
+    {
+      heading: "Guidance from Field Expertise",
+      content: [
+        "During the fieldwork, our supervisor, Dr. Jadob Kumar, provided key insights into mammalian ecology and research methodology.",
+        "He explained how different species utilize forest strata, how ecological niches are formed, and how researchers interpret field data to understand species presence and distribution.",
+        "These insights bridged the gap between theoretical knowledge and real-world application.",
+      ],
+    },
+    {
+      heading: "Fieldwork as a Research Foundation",
+      content: [
+        "This visit also supported our thesis work, reinforcing the importance of field data in ecological research.",
+        "Understanding mammal diversity is not limited to species identification. It involves analyzing habitat relationships, ecological interactions, and environmental pressures.",
+      ],
+    },
+    {
+      heading: "Why Lawachara National Park Matters",
+      content: [
+        "Lawachara National Park is one of Bangladesh’s most important protected areas, supporting a wide range of biodiversity.",
+        "Its role as a habitat for mammals makes it critical for conservation research, ecological monitoring, and long-term biodiversity protection.",
+      ],
+    },
+    {
+      heading: "The Value of Academic Field Experience",
+      content: [
+        "Field visits like this are essential for developing practical understanding in wildlife research.",
+        "They allow students and researchers to connect theoretical concepts with real ecosystems, strengthening both analytical skills and conservation awareness.",
+      ],
+    },
+  ],
+},
 ]
 
 export function getStoryBySlug(slug: string) {
