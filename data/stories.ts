@@ -1,6 +1,8 @@
 export type StorySection = {
   heading: string
   content: string[]
+  image?: string
+  imageCaption?: string
 }
 
 export type Story = {
