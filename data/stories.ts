@@ -208,68 +208,6 @@ export const stories: Story[] = [
       },
     ],
   },
-  {
-    slug: "gis-spatial-ecology-wildlife-research",
-    title: "GIS and spatial ecology for wildlife research",
-    label: "Ecological Analysis",
-    excerpt:
-      "How spatial tools like R, QGIS, and ArcGIS help turn raw ecological observations into stronger habitat understanding and conservation insight.",
-    summary:
-      "Spatial ecology tools supported habitat assessment, home range interpretation, and stronger ecological understanding for conservation research.",
-    image: "/images/marine-conservation.jpg",
-    date: "January 2025",
-    readTime: "6 min read",
-    location: "Bangladesh",
-    author: "Md. Rahenur Islam Sourov",
-    relatedSlugs: ["radio-telemetry-bengal-slow-loris"],
-    sections: [
-      {
-        heading: "From Data to Insight",
-        content: [
-          "Field observations become far more valuable when they are organized and interpreted through spatial tools.",
-          "GIS and ecological analysis help connect movement, habitat, and landscape structure in ways that strengthen conservation decisions.",
-        ],
-      },
-      {
-        heading: "Tools and Workflow",
-        content: [
-          "R, QGIS, and ArcGIS can support habitat-use analysis, mapping, and broader ecological interpretation.",
-          "These tools make it possible to move from raw field records toward clearer research communication and conservation planning.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "conservation-awareness-public-engagement",
-    title: "Conservation awareness through public engagement",
-    label: "Education & Outreach",
-    excerpt:
-      "Connecting people with species, habitats, and environmental responsibility through public awareness and long-term conservation communication.",
-    summary:
-      "Public engagement helps build a stronger conservation culture by linking ecological understanding with awareness and responsibility.",
-    image: "/images/habitat-restoration.jpg",
-    date: "December 2024",
-    readTime: "4 min read",
-    location: "Bangladesh",
-    author: "Md. Rahenur Islam Sourov",
-    relatedSlugs: ["community-response-wildlife-rescue-awareness"],
-    sections: [
-      {
-        heading: "Why Awareness Matters",
-        content: [
-          "Conservation knowledge is most powerful when it reaches people clearly and meaningfully.",
-          "Awareness work creates connections between species protection, ecosystems, and everyday public understanding.",
-        ],
-      },
-      {
-        heading: "Building Long-Term Support",
-        content: [
-          "Public engagement is not a side activity. It is part of long-term conservation itself.",
-          "When people understand why wildlife matters, support for biodiversity protection becomes stronger and more durable.",
-        ],
-      },
-    ],
-  },
 ]
 
 export function getStoryBySlug(slug: string) {
