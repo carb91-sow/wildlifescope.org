@@ -1,757 +1,632 @@
 "use client"
 
-import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import {
   ArrowRight,
-  MapPin,
-  Leaf,
-  Heart,
-  Eye,
-  Target,
+  ShieldAlert,
+  Trees,
+  Users,
+  BookOpen,
   Camera,
-  Radar,
+  Radio,
+  PawPrint,
+  Leaf,
   Globe2,
-  ShieldCheck,
+  HeartHandshake,
 } from "lucide-react"
 
-const principles = [
+const issues = [
   {
-    icon: Target,
-    title: "Mission",
+    icon: ShieldAlert,
+    title: "Endangered Species",
     description:
-      "To protect wildlife in Bangladesh through research, habitat understanding, conservation awareness, and meaningful engagement with local communities.",
+      "Many wildlife species in Bangladesh face increasing pressure from habitat degradation, disturbance, and lack of public awareness.",
   },
   {
-    icon: Eye,
-    title: "Vision",
+    icon: Trees,
+    title: "Habitat Loss",
     description:
-      "A future where people and wildlife coexist with dignity, and where science, compassion, and public awareness guide conservation action.",
+      "Forests, wetlands, and natural ecosystems are shrinking, leaving wildlife with fewer safe places to survive and reproduce.",
   },
   {
-    icon: Heart,
-    title: "Values",
+    icon: Users,
+    title: "Human–Wildlife Conflict",
     description:
-      "Integrity in research, respect for life, local collaboration, emotional connection to nature, and long-term commitment to biodiversity.",
+      "As landscapes change, conflict between people and wildlife becomes more common, creating risks for both communities and species.",
   },
 ]
 
-const expertise = [
+const pillars = [
   {
-    icon: Radar,
-    title: "Radio Telemetry",
+    icon: Globe2,
+    title: "Wildlife Research",
     description:
-      "Tracking wildlife movement and habitat use to better understand how species survive, adapt, and interact with changing landscapes.",
+      "Science-based understanding of species, habitats, and ecological systems through field observation, monitoring, and conservation thinking.",
   },
+  {
+    icon: BookOpen,
+    title: "Conservation Awareness",
+    description:
+      "Accessible storytelling and environmental education that help more people understand why wildlife protection matters.",
+  },
+  {
+    icon: PawPrint,
+    title: "Species Documentation",
+    description:
+      "Highlighting the remarkable wildlife of Bangladesh and bringing attention to species that deserve deeper recognition and protection.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Community Engagement",
+    description:
+      "Supporting a conservation culture where local communities, learners, and nature advocates become part of the mission.",
+  },
+]
+
+const species = [
+  {
+    name: "Bengal Slow Loris",
+    status: "Rare nocturnal primate",
+    image: "/images/species-slow-loris.jpg",
+    description:
+      "A unique and secretive species whose survival depends on habitat protection and informed conservation action.",
+  },
+  {
+    name: "Fishing Cat",
+    status: "Wetland-dependent wild cat",
+    image: "/images/species-fishing-cat.jpg",
+    description:
+      "An extraordinary predator closely tied to fragile wetland ecosystems that are increasingly under pressure.",
+  },
+  {
+    name: "Leopard Cat",
+    status: "Elusive small wild cat",
+    image: "/images/species-leopard-cat.jpg",
+    description:
+      "A symbol of hidden biodiversity, often surviving quietly in landscapes shaped by human activity.",
+  },
+]
+
+const actionCards = [
   {
     icon: Camera,
     title: "Camera Trapping",
     description:
-      "Documenting biodiversity across forest ecosystems and building visual evidence that supports field research and conservation planning.",
+      "Documenting wildlife presence and building visual evidence that supports research, monitoring, and conservation planning.",
   },
   {
-    icon: Globe2,
-    title: "GIS & Spatial Ecology",
+    icon: Radio,
+    title: "Radio Telemetry",
     description:
-      "Using spatial tools to study habitat patterns, ecological relationships, and conservation priorities across Bangladesh.",
+      "Tracking animal movement and habitat use to better understand behavior, survival, and landscape connectivity.",
   },
   {
-    icon: ShieldCheck,
-    title: "Conflict Mitigation",
+    icon: Leaf,
+    title: "Biodiversity Monitoring",
     description:
-      "Supporting awareness, rescue response, and community understanding to reduce human–wildlife conflict in vulnerable areas.",
-  },
-]
-
-const timeline = [
-  {
-    year: "2021",
-    event:
-      "Deepened involvement in wildlife rescue, awareness campaigns, and community-based conservation response.",
+      "Observing species and ecosystems across diverse habitats to support long-term ecological understanding.",
   },
   {
-    year: "2022",
-    event:
-      "Began advanced field experience in biodiversity monitoring, wildlife tracking, and ecological research in Bangladesh.",
-  },
-  {
-    year: "2022–2025",
-    event:
-      "Worked as a Research Assistant supporting Bengal Slow Loris monitoring, movement ecology analysis, and habitat-use research in Sreemangal.",
-  },
-  {
-    year: "2022–2024",
-    event:
-      "Contributed to camera trapping, biodiversity surveys, field logistics, and local conservation awareness through forest-based initiatives.",
-  },
-  {
-    year: "2025",
-    event:
-      "Completed MSc in Wildlife and Conservation Biology from the University of Chittagong.",
-  },
-  {
-    year: "Present",
-    event:
-      "Building WildlifeScope as a platform for conservation storytelling, research communication, biodiversity awareness, and environmental education.",
+    icon: Users,
+    title: "Awareness & Outreach",
+    description:
+      "Building stronger public understanding through educational communication, local engagement, and conservation storytelling.",
   },
 ]
 
 const stats = [
-  { value: "3+", label: "Years of field experience" },
+  { value: "3+", label: "Years of field-based conservation experience" },
   { value: "MSc", label: "Wildlife & Conservation Biology" },
   { value: "Bangladesh", label: "Core conservation landscape" },
   { value: "Research + Awareness", label: "Approach to impact" },
 ]
 
-const founder = {
-  name: "Md. Rahenur Islam Sourov",
-  role: "Wildlife Conservation Researcher • Field Ecologist • Founder of WildlifeScope",
-  location: "Chattogram, Bangladesh",
-  degree: "MSc in Wildlife and Conservation Biology",
-  university: "University of Chittagong",
-}
+const stories = [
+  {
+    title: "Understanding the Bengal Slow Loris in Bangladesh",
+    href: "/stories/bengal-slow-loris",
+  },
+  {
+    title: "Why Habitat Protection Matters More Than Ever",
+    href: "/stories/habitat-protection",
+  },
+  {
+    title: "Human–Wildlife Conflict and the Need for Coexistence",
+    href: "/stories/human-wildlife-conflict",
+  },
+]
 
-export default function AboutPage() {
-  const heroRef = useRef(null)
-  const storyRef = useRef(null)
-  const principlesRef = useRef(null)
-  const expertiseRef = useRef(null)
-  const timelineRef = useRef(null)
-  const founderRef = useRef(null)
-  const quoteRef = useRef(null)
-
-  const heroInView = useInView(heroRef, { once: true, margin: "-100px" })
-  const storyInView = useInView(storyRef, { once: true, margin: "-100px" })
-  const principlesInView = useInView(principlesRef, { once: true, margin: "-100px" })
-  const expertiseInView = useInView(expertiseRef, { once: true, margin: "-100px" })
-  const timelineInView = useInView(timelineRef, { once: true, margin: "-100px" })
-  const founderInView = useInView(founderRef, { once: true, margin: "-100px" })
-  const quoteInView = useInView(quoteRef, { once: true, margin: "-100px" })
-
+export default function HomePage() {
   return (
-    <main className="bg-[#0a0d09] text-white">
-      {/* Hero */}
-      <section
-        ref={heroRef}
-        className="relative isolate min-h-screen overflow-hidden border-b border-white/10"
-      >
-        <div className="absolute inset-0">
-          <Image
-            src="/images/about-emotional-bg.jpg"
-            alt="Conservation awareness and human connection"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-black/45" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/65" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0d09] via-transparent to-black/30" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_30%,rgba(244,197,66,0.16),transparent_26%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.05),transparent_18%)]" />
-          <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(0,0,0,0.55)]" />
-        </div>
+    <>
+      <Header />
 
-        <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:120px_120px]" />
+      <main className="bg-[#0b0d09] text-white">
+        {/* Hero */}
+        <section className="relative min-h-screen overflow-hidden border-b border-white/10">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/home-hero.jpg"
+              alt="Wildlife conservation in Bangladesh"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/55" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/42 to-black/55" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/28 via-transparent to-[#0b0d09]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_left_center,rgba(244,197,66,0.16),transparent_28%)]" />
+            <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(0,0,0,0.45)]" />
+          </div>
 
-        <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 py-24 lg:px-8">
-          <div className="grid w-full items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
+          <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-28 pb-20 lg:px-8 lg:pt-36 lg:pb-24">
+            <div className="max-w-4xl">
               <motion.div
                 initial={{ opacity: 0, y: 22 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
-                className="inline-flex items-center gap-3"
+                className="mb-6 inline-flex items-center gap-3"
               >
-                <span className="h-12 w-1.5 bg-[#f4c542]" />
+                <span className="h-12 w-2 bg-[#f4c542]" />
                 <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#f4c542]">
-                  About WildlifeScope
+                  WildlifeScope
                 </span>
               </motion.div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 28 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08, duration: 0.8 }}
-                className="mt-8 max-w-5xl font-serif text-5xl font-bold leading-[0.95] text-white md:text-7xl lg:text-8xl"
+                className="max-w-5xl font-serif text-5xl font-bold leading-[0.96] text-white md:text-7xl lg:text-8xl"
               >
-                Wildlife conservation in Bangladesh through science, story, and human connection
+                Protecting wildlife in Bangladesh through research, awareness, and action
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 26 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.16, duration: 0.8 }}
-                className="mt-8 max-w-3xl text-lg leading-8 text-white/85 md:text-xl"
+                className="mt-8 max-w-3xl text-lg leading-8 text-white/84 md:text-xl"
               >
-                WildlifeScope is a conservation platform rooted in real field experience
-                and built to create deeper awareness about biodiversity, endangered
-                species, ecological research, and the relationship between people and nature.
+                WildlifeScope is a conservation platform dedicated to biodiversity
+                protection, species awareness, environmental education, and science-based
+                storytelling from the landscapes of Bangladesh.
               </motion.p>
 
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 26 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.24, duration: 0.8 }}
-                className="mt-5 max-w-3xl text-base leading-8 text-white/70 md:text-lg"
-              >
-                It is a space where scientific knowledge meets emotional storytelling,
-                helping conservation feel not distant or technical, but urgent, human,
-                and deeply connected to the future of Bangladesh.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 26 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.32, duration: 0.8 }}
-                className="mt-8 flex flex-wrap gap-6 text-sm text-white/78"
-              >
-                <div className="inline-flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-[#f4c542]" />
-                  {founder.location}
-                </div>
-                <div className="inline-flex items-center gap-2">
-                  <Leaf className="h-4 w-4 text-[#f4c542]" />
-                  Wildlife conservation Bangladesh
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 26 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.4, duration: 0.8 }}
                 className="mt-10 flex flex-wrap gap-4"
               >
                 <Link
                   href="/conservation"
                   className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
                 >
-                  Explore Conservation Work
+                  Explore Our Work
                   <ArrowRight className="h-4 w-4" />
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-[#f4c542] hover:text-[#f4c542]"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-[#f4c542] hover:text-[#f4c542]"
                 >
-                  Contact WildlifeScope
+                  Get Involved
                 </Link>
               </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 34 }}
-              animate={heroInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.18, duration: 0.85 }}
-              className="relative"
-            >
-              <div className="relative mx-auto max-w-[500px] overflow-hidden rounded-[36px] border border-white/10 bg-white/5 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-md">
-                <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                <div className="absolute left-0 top-0 z-20 h-full w-2 bg-[#f4c542]" />
-
-                <div className="relative h-[640px] w-full">
-                  <Image
-                    src="/images/rahenur.png"
-                    alt={founder.name}
-                    fill
-                    priority
-                    className="object-cover object-center"
-                    sizes="(max-width: 1024px) 100vw, 500px"
-                  />
-                </div>
-
-                <div className="absolute inset-x-0 bottom-0 z-20 p-8 md:p-10">
-                  <div className="inline-flex items-center gap-3 rounded-full border border-[#f4c542]/30 bg-black/30 px-4 py-2 backdrop-blur-sm">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#f4c542]" />
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#f4c542]">
-                      WildlifeScope
-                    </span>
-                  </div>
-
-                  <h2 className="mt-5 font-serif text-3xl font-bold text-white md:text-4xl">
-                    {founder.name}
-                  </h2>
-
-                  <p className="mt-3 text-sm uppercase tracking-[0.28em] text-white/75">
-                    {founder.role}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Story */}
-      <section ref={storyRef} className="bg-[#10130f] py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            <div>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={storyInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6 }}
-                className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
-              >
-                The Story
-              </motion.p>
-
-              <motion.h2
-                initial={{ opacity: 0, y: 24 }}
-                animate={storyInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.08, duration: 0.65 }}
-                className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl"
-              >
-                A platform shaped by real landscapes, real fieldwork, and real concern for wildlife
-              </motion.h2>
+        {/* Why It Matters */}
+        <section className="bg-[#10120e] py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+                Why It Matters Now
+              </p>
+              <h2 className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl">
+                Wildlife conservation matters because the future of nature is being shaped now
+              </h2>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/74">
+                Bangladesh is home to remarkable wildlife, rich ecosystems, and irreplaceable
+                biodiversity. But many species and habitats face growing pressure from habitat
+                loss, environmental change, and human–wildlife conflict. Protecting nature now
+                is not only about saving species. It is about protecting ecological balance,
+                community wellbeing, and the future of life itself.
+              </p>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={storyInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.16, duration: 0.65 }}
-              className="space-y-6 text-lg leading-8 text-white/76"
-            >
-              <p>
-                WildlifeScope was created from years of direct experience in the forests,
-                communities, and conservation spaces of Bangladesh. It grew out of a simple
-                but powerful understanding: wildlife conservation is not only about data,
-                reports, or species lists. It is also about people, memory, emotion, and
-                responsibility.
-              </p>
-
-              <p>
-                Across forest landscapes and human-dominated environments, Rahenur has worked
-                with practical conservation methods including radio telemetry, camera trapping,
-                biodiversity surveys, habitat assessment, GIS-based ecological analysis, and
-                public awareness efforts. These experiences revealed how closely conservation
-                success depends on both scientific evidence and human connection.
-              </p>
-
-              <p>
-                WildlifeScope exists to bring those worlds together. It communicates research
-                in a more accessible way, highlights species and ecosystems that deserve
-                attention, and builds a stronger voice for biodiversity protection in
-                Bangladesh through education, storytelling, and field-grounded credibility.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-[#0b0d09] py-8">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ delay: index * 0.08, duration: 0.55 }}
-                className="rounded-[28px] border border-white/10 bg-[#141812] p-6"
-              >
-                <p className="text-xs uppercase tracking-[0.28em] text-[#f4c542]">
-                  {stat.label}
-                </p>
-                <p className="mt-3 font-serif text-3xl font-bold text-white md:text-4xl">
-                  {stat.value}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Principles */}
-      <section ref={principlesRef} className="bg-[#11130f] py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-14 flex items-end justify-between gap-8">
-            <div>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={principlesInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6 }}
-                className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
-              >
-                Foundation
-              </motion.p>
-
-              <motion.h2
-                initial={{ opacity: 0, y: 24 }}
-                animate={principlesInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.08, duration: 0.65 }}
-                className="mt-4 font-serif text-3xl font-bold text-white md:text-4xl"
-              >
-                Mission, vision, and values that guide the platform
-              </motion.h2>
-            </div>
-            <div className="hidden h-px flex-1 bg-white/10 lg:block" />
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {principles.map((item, index) => {
-              const Icon = item.icon
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={principlesInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.12, duration: 0.6 }}
-                  className="rounded-[28px] border border-white/10 bg-[#171a15] p-8 transition duration-300 hover:-translate-y-1 hover:border-[#f4c542]/40"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
-                    <Icon className="h-7 w-7" />
-                  </div>
-
-                  <h3 className="mt-6 font-serif text-2xl font-bold text-white">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 leading-8 text-white/72">{item.description}</p>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Expertise */}
-      <section ref={expertiseRef} className="bg-[#0d0f0c] py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-14">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={expertiseInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
-            >
-              Core Expertise
-            </motion.p>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 24 }}
-              animate={expertiseInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.08, duration: 0.65 }}
-              className="mt-4 max-w-4xl font-serif text-3xl font-bold text-white md:text-5xl"
-            >
-              Specialized field skills supporting conservation research and practical action
-            </motion.h2>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2">
-            {expertise.map((item, index) => {
-              const Icon = item.icon
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={expertiseInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.14 + index * 0.08, duration: 0.6 }}
-                  className="rounded-[28px] border border-white/10 bg-[#161914] p-8"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
-                    <Icon className="h-7 w-7" />
-                  </div>
-
-                  <h3 className="mt-6 font-serif text-2xl font-bold text-white">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 leading-8 text-white/72">{item.description}</p>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section
-        ref={timelineRef}
-        className="relative overflow-hidden py-20 lg:py-28"
-      >
-        <div className="absolute inset-0">
-          <Image
-            src="/images/about-timeline-bg.jpg"
-            alt="Night field research and conservation journey"
-            fill
-            className="object-cover object-center scale-[1.03] brightness-[0.9] contrast-[1.02] saturate-[1.04]"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-black/28" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/20 to-black/42" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-transparent to-black/48" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_38%,rgba(244,197,66,0.12),transparent_24%)]" />
-          <div className="absolute inset-0 shadow-[inset_0_0_110px_rgba(0,0,0,0.32)]" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid items-start gap-16 lg:grid-cols-[0.92fr_1.08fr]">
-            <div className="lg:pr-8">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={timelineInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6 }}
-                className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
-              >
-                Journey
-              </motion.p>
-
-              <motion.h2
-                initial={{ opacity: 0, y: 24 }}
-                animate={timelineInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.08, duration: 0.65 }}
-                className="mt-4 max-w-3xl font-serif text-4xl font-bold leading-[1.02] text-white md:text-6xl"
-              >
-                A growing path in wildlife conservation and ecological research
-              </motion.h2>
-
-              <motion.p
-                initial={{ opacity: 0, y: 24 }}
-                animate={timelineInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.16, duration: 0.65 }}
-                className="mt-8 max-w-xl text-lg leading-8 text-white/86"
-              >
-                This journey reflects the evolution of field experience, academic
-                training, conservation communication, rescue engagement, and the
-                long-term effort to build a stronger public voice for biodiversity.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={timelineInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.24, duration: 0.65 }}
-                className="mt-10 flex items-center gap-4"
-              >
-                <div className="h-px w-16 bg-[#f4c542]" />
-                <span className="text-xs uppercase tracking-[0.32em] text-white/75">
-                  Research • fieldwork • awareness • action
-                </span>
-              </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={timelineInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.12, duration: 0.75 }}
-              className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[rgba(8,10,8,0.68)] p-8 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-md md:p-10"
-            >
-              <div className="absolute left-8 top-10 bottom-10 w-px bg-white/14 md:left-10" />
-
-              <div className="relative space-y-8">
-                {timeline.map((item, index) => (
+            <div className="mt-14 grid gap-8 md:grid-cols-3">
+              {issues.map((item, index) => {
+                const Icon = item.icon
+                return (
                   <motion.div
-                    key={`${item.year}-${item.event}`}
-                    initial={{ opacity: 0, y: 18 }}
-                    animate={timelineInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.22 + index * 0.08, duration: 0.5 }}
-                    className="relative pl-12 md:pl-16"
+                    key={item.title}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    className="rounded-[28px] border border-white/10 bg-[#171a15] p-8"
                   >
-                    <div className="absolute left-[23px] top-1.5 h-4 w-4 rounded-full border-4 border-[#11130f] bg-[#f4c542] shadow-[0_0_18px_rgba(244,197,66,0.24)] md:left-[31px]" />
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f4c542]">
-                      {item.year}
-                    </p>
-                    <p className="mt-2 text-base leading-8 text-white/90">
-                      {item.event}
-                    </p>
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <h3 className="mt-6 font-serif text-2xl font-bold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 leading-8 text-white/72">{item.description}</p>
                   </motion.div>
-                ))}
-              </div>
-            </motion.div>
+                )
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Founder Spotlight */}
-      <section ref={founderRef} className="bg-[#0a0b08] py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={founderInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
-            >
-              Founder Spotlight
-            </motion.p>
+        {/* Pillars */}
+        <section className="bg-[#0c0e0b] py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mb-14">
+              <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+                Our Conservation Pillars
+              </p>
+              <h2 className="mt-4 max-w-4xl font-serif text-3xl font-bold text-white md:text-5xl">
+                How WildlifeScope creates impact
+              </h2>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
+                WildlifeScope brings together field experience, ecological understanding,
+                and public engagement to support a stronger conservation future in Bangladesh.
+              </p>
+            </div>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 24 }}
-              animate={founderInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.08, duration: 0.65 }}
-              className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl"
-            >
-              Conservation leadership grounded in research, rescue, and lived experience
-            </motion.h2>
+            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+              {pillars.map((item, index) => {
+                const Icon = item.icon
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 22 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ delay: index * 0.08, duration: 0.55 }}
+                    className="rounded-[28px] border border-white/10 bg-[#151813] p-8"
+                  >
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <h3 className="mt-6 font-serif text-2xl font-bold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 leading-8 text-white/72">{item.description}</p>
+                  </motion.div>
+                )
+              })}
+            </div>
           </div>
+        </section>
 
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={founderInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.14, duration: 0.75 }}
-            className="overflow-hidden rounded-[36px] border border-white/10 bg-[#141611] shadow-2xl"
-          >
-            <div className="grid lg:grid-cols-2">
-              <div className="relative min-h-[460px] lg:min-h-[760px]">
+        {/* Story / About */}
+        <section className="bg-[#11130f] py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="relative overflow-hidden rounded-[34px] border border-white/10 min-h-[480px]">
                 <Image
-                  src="/images/rahenur.jpeg"
-                  alt={founder.name}
+                  src="/images/home-story.jpg"
+                  alt="Field experience and conservation storytelling"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />
-                <div className="absolute left-0 top-0 h-full w-3 bg-[#f4c542]" />
-
-                <div className="absolute bottom-0 left-0 p-8 md:p-10 lg:p-12">
-                  <div className="inline-flex items-center gap-3 border border-[#f4c542]/35 bg-black/20 px-4 py-2 backdrop-blur-sm">
-                    <span className="h-3 w-3 rounded-full bg-[#f4c542]" />
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-[#f4c542]">
-                      WildlifeScope
-                    </span>
-                  </div>
-
-                  <h3 className="mt-6 max-w-2xl font-serif text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-                    {founder.name}
-                  </h3>
-
-                  <p className="mt-3 text-sm uppercase tracking-[0.32em] text-white/72 md:text-base">
-                    {founder.role}
-                  </p>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
               </div>
 
-              <div className="flex items-center bg-[#141611]">
-                <div className="w-full p-8 md:p-10 lg:p-14 xl:p-16">
-                  <div className="h-1 w-20 bg-[#f4c542]" />
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+                  Our Story
+                </p>
+                <h2 className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl">
+                  From field experience to conservation storytelling
+                </h2>
+                <p className="mt-6 text-lg leading-8 text-white/74">
+                  WildlifeScope was built from real experience in the forests, field sites,
+                  and communities of Bangladesh. It grew from the understanding that
+                  conservation is not only scientific, but also human. Research helps us
+                  understand wildlife, but awareness helps protect it.
+                </p>
+                <p className="mt-6 text-lg leading-8 text-white/74">
+                  Founded by wildlife conservation researcher Md. Rahenur Islam Sourov,
+                  WildlifeScope connects field ecology, biodiversity research, and public
+                  education into one platform to create a stronger voice for wildlife
+                  conservation in Bangladesh.
+                </p>
 
-                  <p className="mt-6 text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
-                    Conservation Leadership
-                  </p>
-
-                  <h3 className="mt-4 font-serif text-3xl font-bold leading-tight text-white md:text-4xl">
-                    Building a platform for wildlife conservation, biodiversity awareness, and environmental education
-                  </h3>
-
-                  <div className="mt-6 space-y-6 text-lg leading-9 text-white/78">
-                    <p>
-                      Rahenur is a wildlife conservation researcher in Bangladesh with
-                      more than three years of field-based experience in biodiversity
-                      monitoring, spatial ecology, and human–wildlife conflict mitigation.
-                    </p>
-
-                    <p>
-                      His work combines field research with conservation communication,
-                      helping turn ecological knowledge into more meaningful and accessible
-                      public understanding. From tracking species in forest landscapes to
-                      supporting awareness initiatives in communities, his approach connects
-                      scientific rigor with practical conservation value.
-                    </p>
-
-                    <p>
-                      Through WildlifeScope, he is creating a stronger voice for nature in
-                      Bangladesh by sharing research-backed stories, species knowledge, and
-                      conservation perspectives that inspire both awareness and action.
-                    </p>
-                  </div>
-
-                  <div className="mt-10 grid gap-6 border-t border-white/10 pt-8 sm:grid-cols-2">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.28em] text-white/45">
-                        Academic Background
-                      </p>
-                      <p className="mt-3 text-xl font-semibold text-white">
-                        {founder.university}
-                      </p>
-                      <p className="mt-1 text-white/68">{founder.degree}</p>
-                    </div>
-
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.28em] text-white/45">
-                        Based In
-                      </p>
-                      <p className="mt-3 text-xl font-semibold text-white">
-                        {founder.location}
-                      </p>
-                      <p className="mt-1 text-white/68">
-                        Wildlife research and conservation advocacy
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-10 flex items-center gap-4">
-                    <div className="h-px flex-1 bg-white/10" />
-                    <span className="text-xs uppercase tracking-[0.3em] text-[#f4c542]">
-                      Protecting Nature Through Science
-                    </span>
-                    <div className="h-px flex-1 bg-white/10" />
-                  </div>
+                <div className="mt-10">
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+                  >
+                    Read Our Story
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Quote */}
-      <section ref={quoteRef} className="bg-[#11130f] py-20">
-        <div className="mx-auto max-w-5xl px-6 text-center lg:px-8">
-          <motion.blockquote
-            initial={{ opacity: 0, y: 20 }}
-            animate={quoteInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.65 }}
-            className="font-serif text-3xl leading-tight text-white md:text-5xl"
-          >
-            “Conservation is not only about protecting wildlife. It is about understanding
-            ecosystems, reaching people, and building a future where nature is not forgotten.”
-          </motion.blockquote>
-
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={quoteInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.12, duration: 0.6 }}
-            className="mt-8 text-sm uppercase tracking-[0.3em] text-[#f4c542]"
-          >
-            Md. Rahenur Islam Sourov · Founder of WildlifeScope
-          </motion.p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-[#0a0b08] py-20">
-        <div className="mx-auto max-w-5xl px-6 text-center lg:px-8">
-          <h2 className="font-serif text-3xl font-bold text-white md:text-5xl">
-            Join a growing mission for wildlife conservation in Bangladesh
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/72">
-            Explore conservation work, discover species, and connect with WildlifeScope
-            to support biodiversity protection, environmental education, and a deeper
-            public understanding of nature.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
-            >
-              Contact WildlifeScope
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-
-            <Link
-              href="/species"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
-            >
-              Explore Species
-            </Link>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+
+        {/* Species Spotlight */}
+        <section className="bg-[#0c0e0b] py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mb-14">
+              <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+                Species Spotlight
+              </p>
+              <h2 className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl">
+                Species that need our attention
+              </h2>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
+                Bangladesh shelters extraordinary wildlife. By learning about these species,
+                we take the first step toward protecting them.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+              {species.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ delay: index * 0.08, duration: 0.6 }}
+                  className="overflow-hidden rounded-[28px] border border-white/10 bg-[#151813]"
+                >
+                  <div className="relative h-72 w-full">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1280px) 100vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                  </div>
+                  <div className="p-8">
+                    <p className="text-xs uppercase tracking-[0.28em] text-[#f4c542]">
+                      {item.status}
+                    </p>
+                    <h3 className="mt-3 font-serif text-2xl font-bold text-white">
+                      {item.name}
+                    </h3>
+                    <p className="mt-4 leading-8 text-white/72">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-12">
+              <Link
+                href="/species"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+              >
+                Explore More Species
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Conservation in Action */}
+        <section className="bg-[#11130f] py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mb-14">
+              <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+                Conservation in Action
+              </p>
+              <h2 className="mt-4 max-w-4xl font-serif text-3xl font-bold text-white md:text-5xl">
+                Wildlife protection requires more than concern
+              </h2>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
+                WildlifeScope is rooted in practical conservation experience across research,
+                monitoring, rescue awareness, and community engagement.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+              {actionCards.map((item, index) => {
+                const Icon = item.icon
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 22 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ delay: index * 0.08, duration: 0.55 }}
+                    className="rounded-[28px] border border-white/10 bg-[#171a15] p-8"
+                  >
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <h3 className="mt-6 font-serif text-2xl font-bold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 leading-8 text-white/72">{item.description}</p>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats */}
+        <section className="bg-[#0b0d09] py-8">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ delay: index * 0.08, duration: 0.55 }}
+                  className="rounded-[28px] border border-white/10 bg-[#141812] p-6"
+                >
+                  <p className="text-xs uppercase tracking-[0.28em] text-[#f4c542]">
+                    {stat.label}
+                  </p>
+                  <p className="mt-3 font-serif text-3xl font-bold text-white md:text-4xl">
+                    {stat.value}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stories */}
+        <section className="bg-[#10120e] py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mb-14 flex items-end justify-between gap-8">
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+                  Latest Stories
+                </p>
+                <h2 className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl">
+                  Conservation insights and field-based stories
+                </h2>
+              </div>
+
+              <Link
+                href="/stories"
+                className="hidden text-sm font-semibold text-white/80 transition hover:text-[#f4c542] lg:inline-flex"
+              >
+                Read all stories
+              </Link>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3">
+              {stories.map((story, index) => (
+                <motion.div
+                  key={story.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ delay: index * 0.08, duration: 0.55 }}
+                  className="rounded-[28px] border border-white/10 bg-[#171a15] p-8"
+                >
+                  <p className="text-xs uppercase tracking-[0.28em] text-[#f4c542]">
+                    Conservation Story
+                  </p>
+                  <h3 className="mt-4 font-serif text-2xl font-bold text-white">
+                    {story.title}
+                  </h3>
+                  <div className="mt-8">
+                    <Link
+                      href={story.href}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-white/85 transition hover:text-[#f4c542]"
+                    >
+                      Read story
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Get Involved */}
+        <section className="bg-[#0c0e0b] py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.95fr]">
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+                  Get Involved
+                </p>
+                <h2 className="mt-4 max-w-4xl font-serif text-3xl font-bold text-white md:text-5xl">
+                  Be part of wildlife conservation in Bangladesh
+                </h2>
+                <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
+                  Conservation grows stronger when more people care, learn, and take action.
+                  Whether you are a student, researcher, nature enthusiast, photographer,
+                  or potential partner, WildlifeScope invites you to join a growing mission
+                  for biodiversity protection and environmental awareness.
+                </p>
+
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+                  >
+                    Contact WildlifeScope
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                {[
+                  "Learn about species and ecosystems",
+                  "Share awareness with others",
+                  "Collaborate on education or research",
+                  "Support a science-rooted mission",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-[24px] border border-white/10 bg-[#151813] p-6 text-white/78"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="relative overflow-hidden bg-[#0a0b08] py-24">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,197,66,0.08),transparent_28%)]" />
+          <div className="relative mx-auto max-w-5xl px-6 text-center lg:px-8">
+            <h2 className="font-serif text-3xl font-bold text-white md:text-5xl">
+              The future of Bangladesh’s wildlife depends on what we protect today
+            </h2>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/72">
+              Join WildlifeScope in building awareness, supporting conservation, and
+              creating a stronger voice for nature.
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+              >
+                Get Involved
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+
+              <Link
+                href="/conservation"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+              >
+                Explore Conservation Work
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
   )
 }
