@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import HomePageClient from "./home-page-client"
 
 export const metadata: Metadata = {
   title:
@@ -68,11 +69,6 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "WildlifeScope",
   url: "https://www.wildlifescope.org",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://www.wildlifescope.org/search?q={search_term_string}",
-    "query-input": "required name=search_term_string",
-  },
 }
 
 export default function Page() {
