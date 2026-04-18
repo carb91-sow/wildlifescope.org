@@ -568,49 +568,75 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Conservation in Action */}
-        <section className="bg-[#11130f] py-20 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mb-14">
-              <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
-                Conservation in Action
-              </p>
-              <h2 className="mt-4 max-w-4xl font-serif text-3xl font-bold text-white md:text-5xl">
-                Conservation requires action, not just awareness
-              </h2>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
-                WildlifeScope is rooted in practical conservation experience across
-                research, biodiversity monitoring, rescue awareness, and public engagement.
-                These approaches help transform knowledge into meaningful conservation
-                action.
-              </p>
+       {/* Conservation in Action */}
+<section className="relative overflow-hidden py-20 lg:py-24">
+  <div className="absolute inset-0">
+    <Image
+      src="/images/conservation-in-action-thermal.jpg"
+      alt="Nighttime wildlife conservation field research and biodiversity monitoring in Bangladesh"
+      fill
+      className="object-cover brightness-[0.82] contrast-110 saturate-[0.9]"
+      sizes="100vw"
+    />
+
+    {/* Mild overlay to keep image visible but text readable */}
+    <div className="absolute inset-0 bg-black/38" />
+    <div className="absolute inset-0 bg-gradient-to-r from-black/62 via-black/34 to-black/20" />
+    <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-transparent to-black/30" />
+  </div>
+
+  <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mb-14 max-w-4xl">
+      <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+        Conservation in Action
+      </p>
+
+      <h2 className="mt-4 max-w-5xl font-serif text-3xl font-bold leading-tight text-white md:text-5xl">
+        Conservation requires action, not just awareness
+      </h2>
+
+      <p className="mt-6 max-w-4xl text-lg leading-8 text-white/85">
+        WildlifeScope is rooted in practical wildlife conservation in Bangladesh
+        through field research, biodiversity monitoring, camera trapping, radio
+        telemetry, environmental awareness, and community engagement. These
+        science-based conservation approaches help transform ecological knowledge
+        into meaningful action for endangered species protection, habitat
+        conservation, and long-term biodiversity preservation.
+      </p>
+    </div>
+
+    <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+      {actionCards.map((item, index) => {
+        const Icon = item.icon
+        return (
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ delay: index * 0.08, duration: 0.55 }}
+            className="rounded-[28px] border border-white/10 bg-[#11130f]/72 p-8 backdrop-blur-[2px] shadow-[0_10px_35px_rgba(0,0,0,0.25)]"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
+              <Icon className="h-7 w-7" />
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-              {actionCards.map((item, index) => {
-                const Icon = item.icon
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 22 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ delay: index * 0.08, duration: 0.55 }}
-                    className="rounded-[28px] border border-white/10 bg-[#171a15] p-8"
-                  >
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="mt-6 font-serif text-2xl font-bold text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-4 leading-8 text-white/72">{item.description}</p>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
+            <h3 className="mt-6 font-serif text-2xl font-bold text-white">
+              {item.title}
+            </h3>
+
+            <p className="mt-4 leading-8 text-white/80">{item.description}</p>
+          </motion.div>
+        )
+      })}
+    </div>
+
+    <p className="sr-only">
+      Wildlife researchers conducting nighttime conservation fieldwork in
+      Bangladesh using practical biodiversity monitoring methods.
+    </p>
+  </div>
+</section>
 
         {/* Donate */}
         <section className="bg-[#11130f] py-20 lg:py-24">
