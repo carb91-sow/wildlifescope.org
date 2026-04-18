@@ -21,6 +21,40 @@ import {
   HandCoins,
 } from "lucide-react"
 
+const seo = {
+  organizationName: "WildlifeScope",
+  siteUrl: "https://wildlifescope.org",
+  title:
+    "Wildlife Conservation in Bangladesh | WildlifeScope Research, Awareness, and Action",
+  description:
+    "WildlifeScope is a Bangladesh-based wildlife conservation platform focused on biodiversity research, endangered species awareness, ecological storytelling, and community engagement.",
+  keywords: [
+    "wildlife conservation in Bangladesh",
+    "Bangladesh wildlife",
+    "endangered species in Bangladesh",
+    "biodiversity Bangladesh",
+    "wildlife research Bangladesh",
+    "conservation awareness Bangladesh",
+    "ecology Bangladesh",
+    "species documentation Bangladesh",
+    "Fishing Cat Bangladesh",
+    "Bengal Slow Loris Bangladesh",
+    "Leopard Cat Bangladesh",
+    "wildlife storytelling",
+  ],
+}
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: seo.organizationName,
+  url: seo.siteUrl,
+  description: seo.description,
+  keywords: seo.keywords.join(", "),
+  areaServed: "Bangladesh",
+  sameAs: [],
+}
+
 const issues = [
   {
     icon: ShieldAlert,
@@ -120,6 +154,13 @@ const actionCards = [
   },
 ]
 
+const stats = [
+  { label: "Species Focus", value: "120+" },
+  { label: "Field Learning", value: "35+" },
+  { label: "Conservation Stories", value: "80+" },
+  { label: "Community Reach", value: "5K+" },
+]
+
 export default function HomePage() {
   const featuredStories = stories.filter((story) => story.featured).slice(0, 3)
   const homepageStories =
@@ -127,9 +168,19 @@ export default function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       <Header />
 
       <main className="bg-[#0b0d09] text-white">
+        <h1 className="sr-only">
+          Wildlife conservation in Bangladesh through research, storytelling, and action
+        </h1>
+
         {/* Hero */}
         <section className="relative min-h-screen overflow-hidden border-b border-white/10">
           <div className="absolute inset-0">
@@ -160,14 +211,14 @@ export default function HomePage() {
                 </span>
               </motion.div>
 
-              <motion.h1
+              <motion.p
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08, duration: 0.8 }}
                 className="max-w-5xl font-serif text-5xl font-bold leading-[0.96] text-white md:text-7xl lg:text-8xl drop-shadow-lg"
               >
                 Wildlife conservation in Bangladesh through research, storytelling, and action
-              </motion.h1>
+              </motion.p>
 
               <motion.p
                 initial={{ opacity: 0, y: 26 }}
@@ -189,6 +240,7 @@ export default function HomePage() {
                 <Link
                   href="/conservation"
                   className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c] shadow-lg"
+                  aria-label="Explore wildlife conservation work in Bangladesh"
                 >
                   Explore Conservation Work
                   <ArrowRight className="h-4 w-4" />
@@ -197,6 +249,7 @@ export default function HomePage() {
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:border-[#f4c542] hover:text-[#f4c542]"
+                  aria-label="Get involved with WildlifeScope"
                 >
                   Get Involved
                 </Link>
@@ -206,8 +259,11 @@ export default function HomePage() {
         </section>
 
         {/* Stats */}
-        <section className="bg-[#0b0d09] py-8">
+        <section className="bg-[#0b0d09] py-8" aria-labelledby="homepage-impact-stats">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <h2 id="homepage-impact-stats" className="sr-only">
+              Wildlife conservation impact highlights
+            </h2>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {stats.map((stat, index) => (
                 <motion.div
@@ -358,6 +414,7 @@ export default function HomePage() {
                   <Link
                     href="/about"
                     className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+                    aria-label="Read the WildlifeScope story"
                   >
                     Read Our Story
                     <ArrowRight className="h-4 w-4" />
@@ -422,6 +479,7 @@ export default function HomePage() {
               <Link
                 href="/species"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+                aria-label="Explore more wildlife species in Bangladesh"
               >
                 Explore More Species
                 <ArrowRight className="h-4 w-4" />
@@ -501,6 +559,7 @@ export default function HomePage() {
                     <Link
                       href="/donate"
                       className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+                      aria-label="Donate to support wildlife conservation in Bangladesh"
                     >
                       Donate Now
                       <ArrowRight className="h-4 w-4" />
@@ -509,6 +568,7 @@ export default function HomePage() {
                     <Link
                       href="/contact"
                       className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+                      aria-label="Partner with WildlifeScope"
                     >
                       Partner With Us
                     </Link>
@@ -545,6 +605,7 @@ export default function HomePage() {
               <Link
                 href="/stories"
                 className="hidden text-sm font-semibold text-white/80 transition hover:text-[#f4c542] lg:inline-flex"
+                aria-label="Read all wildlife conservation stories"
               >
                 Read all stories
               </Link>
@@ -562,6 +623,7 @@ export default function HomePage() {
                   <Link
                     href={`/stories/${story.slug}`}
                     className="group block overflow-hidden rounded-[28px] border border-white/10 bg-[#171a15] shadow-[0_20px_50px_rgba(0,0,0,0.22)]"
+                    aria-label={`Read story: ${story.title}`}
                   >
                     <div className="relative h-[420px] w-full">
                       <Image
@@ -624,6 +686,7 @@ export default function HomePage() {
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+                    aria-label="Contact WildlifeScope"
                   >
                     Contact WildlifeScope
                     <ArrowRight className="h-4 w-4" />
@@ -632,6 +695,7 @@ export default function HomePage() {
                   <Link
                     href="/about"
                     className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+                    aria-label="Learn more about WildlifeScope"
                   >
                     Learn More
                   </Link>
@@ -673,6 +737,7 @@ export default function HomePage() {
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+                aria-label="Get involved with wildlife conservation"
               >
                 Get Involved
                 <ArrowRight className="h-4 w-4" />
@@ -681,6 +746,7 @@ export default function HomePage() {
               <Link
                 href="/conservation"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+                aria-label="Explore conservation work"
               >
                 Explore Conservation Work
               </Link>
