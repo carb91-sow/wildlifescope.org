@@ -120,13 +120,6 @@ const actionCards = [
   },
 ]
 
-const stats = [
-  { value: "3+", label: "Years of field-based conservation experience" },
-  { value: "MSc", label: "Wildlife & Conservation Biology" },
-  { value: "Bangladesh", label: "Core conservation landscape" },
-  { value: "Research + Awareness", label: "Approach to impact" },
-]
-
 export default function HomePage() {
   const featuredStories = stories.filter((story) => story.featured).slice(0, 3)
   const homepageStories =
