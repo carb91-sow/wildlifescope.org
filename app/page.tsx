@@ -699,62 +699,89 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Get Involved */}
-        <section className="bg-[#0c0e0b] py-20 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.95fr]">
-              <div>
-                <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
-                  Get Involved
-                </p>
-                <h2 className="mt-4 max-w-4xl font-serif text-3xl font-bold text-white md:text-5xl">
-                  Be part of wildlife conservation in Bangladesh
-                </h2>
-                <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
-                  Conservation grows stronger when more people care, learn, and take action.
-                  Whether you are a student, researcher, nature enthusiast, photographer,
-                  or potential partner, WildlifeScope invites you to join a growing mission
-                  for biodiversity protection and environmental awareness.
-                </p>
+{/* Get Involved */}
+<section className="relative overflow-hidden py-20 lg:py-24">
+  {/* Background image */}
+  <div className="absolute inset-0">
+    <Image
+      src="/images/get-involved-forest-walk.jpg"
+      alt="People walking through a forest in Bangladesh to support wildlife conservation and environmental awareness"
+      fill
+      className="object-cover object-center brightness-[0.78] contrast-[1.04] saturate-[0.88]"
+      sizes="100vw"
+    />
 
-                <div className="mt-10 flex flex-wrap gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
-                    aria-label="Contact WildlifeScope"
-                  >
-                    Contact WildlifeScope
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
+    {/* Reduced dark overlay */}
+    <div className="absolute inset-0 bg-black/34" />
 
-                  <Link
-                    href="/about"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
-                    aria-label="Learn more about WildlifeScope"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
+    {/* Left-side readability gradient */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/62 via-black/28 to-transparent" />
 
-              <div className="grid gap-5 sm:grid-cols-2">
-                {[
-                  "Learn about species and ecosystems",
-                  "Share awareness with others",
-                  "Collaborate on education or research",
-                  "Support a science-rooted mission",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[24px] border border-white/10 bg-[#151813] p-6 text-white/78"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
+    {/* Soft top/bottom depth */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/12 via-transparent to-black/18" />
+
+    {/* Very subtle warm tone */}
+    <div className="absolute inset-0 bg-[rgba(244,197,66,0.05)] mix-blend-overlay" />
+  </div>
+
+  <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.95fr]">
+      <div>
+        <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+          Get Involved
+        </p>
+
+        <h2 className="mt-4 max-w-4xl font-serif text-3xl font-bold text-white md:text-5xl">
+          Be part of wildlife conservation in Bangladesh
+        </h2>
+
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-white/84">
+          Conservation grows stronger when more people care, learn, and take
+          action. Whether you are a student, researcher, nature enthusiast,
+          photographer, educator, or potential partner, WildlifeScope invites
+          you to join a growing mission for biodiversity protection,
+          environmental awareness, and community-based conservation in
+          Bangladesh.
+        </p>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-full bg-[#f4c542] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffd45c]"
+            aria-label="Contact WildlifeScope"
+          >
+            Contact WildlifeScope
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f4c542] hover:text-[#f4c542]"
+            aria-label="Learn more about WildlifeScope"
+          >
+            Learn More
+          </Link>
+        </div>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        {[
+          "Learn about species and ecosystems",
+          "Share awareness with others",
+          "Collaborate on education or research",
+          "Support a science-rooted mission",
+        ].map((item) => (
+          <div
+            key={item}
+            className="rounded-[24px] border border-white/12 bg-black/14 p-6 text-white/84 backdrop-blur-[1.5px] shadow-[0_8px_24px_rgba(0,0,0,0.14)]"
+          >
+            {item}
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Final CTA */}
         <section className="relative overflow-hidden bg-[#0a0b08] py-24">
