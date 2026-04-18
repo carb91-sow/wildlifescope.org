@@ -304,51 +304,63 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Why It Matters */}
-        <section className="bg-[#10120e] py-20 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="max-w-4xl">
-              <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
-                Why It Matters Now
-              </p>
-              <h2 className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl">
-                Why wildlife conservation in Bangladesh matters now
-              </h2>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/74">
-                Bangladesh is home to remarkable wildlife, rich ecosystems, and irreplaceable
-                biodiversity. But many species and habitats face growing pressure from habitat
-                loss, environmental change, and human–wildlife conflict. Protecting nature is
-                not only about saving species. It is about protecting ecological balance,
-                supporting communities, and securing a more sustainable future for both people
-                and wildlife.
-              </p>
-            </div>
+      {/* Why It Matters */}
+<section className="relative overflow-hidden py-20 lg:py-24">
+  <div className="absolute inset-0">
+    <Image
+      src="/images/why-it-matters-bg.jpg"
+      alt="Forest stream ecosystem in Bangladesh showing wildlife habitat"
+      fill
+      className="object-cover brightness-[0.65] contrast-110"
+      sizes="100vw"
+    />
+    <div className="absolute inset-0 bg-[#10120e]/85" />
+    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#10120e]" />
+  </div>
 
-            <div className="mt-14 grid gap-8 md:grid-cols-3">
-              {issues.map((item, index) => {
-                const Icon = item.icon
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="rounded-[28px] border border-white/10 bg-[#171a15] p-8"
-                  >
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="mt-6 font-serif text-2xl font-bold text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-4 leading-8 text-white/72">{item.description}</p>
-                  </motion.div>
-                )
-              })}
+  <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="max-w-4xl">
+      <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+        Why It Matters Now
+      </p>
+      <h2 className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl">
+        Why wildlife conservation in Bangladesh matters now
+      </h2>
+      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/74">
+        Bangladesh is home to remarkable wildlife, rich ecosystems, and irreplaceable
+        biodiversity. But many species and habitats face growing pressure from habitat
+        loss, environmental change, and human–wildlife conflict. Protecting nature is
+        not only about saving species. It is about protecting ecological balance,
+        supporting communities, and securing a more sustainable future for both people
+        and wildlife.
+      </p>
+    </div>
+
+    <div className="mt-14 grid gap-8 md:grid-cols-3">
+      {issues.map((item, index) => {
+        const Icon = item.icon
+        return (
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ delay: index * 0.1, duration: 0.6 }}
+            className="rounded-[28px] border border-white/10 bg-[#171a15]/90 p-8 backdrop-blur-[2px]"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
+              <Icon className="h-7 w-7" />
             </div>
-          </div>
-        </section>
+            <h3 className="mt-6 font-serif text-2xl font-bold text-white">
+              {item.title}
+            </h3>
+            <p className="mt-4 leading-8 text-white/72">{item.description}</p>
+          </motion.div>
+        )
+      })}
+    </div>
+  </div>
+</section>
 
         {/* Pillars */}
         <section className="bg-[#0c0e0b] py-20 lg:py-24">
