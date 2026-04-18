@@ -246,28 +246,31 @@ export default function AboutPage() {
           </div>
         </section>
 
-{/* Intro / Founder Summary */}
 <section
   ref={introRef}
   className="relative overflow-hidden py-20 lg:py-24"
 >
+  {/* Background Image (CLEAR) */}
   <Image
     src="/images/founder-bg.jpg"
     alt="Wildlife observation fieldwork"
     fill
     priority
-    className="object-cover object-right brightness-[0.42] contrast-[1.08] saturate-[0.88]"
+    className="object-cover object-right brightness-[0.85]"
     sizes="100vw"
   />
 
-  <div className="absolute inset-0 bg-black/65" />
-  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent" />
-  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_28%,rgba(244,197,66,0.08),transparent_36%)]" />
-  <div className="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.55)]" />
+  {/* VERY LIGHT overlay */}
+  <div className="absolute inset-0 bg-black/25" />
 
+  {/* Simple left fade for text */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+
+  {/* Content */}
   <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
     <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      
+      {/* LEFT */}
       <div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -291,7 +294,7 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 24 }}
           animate={introInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 0.65 }}
-          className="mt-8 flex flex-wrap gap-6 text-sm text-white/75"
+          className="mt-8 flex flex-wrap gap-6 text-sm text-white/85"
         >
           <div className="inline-flex items-center gap-2">
             <MapPin className="h-4 w-4 text-[#f4c542]" />
@@ -304,11 +307,12 @@ export default function AboutPage() {
         </motion.div>
       </div>
 
+      {/* RIGHT */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={introInView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.2, duration: 0.65 }}
-        className="space-y-6 text-lg leading-8 text-white/82"
+        className="space-y-6 text-lg leading-8 text-white/90"
       >
         <p>{founder.shortBio}</p>
         <p>{founder.longBio1}</p>
@@ -316,6 +320,7 @@ export default function AboutPage() {
         <p>{founder.longBio3}</p>
         <p>{founder.longBio4}</p>
       </motion.div>
+
     </div>
   </div>
 </section>
