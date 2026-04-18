@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { stories } from "@/data/stories"
 import {
   ArrowRight,
   ShieldAlert,
@@ -126,22 +127,11 @@ const stats = [
   { value: "Research + Awareness", label: "Approach to impact" },
 ]
 
-const stories = [
-  {
-    title: "Understanding the Bengal Slow Loris in Bangladesh",
-    href: "/stories/bengal-slow-loris",
-  },
-  {
-    title: "Why Habitat Protection Matters More Than Ever",
-    href: "/stories/habitat-protection",
-  },
-  {
-    title: "Human–Wildlife Conflict and the Need for Coexistence",
-    href: "/stories/human-wildlife-conflict",
-  },
-]
-
 export default function HomePage() {
+  const featuredStories = stories.filter((story) => story.featured).slice(0, 3)
+  const homepageStories =
+    featuredStories.length > 0 ? featuredStories : stories.slice(0, 3)
+
   return (
     <>
       <Header />
@@ -568,30 +558,51 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-8 md:grid-cols-3">
-              {stories.map((story, index) => (
+              {homepageStories.map((story, index) => (
                 <motion.div
-                  key={story.title}
+                  key={story.slug}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ delay: index * 0.08, duration: 0.55 }}
-                  className="rounded-[28px] border border-white/10 bg-[#171a15] p-8"
                 >
-                  <p className="text-xs uppercase tracking-[0.28em] text-[#f4c542]">
-                    Conservation Story
-                  </p>
-                  <h3 className="mt-4 font-serif text-2xl font-bold text-white">
-                    {story.title}
-                  </h3>
-                  <div className="mt-8">
-                    <Link
-                      href={story.href}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-white/85 transition hover:text-[#f4c542]"
-                    >
-                      Read story
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
+                  <Link
+                    href={`/stories/${story.slug}`}
+                    className="group block overflow-hidden rounded-[28px] border border-white/10 bg-[#171a15] shadow-[0_20px_50px_rgba(0,0,0,0.22)]"
+                  >
+                    <div className="relative h-[420px] w-full">
+                      <Image
+                        src={story.image}
+                        alt={story.title}
+                        fill
+                        className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                        sizes="(max-width: 1024px) 100vw, 33vw"
+                      />
+
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(244,197,66,0.08),transparent_28%)]" />
+
+                      <div className="absolute inset-x-0 bottom-0 p-8">
+                        <p className="text-xs uppercase tracking-[0.28em] text-[#f4c542]">
+                          {story.label}
+                        </p>
+
+                        <h3 className="mt-4 font-serif text-2xl font-bold leading-tight text-white">
+                          {story.title}
+                        </h3>
+
+                        <p className="mt-3 line-clamp-3 text-sm leading-7 text-white/72">
+                          {story.excerpt}
+                        </p>
+
+                        <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition group-hover:text-[#f4c542]">
+                          Read story
+                          <ArrowRight className="h-4 w-4" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
