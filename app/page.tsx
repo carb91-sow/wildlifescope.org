@@ -209,12 +209,12 @@ export default function HomePage() {
               alt="Wildlife telemetry research at dusk in Bangladesh"
               fill
               priority
-              className="object-cover object-[72%_center] brightness-[0.72] contrast-110 saturate-[0.9]"
+              className="object-cover object-[68%_center] brightness-[1.08] contrast-105 saturate-[0.92] sm:object-[70%_center] sm:brightness-[1] md:object-[72%_center] md:brightness-[0.95] lg:object-[74%_center] lg:brightness-[0.9]"
               sizes="100vw"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-[#0b0d09]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/28 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/72 via-black/42 to-[#0b0d09] sm:from-black/66 sm:via-black/36 md:from-black/60 md:via-black/32 lg:from-black/52 lg:via-black/28" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/38 to-transparent sm:from-black/74 sm:via-black/32 md:from-black/68 md:via-black/28 lg:from-black/60 lg:via-black/22" />
           </div>
 
           <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-28 pb-20 lg:px-8 lg:pt-36 lg:pb-24">
