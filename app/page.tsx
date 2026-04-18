@@ -568,46 +568,85 @@ export default function HomePage() {
           </div>
         </section>
 
-       {/* Conservation in Action */}
+{/* Conservation in Action */}
 <section className="relative overflow-hidden py-20 lg:py-24">
+  {/* Background image */}
   <div className="absolute inset-0">
     <Image
       src="/images/conservation-in-action-thermal.jpg"
-      alt="Nighttime wildlife conservation field research and biodiversity monitoring in Bangladesh"
+      alt="Nighttime wildlife conservation fieldwork in Bangladesh"
       fill
-      className="object-cover brightness-[0.82] contrast-110 saturate-[0.9]"
+      className="object-cover object-center brightness-[0.72] contrast-[1.08] saturate-[0.85] sepia-[0.55]"
       sizes="100vw"
+      priority={false}
     />
 
-    {/* Mild overlay to keep image visible but text readable */}
-    <div className="absolute inset-0 bg-black/38" />
-    <div className="absolute inset-0 bg-gradient-to-r from-black/62 via-black/34 to-black/20" />
-    <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-transparent to-black/30" />
+    {/* Base dark overlay */}
+    <div className="absolute inset-0 bg-[#050505]/52" />
+
+    {/* Warm cinematic tint */}
+    <div className="absolute inset-0 bg-[rgba(120,68,18,0.22)] mix-blend-screen" />
+
+    {/* Left-side reading support */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/72 via-black/42 to-black/18" />
+
+    {/* Top/bottom depth */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+
+    {/* Soft texture/glow */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_30%,rgba(244,197,66,0.10),transparent_30%),radial-gradient(circle_at_78%_24%,rgba(244,197,66,0.08),transparent_26%),radial-gradient(circle_at_52%_78%,rgba(244,197,66,0.06),transparent_32%)]" />
+
+    {/* Very subtle blur wash */}
+    <div className="absolute inset-0 backdrop-blur-[1.4px]" />
   </div>
 
   <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-    <div className="mb-14 max-w-4xl">
-      <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+    <div className="mb-14 max-w-5xl">
+      <p className="text-sm font-medium uppercase tracking-[0.32em] text-[#f4c542]">
         Conservation in Action
       </p>
 
-      <h2 className="mt-4 max-w-5xl font-serif text-3xl font-bold leading-tight text-white md:text-5xl">
-        Conservation requires action, not just awareness
+      <h2 className="mt-4 max-w-4xl font-serif text-4xl font-bold leading-[1.02] text-white md:text-6xl">
+        Conservation requires action,
+        <br className="hidden md:block" />
+        not just awareness
       </h2>
 
-      <p className="mt-6 max-w-4xl text-lg leading-8 text-white/85">
-        WildlifeScope is rooted in practical wildlife conservation in Bangladesh
-        through field research, biodiversity monitoring, camera trapping, radio
-        telemetry, environmental awareness, and community engagement. These
-        science-based conservation approaches help transform ecological knowledge
-        into meaningful action for endangered species protection, habitat
-        conservation, and long-term biodiversity preservation.
+      <p className="mt-8 max-w-4xl text-lg leading-8 text-white/88 md:text-[1.28rem]">
+        WildlifeScope is dedicated to hands-on wildlife conservation in Bangladesh
+        through field research, advanced biodiversity monitoring, rescue and
+        rehabilitation support, and active public outreach. These practical
+        conservation efforts help transform scientific knowledge into meaningful
+        action for species protection, habitat conservation, and long-term
+        ecological awareness.
       </p>
     </div>
 
     <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-      {actionCards.map((item, index) => {
+      {[
+        {
+          title: "Camera Trapping",
+          desc: "Documenting wildlife presence and creating visual evidence that supports species research, field monitoring, and conservation planning.",
+          icon: Camera,
+        },
+        {
+          title: "Radio Telemetry",
+          desc: "Tracking animal movement and habitat use to better understand behavior, survival patterns, and landscape connectivity.",
+          icon: Radio,
+        },
+        {
+          title: "Biodiversity Monitoring",
+          desc: "Observing species and ecosystems across diverse habitats to support long-term ecological understanding and conservation protection.",
+          icon: Leaf,
+        },
+        {
+          title: "Awareness and Outreach",
+          desc: "Building stronger public understanding through educational communication, local engagement, and conservation storytelling.",
+          icon: Users,
+        },
+      ].map((item, index) => {
         const Icon = item.icon
+
         return (
           <motion.div
             key={item.title}
@@ -615,25 +654,24 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: index * 0.08, duration: 0.55 }}
-            className="rounded-[28px] border border-white/10 bg-[#11130f]/72 p-8 backdrop-blur-[2px] shadow-[0_10px_35px_rgba(0,0,0,0.25)]"
+            className="rounded-[30px] border border-white/10 bg-black/28 p-8 backdrop-blur-md shadow-[0_10px_35px_rgba(0,0,0,0.28)]"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#20170b]/80 text-[#f4c542] shadow-inner">
               <Icon className="h-7 w-7" />
             </div>
 
-            <h3 className="mt-6 font-serif text-2xl font-bold text-white">
+            <h3 className="mt-8 font-serif text-2xl font-bold leading-tight text-white">
               {item.title}
             </h3>
 
-            <p className="mt-4 leading-8 text-white/80">{item.description}</p>
+            <p className="mt-5 text-lg leading-8 text-white/82">{item.desc}</p>
           </motion.div>
         )
       })}
     </div>
 
     <p className="sr-only">
-      Wildlife researchers conducting nighttime conservation fieldwork in
-      Bangladesh using practical biodiversity monitoring methods.
+      Wildlife researchers conducting nighttime conservation fieldwork in Bangladesh.
     </p>
   </div>
 </section>
