@@ -246,7 +246,10 @@ export default function HomePage() {
                 transition={{ delay: 0.16, duration: 0.8 }}
                 className="mt-8 max-w-3xl text-lg leading-8 text-white md:text-xl drop-shadow-md"
               >
-                WildlifeScope is a Bangladesh-based conservation platform dedicated to biodiversity protection, endangered species awareness, ecological research, wildlife telemetry, and science-based storytelling from the front lines of conservation.
+                WildlifeScope is a Bangladesh-based conservation platform dedicated to
+                biodiversity protection, endangered species awareness, ecological research,
+                wildlife telemetry, and science-based storytelling from the front lines of
+                conservation.
               </motion.p>
 
               <motion.div
@@ -304,176 +307,154 @@ export default function HomePage() {
           </div>
         </section>
 
-      {/* Why It Matters */}
-<section className="relative overflow-hidden py-20 lg:py-24">
-  {/* Background */}
-  <div className="absolute inset-0">
-    <Image
-      src="/images/why-it-matters-bg.jpg"
-      alt="Forest stream ecosystem in Bangladesh showing wildlife habitat"
-      fill
-      className="object-cover brightness-[0.9] contrast-105 saturate-[1]"
-      sizes="100vw"
-    />
+        {/* Why It Matters */}
+        <section className="relative overflow-hidden py-20 lg:py-24">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/why-it-matters-bg.jpg"
+              alt="Forest stream ecosystem in Bangladesh showing wildlife habitat"
+              fill
+              className="object-cover brightness-[0.9] contrast-105 saturate-[1]"
+              sizes="100vw"
+            />
 
-    {/* Lighter base overlay */}
-    <div className="absolute inset-0 bg-[#10120e]/40" />
+            <div className="absolute inset-0 bg-[#10120e]/40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/5 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#10120e]/65 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-transparent" />
+          </div>
 
-    {/* Softer top gradient */}
-    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/5 to-transparent" />
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+                Why It Matters Now
+              </p>
 
-    {/* Softer bottom gradient */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#10120e]/65 via-transparent to-transparent" />
+              <h2 className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl">
+                Why wildlife conservation in Bangladesh matters now
+              </h2>
 
-    {/* Softer left gradient */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-transparent" />
-  </div>
-
-  {/* Content */}
-  <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-    <div className="max-w-4xl">
-      <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
-        Why It Matters Now
-      </p>
-
-      <h2 className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl">
-        Why wildlife conservation in Bangladesh matters now
-      </h2>
-
-      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85">
-        Bangladesh is home to remarkable wildlife, rich ecosystems, and irreplaceable
-        biodiversity. But many species and habitats face growing pressure from habitat
-        loss, environmental change, and human–wildlife conflict. Protecting nature is
-        not only about saving species. It is about protecting ecological balance,
-        supporting communities, and securing a more sustainable future for both people
-        and wildlife.
-      </p>
-    </div>
-
-    <div className="mt-14 grid gap-8 md:grid-cols-3">
-      {issues.map((item, index) => {
-        const Icon = item.icon
-        return (
-          <motion.div
-            key={item.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
-            className="rounded-[28px] border border-white/12 bg-[#171a15]/65 p-8 backdrop-blur-[1px]"
-          >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/12 text-[#f4c542]">
-              <Icon className="h-7 w-7" />
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85">
+                Bangladesh is home to remarkable wildlife, rich ecosystems, and
+                irreplaceable biodiversity. But many species and habitats face growing
+                pressure from habitat loss, environmental change, and human–wildlife
+                conflict. Protecting nature is not only about saving species. It is about
+                protecting ecological balance, supporting communities, and securing a more
+                sustainable future for both people and wildlife.
+              </p>
             </div>
 
-            <h3 className="mt-6 font-serif text-2xl font-bold text-white">
-              {item.title}
-            </h3>
+            <div className="mt-14 grid gap-8 md:grid-cols-3">
+              {issues.map((item, index) => {
+                const Icon = item.icon
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    className="rounded-[28px] border border-white/12 bg-[#171a15]/65 p-8 backdrop-blur-[1px]"
+                  >
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/12 text-[#f4c542]">
+                      <Icon className="h-7 w-7" />
+                    </div>
 
-            <p className="mt-4 leading-8 text-white/80">
-              {item.description}
-            </p>
-          </motion.div>
-        )
-      })}
-    </div>
-  </div>
-</section>
+                    <h3 className="mt-6 font-serif text-2xl font-bold text-white">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-4 leading-8 text-white/80">{item.description}</p>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* Conservation Pillars */}
-<section className="relative overflow-hidden py-24 lg:py-28">
-  {/* Background */}
-  <div className="absolute inset-0">
-    <Image
-      src="/images/impact-bg.jpg"
-      alt="Wildlife conservation team working in Bangladesh forest"
-      fill
-      className="object-cover brightness-[0.82] contrast-105 saturate-[0.95] blur-[1.2px]"
-      sizes="100vw"
-    />
+        <section className="relative overflow-hidden py-24 lg:py-28">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/impact-bg.jpg"
+              alt="Wildlife conservation team working in Bangladesh forest"
+              fill
+              className="object-cover brightness-[0.82] contrast-105 saturate-[0.95] blur-[1.2px]"
+              sizes="100vw"
+            />
 
-    {/* Base overlay (balanced) */}
-    <div className="absolute inset-0 bg-[#10120e]/55" />
+            <div className="absolute inset-0 bg-[#10120e]/55" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#10120e]/75 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+          </div>
 
-    {/* Top gradient for heading */}
-    <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent" />
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-4xl">
+              <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+                Our Conservation Pillars
+              </p>
 
-    {/* Bottom gradient for cards */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#10120e]/75 via-transparent to-transparent" />
+              <h2 className="mt-4 font-serif text-4xl font-bold leading-tight text-white md:text-6xl">
+                How WildlifeScope creates conservation impact
+              </h2>
 
-    {/* Left fade for text */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
-  </div>
-
-  {/* Content */}
-  <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-    {/* Heading */}
-    <div className="max-w-4xl">
-      <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
-        Our Conservation Pillars
-      </p>
-
-      <h2 className="mt-4 font-serif text-4xl font-bold text-white md:text-6xl leading-tight">
-        How WildlifeScope creates conservation impact
-      </h2>
-
-      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85">
-        WildlifeScope brings together field experience, ecological understanding,
-        conservation communication, and public engagement to support long-term
-        wildlife conservation in Bangladesh.
-      </p>
-    </div>
-
-    {/* Cards */}
-    <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-      {[
-        {
-          title: "Wildlife Research",
-          desc: "Science-based understanding of species, habitats, and ecological systems through field studies and data collection.",
-          icon: Globe,
-        },
-        {
-          title: "Conservation Awareness",
-          desc: "Accessible storytelling and environmental education that help more people understand and care about wildlife.",
-          icon: BookOpen,
-        },
-        {
-          title: "Species Documentation",
-          desc: "Highlighting the remarkable biodiversity of Bangladesh and bringing attention to lesser-known species.",
-          icon: Leaf,
-        },
-        {
-          title: "Community Engagement",
-          desc: "Supporting a conservation culture where local communities actively participate in protecting nature.",
-          icon: HeartHandshake,
-        },
-      ].map((item, index) => {
-        const Icon = item.icon
-        return (
-          <motion.div
-            key={item.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
-            className="rounded-[26px] border border-white/12 bg-[#171a15]/70 p-8 backdrop-blur-[1.5px] shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
-          >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/12 text-[#f4c542]">
-              <Icon className="h-7 w-7" />
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85">
+                WildlifeScope brings together field experience, ecological understanding,
+                conservation communication, and public engagement to support long-term
+                wildlife conservation in Bangladesh.
+              </p>
             </div>
 
-            <h3 className="mt-6 font-serif text-2xl font-bold text-white">
-              {item.title}
-            </h3>
+            <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  title: "Wildlife Research",
+                  desc: "Science-based understanding of species, habitats, and ecological systems through field studies and data collection.",
+                  icon: Globe2,
+                },
+                {
+                  title: "Conservation Awareness",
+                  desc: "Accessible storytelling and environmental education that help more people understand and care about wildlife.",
+                  icon: BookOpen,
+                },
+                {
+                  title: "Species Documentation",
+                  desc: "Highlighting the remarkable biodiversity of Bangladesh and bringing attention to lesser-known species.",
+                  icon: Leaf,
+                },
+                {
+                  title: "Community Engagement",
+                  desc: "Supporting a conservation culture where local communities actively participate in protecting nature.",
+                  icon: HeartHandshake,
+                },
+              ].map((item, index) => {
+                const Icon = item.icon
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    className="rounded-[26px] border border-white/12 bg-[#171a15]/70 p-8 backdrop-blur-[1.5px] shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
+                  >
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/12 text-[#f4c542]">
+                      <Icon className="h-7 w-7" />
+                    </div>
 
-            <p className="mt-4 leading-8 text-white/80">
-              {item.desc}
-            </p>
-          </motion.div>
-        )
-      })}
-    </div>
-  </div>
-</section>
+                    <h3 className="mt-6 font-serif text-2xl font-bold text-white">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-4 leading-8 text-white/80">{item.desc}</p>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* Story / About */}
         <section className="bg-[#11130f] py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -497,10 +478,10 @@ export default function HomePage() {
                   From field experience to conservation storytelling
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-white/74">
-                  WildlifeScope was built from real experience in the forests, field sites, and
-                  communities of Bangladesh. It grew from the understanding that conservation is
-                  not only scientific, but also human. Research helps us understand wildlife,
-                  while awareness helps protect it.
+                  WildlifeScope was built from real experience in the forests, field sites,
+                  and communities of Bangladesh. It grew from the understanding that
+                  conservation is not only scientific, but also human. Research helps us
+                  understand wildlife, while awareness helps protect it.
                 </p>
                 <p className="mt-6 text-lg leading-8 text-white/74">
                   Founded by wildlife conservation researcher Md. Rahenur Islam Sourov,
@@ -536,8 +517,8 @@ export default function HomePage() {
               </h2>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
                 Bangladesh shelters extraordinary wildlife, many of which remain threatened,
-                understudied, or poorly understood. Learning about these species is the first
-                step toward protecting them.
+                understudied, or poorly understood. Learning about these species is the
+                first step toward protecting them.
               </p>
             </div>
 
@@ -598,9 +579,10 @@ export default function HomePage() {
                 Conservation requires action, not just awareness
               </h2>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
-                WildlifeScope is rooted in practical conservation experience across research,
-                biodiversity monitoring, rescue awareness, and public engagement. These
-                approaches help transform knowledge into meaningful conservation action.
+                WildlifeScope is rooted in practical conservation experience across
+                research, biodiversity monitoring, rescue awareness, and public engagement.
+                These approaches help transform knowledge into meaningful conservation
+                action.
               </p>
             </div>
 
@@ -650,8 +632,9 @@ export default function HomePage() {
 
                   <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">
                     Your support can help expand species awareness, conservation storytelling,
-                    environmental education, and field-informed biodiversity protection. Every
-                    contribution helps build a stronger voice for wildlife conservation in Bangladesh.
+                    environmental education, and field-informed biodiversity protection.
+                    Every contribution helps build a stronger voice for wildlife
+                    conservation in Bangladesh.
                   </p>
 
                   <div className="mt-10 flex flex-wrap gap-4">
@@ -776,9 +759,9 @@ export default function HomePage() {
                 </h2>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
                   Conservation grows stronger when more people care, learn, and take action.
-                  Whether you are a student, researcher, nature enthusiast, photographer, or
-                  potential partner, WildlifeScope invites you to join a growing mission for
-                  biodiversity protection and environmental awareness.
+                  Whether you are a student, researcher, nature enthusiast, photographer,
+                  or potential partner, WildlifeScope invites you to join a growing mission
+                  for biodiversity protection and environmental awareness.
                 </p>
 
                 <div className="mt-10 flex flex-wrap gap-4">
