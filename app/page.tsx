@@ -46,13 +46,33 @@ const seo = {
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: seo.organizationName,
-  url: seo.siteUrl,
-  description: seo.description,
-  keywords: seo.keywords.join(", "),
-  areaServed: "Bangladesh",
-  sameAs: [],
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: seo.organizationName,
+      url: seo.siteUrl,
+      description: seo.description,
+      keywords: seo.keywords.join(", "),
+      areaServed: "Bangladesh",
+      sameAs: [],
+    },
+    {
+      "@type": "WebSite",
+      name: seo.organizationName,
+      url: seo.siteUrl,
+      description: seo.description,
+      inLanguage: "en",
+      keywords: seo.keywords.join(", "),
+    },
+    {
+      "@type": "WebPage",
+      name: seo.title,
+      url: seo.siteUrl,
+      description: seo.description,
+      primaryImageOfPage: `${seo.siteUrl}/images/hero-telemetry-research.jpg`,
+      about: "Wildlife conservation in Bangladesh",
+    },
+  ],
 }
 
 const issues = [
@@ -185,16 +205,16 @@ export default function HomePage() {
         <section className="relative min-h-screen overflow-hidden border-b border-white/10">
           <div className="absolute inset-0">
             <Image
-              src="/images/hero-field-research.jpg"
-              alt="Wildlife conservation field research in Bangladesh"
+              src="/images/hero-telemetry-research.jpg"
+              alt="Wildlife telemetry research at dusk in Bangladesh"
               fill
               priority
-              className="object-cover object-center brightness-125 contrast-90"
+              className="object-cover object-[72%_center] brightness-[0.72] contrast-110 saturate-[0.9]"
               sizes="100vw"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#0b0d09]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-[#0b0d09]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/28 to-transparent" />
           </div>
 
           <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-28 pb-20 lg:px-8 lg:pt-36 lg:pb-24">
@@ -226,9 +246,7 @@ export default function HomePage() {
                 transition={{ delay: 0.16, duration: 0.8 }}
                 className="mt-8 max-w-3xl text-lg leading-8 text-white md:text-xl drop-shadow-md"
               >
-                WildlifeScope is a Bangladesh-based conservation platform dedicated to
-                biodiversity protection, endangered species awareness, ecological research,
-                and science-based storytelling from the front lines of conservation.
+                WildlifeScope is a Bangladesh-based conservation platform dedicated to biodiversity protection, endangered species awareness, ecological research, wildlife telemetry, and science-based storytelling from the front lines of conservation.
               </motion.p>
 
               <motion.div
