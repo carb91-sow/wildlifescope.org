@@ -20,9 +20,22 @@ const species = [
     description:
       "The iconic tiger of the Sundarbans mangrove forest, adapted to swimming and hunting in tidal waterways.",
   },
-  // (keep your other species here same as before)
+  {
+    id: "clouded-leopard",
+    name: "Clouded Leopard",
+    scientificName: "Neofelis nebulosa",
+    status: "Vulnerable",
+    region: "Chittagong Hill Tracts",
+    habitat: "Tropical Forest",
+    population: "Unknown",
+    trend: "Unknown",
+    threat: "Forest loss & habitat fragmentation",
+    importance: "A rare forest predator representing the richness of Bangladesh's wild forests.",
+    image: "/images/clouded-leopard.jpg",
+    description:
+      "A secretive forest cat with distinctive cloud-shaped markings, rarely seen in Bangladesh's forests.",
+  },
 ]
-
 const statusStyles: Record<string, string> = {
   Endangered: "text-[#ffb4a8] border-[#ffb4a8]/30 bg-[#ffb4a8]/10",
   "Critically Endangered": "text-[#ff8f7a] border-[#ff8f7a]/30 bg-[#ff8f7a]/10",
