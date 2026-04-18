@@ -246,62 +246,79 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Intro / Founder Summary */}
-        <section ref={introRef} className="bg-[#11130f] py-20 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-              <div>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={introInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6 }}
-                  className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
-                >
-                  Founder Profile
-                </motion.p>
+{/* Intro / Founder Summary */}
+<section
+  ref={introRef}
+  className="relative overflow-hidden py-20 lg:py-24"
+>
+  <Image
+    src="/images/founder-bg.jpg"
+    alt="Wildlife observation fieldwork"
+    fill
+    priority
+    className="object-cover object-right brightness-[0.42] contrast-[1.08] saturate-[0.88]"
+    sizes="100vw"
+  />
 
-                <motion.h2
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={introInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.1, duration: 0.65 }}
-                  className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl"
-                >
-                  A wildlife conservation researcher building impact through field experience and science
-                </motion.h2>
+  <div className="absolute inset-0 bg-black/65" />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_28%,rgba(244,197,66,0.08),transparent_36%)]" />
+  <div className="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.55)]" />
 
-                <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={introInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.2, duration: 0.65 }}
-                  className="mt-8 flex flex-wrap gap-6 text-sm text-white/70"
-                >
-                  <div className="inline-flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-[#f4c542]" />
-                    {founder.location}
-                  </div>
-                  <div className="inline-flex items-center gap-2">
-                    <Leaf className="h-4 w-4 text-[#f4c542]" />
-                    Wildlife conservation Bangladesh
-                  </div>
-                </motion.div>
-              </div>
+  <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={introInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]"
+        >
+          Founder Profile
+        </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={introInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.2, duration: 0.65 }}
-                className="space-y-6 text-lg leading-8 text-white/74"
-              >
-                <p>{founder.shortBio}</p>
-                <p>{founder.longBio1}</p>
-                <p>{founder.longBio2}</p>
-                <p>{founder.longBio3}</p>
-                <p>{founder.longBio4}</p>
-              </motion.div>
-            </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
+          animate={introInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.1, duration: 0.65 }}
+          className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl"
+        >
+          A wildlife conservation researcher building impact through field experience and science
+        </motion.h2>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={introInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.2, duration: 0.65 }}
+          className="mt-8 flex flex-wrap gap-6 text-sm text-white/75"
+        >
+          <div className="inline-flex items-center gap-2">
+            <MapPin className="h-4 w-4 text-[#f4c542]" />
+            {founder.location}
           </div>
-        </section>
+          <div className="inline-flex items-center gap-2">
+            <Leaf className="h-4 w-4 text-[#f4c542]" />
+            Wildlife conservation Bangladesh
+          </div>
+        </motion.div>
+      </div>
 
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={introInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.2, duration: 0.65 }}
+        className="space-y-6 text-lg leading-8 text-white/82"
+      >
+        <p>{founder.shortBio}</p>
+        <p>{founder.longBio1}</p>
+        <p>{founder.longBio2}</p>
+        <p>{founder.longBio3}</p>
+        <p>{founder.longBio4}</p>
+      </motion.div>
+    </div>
+  </div>
+</section>
         {/* Mission Vision Values */}
         <section className="bg-[#0d0f0c] py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
