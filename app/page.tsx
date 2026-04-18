@@ -311,11 +311,12 @@ export default function HomePage() {
       src="/images/why-it-matters-bg.jpg"
       alt="Forest stream ecosystem in Bangladesh showing wildlife habitat"
       fill
-      className="object-cover brightness-[0.65] contrast-110"
+      className="object-cover brightness-[0.9] contrast-110 saturate-[0.95] md:brightness-[0.82] lg:brightness-[0.78]"
       sizes="100vw"
     />
-    <div className="absolute inset-0 bg-[#10120e]/85" />
-    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#10120e]" />
+    <div className="absolute inset-0 bg-[#10120e]/58 md:bg-[#10120e]/64 lg:bg-[#10120e]/68" />
+    <div className="absolute inset-0 bg-gradient-to-b from-black/22 via-black/12 to-[#10120e]/82" />
+    <div className="absolute inset-0 bg-gradient-to-r from-[#0b0d09]/38 via-transparent to-transparent" />
   </div>
 
   <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -326,7 +327,7 @@ export default function HomePage() {
       <h2 className="mt-4 font-serif text-3xl font-bold text-white md:text-5xl">
         Why wildlife conservation in Bangladesh matters now
       </h2>
-      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/74">
+      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/82">
         Bangladesh is home to remarkable wildlife, rich ecosystems, and irreplaceable
         biodiversity. But many species and habitats face growing pressure from habitat
         loss, environmental change, and human–wildlife conflict. Protecting nature is
@@ -346,22 +347,21 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: index * 0.1, duration: 0.6 }}
-            className="rounded-[28px] border border-white/10 bg-[#171a15]/90 p-8 backdrop-blur-[2px]"
+            className="rounded-[28px] border border-white/12 bg-[#171a15]/72 p-8 backdrop-blur-[1.5px] shadow-[0_10px_40px_rgba(0,0,0,0.22)]"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/12 text-[#f4c542]">
               <Icon className="h-7 w-7" />
             </div>
             <h3 className="mt-6 font-serif text-2xl font-bold text-white">
               {item.title}
             </h3>
-            <p className="mt-4 leading-8 text-white/72">{item.description}</p>
+            <p className="mt-4 leading-8 text-white/76">{item.description}</p>
           </motion.div>
         )
       })}
     </div>
   </div>
 </section>
-
         {/* Pillars */}
         <section className="bg-[#0c0e0b] py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
