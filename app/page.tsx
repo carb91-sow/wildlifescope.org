@@ -379,49 +379,101 @@ export default function HomePage() {
     </div>
   </div>
 </section>
-        {/* Pillars */}
-        <section className="bg-[#0c0e0b] py-20 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mb-14">
-              <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
-                Our Conservation Pillars
-              </p>
-              <h2 className="mt-4 max-w-4xl font-serif text-3xl font-bold text-white md:text-5xl">
-                How WildlifeScope creates conservation impact
-              </h2>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
-                WildlifeScope brings together field experience, ecological understanding,
-                conservation communication, and public engagement to support long-term
-                wildlife conservation in Bangladesh.
-              </p>
+        {/* Conservation Pillars */}
+<section className="relative overflow-hidden py-24 lg:py-28">
+  {/* Background */}
+  <div className="absolute inset-0">
+    <Image
+      src="/images/impact-bg.jpg"
+      alt="Wildlife conservation team working in Bangladesh forest"
+      fill
+      className="object-cover brightness-[0.82] contrast-105 saturate-[0.95] blur-[1.2px]"
+      sizes="100vw"
+    />
+
+    {/* Base overlay (balanced) */}
+    <div className="absolute inset-0 bg-[#10120e]/55" />
+
+    {/* Top gradient for heading */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent" />
+
+    {/* Bottom gradient for cards */}
+    <div className="absolute inset-0 bg-gradient-to-t from-[#10120e]/75 via-transparent to-transparent" />
+
+    {/* Left fade for text */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+  </div>
+
+  {/* Content */}
+  <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+    {/* Heading */}
+    <div className="max-w-4xl">
+      <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f4c542]">
+        Our Conservation Pillars
+      </p>
+
+      <h2 className="mt-4 font-serif text-4xl font-bold text-white md:text-6xl leading-tight">
+        How WildlifeScope creates conservation impact
+      </h2>
+
+      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85">
+        WildlifeScope brings together field experience, ecological understanding,
+        conservation communication, and public engagement to support long-term
+        wildlife conservation in Bangladesh.
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {[
+        {
+          title: "Wildlife Research",
+          desc: "Science-based understanding of species, habitats, and ecological systems through field studies and data collection.",
+          icon: Globe,
+        },
+        {
+          title: "Conservation Awareness",
+          desc: "Accessible storytelling and environmental education that help more people understand and care about wildlife.",
+          icon: BookOpen,
+        },
+        {
+          title: "Species Documentation",
+          desc: "Highlighting the remarkable biodiversity of Bangladesh and bringing attention to lesser-known species.",
+          icon: Leaf,
+        },
+        {
+          title: "Community Engagement",
+          desc: "Supporting a conservation culture where local communities actively participate in protecting nature.",
+          icon: HeartHandshake,
+        },
+      ].map((item, index) => {
+        const Icon = item.icon
+        return (
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ delay: index * 0.1, duration: 0.6 }}
+            className="rounded-[26px] border border-white/12 bg-[#171a15]/70 p-8 backdrop-blur-[1.5px] shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/12 text-[#f4c542]">
+              <Icon className="h-7 w-7" />
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-              {pillars.map((item, index) => {
-                const Icon = item.icon
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 22 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ delay: index * 0.08, duration: 0.55 }}
-                    className="rounded-[28px] border border-white/10 bg-[#151813] p-8"
-                  >
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/10 text-[#f4c542]">
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="mt-6 font-serif text-2xl font-bold text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-4 leading-8 text-white/72">{item.description}</p>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
+            <h3 className="mt-6 font-serif text-2xl font-bold text-white">
+              {item.title}
+            </h3>
 
+            <p className="mt-4 leading-8 text-white/80">
+              {item.desc}
+            </p>
+          </motion.div>
+        )
+      })}
+    </div>
+  </div>
+</section>
         {/* Story / About */}
         <section className="bg-[#11130f] py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
