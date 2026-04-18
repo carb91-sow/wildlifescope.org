@@ -312,21 +312,21 @@ export default function HomePage() {
       src="/images/why-it-matters-bg.jpg"
       alt="Forest stream ecosystem in Bangladesh showing wildlife habitat"
       fill
-      className="object-cover brightness-[0.85] contrast-105 saturate-[1]"
+      className="object-cover brightness-[0.9] contrast-105 saturate-[1]"
       sizes="100vw"
     />
 
-    {/* Base overlay (balanced) */}
-    <div className="absolute inset-0 bg-[#10120e]/50" />
+    {/* Lighter base overlay */}
+    <div className="absolute inset-0 bg-[#10120e]/40" />
 
-    {/* Top gradient for heading */}
-    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-transparent" />
+    {/* Softer top gradient */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/5 to-transparent" />
 
-    {/* Bottom gradient for cards */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#10120e]/80 via-transparent to-transparent" />
+    {/* Softer bottom gradient */}
+    <div className="absolute inset-0 bg-gradient-to-t from-[#10120e]/65 via-transparent to-transparent" />
 
-    {/* Left gradient for text readability */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-transparent" />
+    {/* Softer left gradient */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-transparent" />
   </div>
 
   {/* Content */}
@@ -340,7 +340,7 @@ export default function HomePage() {
         Why wildlife conservation in Bangladesh matters now
       </h2>
 
-      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/82">
+      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85">
         Bangladesh is home to remarkable wildlife, rich ecosystems, and irreplaceable
         biodiversity. But many species and habitats face growing pressure from habitat
         loss, environmental change, and human–wildlife conflict. Protecting nature is
@@ -360,7 +360,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: index * 0.1, duration: 0.6 }}
-            className="rounded-[28px] border border-white/12 bg-[#171a15]/70 p-8 backdrop-blur-[1.5px]"
+            className="rounded-[28px] border border-white/12 bg-[#171a15]/65 p-8 backdrop-blur-[1px]"
           >
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4c542]/12 text-[#f4c542]">
               <Icon className="h-7 w-7" />
@@ -370,7 +370,7 @@ export default function HomePage() {
               {item.title}
             </h3>
 
-            <p className="mt-4 leading-8 text-white/76">
+            <p className="mt-4 leading-8 text-white/80">
               {item.description}
             </p>
           </motion.div>
