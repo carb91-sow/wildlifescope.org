@@ -112,21 +112,27 @@ export const species: Species[] = [
   },
 
   {
-    id: "asian-elephant",
-    name: "Asian Elephant",
-    scientificName: "Elephas maximus",
-    status: "Endangered",
-    region: "Chittagong Hill Tracts",
-    habitat: "Hill Forests",
-    population: "~268",
-    trend: "Decreasing",
-    threat: "Habitat fragmentation & human-elephant conflict",
-    importance:
-      "A keystone species that shapes and supports forest ecosystems.",
-    image: "/images/asian-elephant.jpg",
-    description:
-      "Bangladesh's largest land mammal, facing habitat fragmentation and human-elephant conflict.",
-  },
+  id: "asian-palm-civet",
+  name: "Asian Palm Civet",
+  scientificName: "Paradoxurus hermaphroditus",
+  status: "Least Concern",
+  region: "Forests and rural landscapes of Bangladesh",
+  habitat: "Forests, orchards, village edges, and mixed tree cover",
+  population: "Unknown",
+  trend: "Decreasing",
+  threat: "Habitat loss, fragmentation & persecution",
+  importance:
+    "An important nocturnal mammal that helps with seed dispersal and ecosystem balance.",
+  image: "/images/asian-palm-civet.jpg",
+  description:
+    "The Asian Palm Civet is a shy, nocturnal mammal found in forests and mixed landscapes, where it plays a quiet but valuable ecological role.",
+  featured: false,
+
+  insight: "/insights/asian-palm-civet-bangladesh",
+  insightTitle: "Asian Palm Civet in Bangladesh",
+  insightDescription:
+    "Explore the habitat, ecological role, threats, and conservation importance of the Asian Palm Civet in Bangladesh.",
+}
   
   {
   id: "asian-golden-cat",
