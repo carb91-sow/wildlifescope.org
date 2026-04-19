@@ -5,39 +5,39 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Clouded Leopard Bangladesh | Wildlife Scope",
+  title: "Clouded Leopard Bangladesh | Sightings, Habitat & Conservation",
   description:
-    "Discover the rare clouded leopard in Bangladesh, its habitat in the Chittagong Hill Tracts, unique adaptations, major threats, and the conservation efforts working to protect this elusive forest predator.",
+    "Explore confirmed clouded leopard sightings in Bangladesh, including camera-trap records, habitat, threats, and conservation insights.",
 }
 
 const keyPoints = [
   "Clouded leopards are among Bangladesh’s rarest forest predators.",
   "They survive mainly in the forests of the Chittagong Hill Tracts.",
-  "Their tree-climbing ability makes them highly specialized hunters.",
-  "Forest loss, fragmentation, and poaching are major threats.",
-  "Protecting clouded leopards helps protect Bangladesh’s remaining forests.",
+  "Most confirmed records come from camera trap evidence.",
+  "Forest loss and fragmentation are major threats.",
+  "Protecting them helps preserve entire ecosystems.",
 ]
 
 const threats = [
   {
     id: "forest-loss",
     title: "Forest loss",
-    text: "Deforestation, logging, and land conversion continue to reduce the dense forest habitat clouded leopards depend on.",
+    text: "Deforestation and land conversion continue to reduce dense habitats required by clouded leopards.",
   },
   {
-    id: "habitat-fragmentation",
+    id: "fragmentation",
     title: "Habitat fragmentation",
-    text: "Roads, settlements, and development projects break forests into smaller patches, isolating already rare populations.",
+    text: "Development divides forests into smaller patches, isolating populations.",
   },
   {
     id: "poaching",
-    title: "Poaching and illegal trade",
-    text: "Clouded leopards are threatened by illegal hunting for their striking coat, bones, and teeth.",
+    title: "Poaching",
+    text: "Illegal hunting for fur and body parts remains a serious threat.",
   },
   {
-    id: "low-monitoring",
+    id: "low-data",
     title: "Limited monitoring",
-    text: "Because the species is elusive and poorly studied in Bangladesh, weak data and limited species-specific action make conservation harder.",
+    text: "Lack of consistent research makes conservation difficult.",
   },
 ]
 
@@ -51,19 +51,19 @@ export default function Page() {
         {/* HERO */}
         <section className="text-center py-20">
           <h1 className="text-5xl font-bold max-w-4xl mx-auto">
-            The Clouded Leopard: The Phantom of Bangladesh’s Forest Canopy
+            The Clouded Leopard: Bangladesh’s Most Elusive Wild Cat
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-white/70">
-            Hidden within the forests of the Chittagong Hill Tracts, the clouded leopard
-            remains one of Bangladesh’s rarest and most elusive predators. Its survival
-            is a powerful sign of the health of the country’s remaining wild forests.
+            Hidden deep within the forests of the Chittagong Hill Tracts, the
+            clouded leopard remains one of the rarest and least understood
+            predators in Bangladesh.
           </p>
 
           <div className="mt-10 max-w-4xl mx-auto">
             <Image
               src="/images/clouded-leopard.jpg"
-              alt="Clouded Leopard in Bangladesh"
+              alt="Clouded Leopard"
               width={1200}
               height={600}
               className="rounded-xl"
@@ -71,12 +71,10 @@ export default function Page() {
           </div>
         </section>
 
-        {/* KEY POINTS */}
+        {/* KEY INSIGHTS */}
         <section className="py-16 bg-[#11130f]">
           <div className="max-w-5xl mx-auto px-6">
-            <h2 className="text-3xl font-bold">
-              Key Insights
-            </h2>
+            <h2 className="text-3xl font-bold">Key Insights</h2>
 
             <ul className="mt-6 space-y-3">
               {keyPoints.map((point) => (
@@ -89,83 +87,110 @@ export default function Page() {
           </div>
         </section>
 
-        {/* SPECIES ROLE */}
+        {/* SIGHTINGS */}
         <section className="py-20">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold">
-              A Predator Built for the Canopy
+              Confirmed Sightings in Bangladesh (2015–2025)
             </h2>
 
-            <p className="mt-6 text-white/70 max-w-3xl">
-              The clouded leopard is one of the most specialized climbers among wild cats.
-              Its long tail helps with balance, its flexible ankles support agile movement
-              through trees, and its powerful body allows it to hunt both in the canopy
-              and on the forest floor.
+            <p className="mt-6 text-white/70">
+              Verified sightings rely mainly on camera trap records from the
+              Chittagong Hill Tracts, especially the Sangu-Matamuhuri forest.
             </p>
 
-            <div className="grid md:grid-cols-5 gap-4 mt-10">
-              {[
-                "Dense forest",
-                "Tree climber",
-                "Ambush hunter",
-                "Controls prey",
-                "Healthier ecosystem",
-              ].map((item) => (
-                <div key={item} className="p-4 border border-white/10 rounded-lg text-center">
-                  {item}
-                </div>
-              ))}
+            <div className="mt-10 overflow-x-auto">
+              <table className="w-full border border-white/10">
+                <thead>
+                  <tr className="bg-[#141611] text-[#f4c542]">
+                    <th className="p-4 text-left">Year</th>
+                    <th className="p-4 text-left">Location</th>
+                    <th className="p-4 text-left">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["2015", "Sangu-Matamuhuri", "First confirmed camera trap record (CCA)"],
+                    ["2018", "Sangu-Matamuhuri", "Single individual recorded"],
+                    ["2021", "Sangu & Kaptai", "Multiple individuals recorded"],
+                    ["2022", "Rangamati", "Confirmed sighting"],
+                    ["2023", "Eastern Bangladesh", "Recorded by Dr. Muntasir Akash"],
+                    ["2025", "Sangu-Matamuhuri", "Latest confirmed camera trap image"],
+                  ].map((row) => (
+                    <tr key={row[0]} className="border-t border-white/10">
+                      <td className="p-4">{row[0]}</td>
+                      <td className="p-4 text-white/80">{row[1]}</td>
+                      <td className="p-4 text-white/70">{row[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+
+            <div className="mt-10 grid md:grid-cols-2 gap-6">
+              <div className="p-6 border border-white/10 rounded-xl">
+                <h3 className="text-xl font-bold">Live Capture (2023)</h3>
+                <p className="mt-3 text-white/70">
+                  A live clouded leopard was captured in Rangamati and is now
+                  kept at Dulahazara Safari Park.
+                </p>
+              </div>
+
+              <div className="p-6 border border-white/10 rounded-xl">
+                <h3 className="text-xl font-bold">Earlier Records</h3>
+                <p className="mt-3 text-white/70">
+                  Past encounters were reported from Jamalpur, Bandarban, and
+                  Kaptai National Park.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-10 p-6 bg-[#f4c542]/10 border border-[#f4c542]/30 rounded-xl">
+              <p className="text-white/80">
+                Key contributors include the Creative Conservation Alliance and
+                Dr. Muntasir Akash, whose research has helped confirm the
+                species’ presence in Bangladesh.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ROLE */}
+        <section className="py-20 bg-[#11130f]">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold">Ecological Role</h2>
+
+            <p className="mt-6 text-white/70 max-w-3xl">
+              As a mid-to-top predator, the clouded leopard helps regulate prey
+              populations, maintaining ecological balance in forest ecosystems.
+            </p>
           </div>
         </section>
 
         {/* THREATS */}
-        <section className="py-20 bg-[#11130f]">
+        <section className="py-20">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-bold">
-              Major Threats
-            </h2>
+            <h2 className="text-3xl font-bold">Major Threats</h2>
 
             <div className="grid md:grid-cols-2 gap-6 mt-8">
-              {threats.map((item) => (
-                <div key={item.id} className="p-6 border border-white/10 rounded-xl">
-                  <h3 className="text-xl font-bold">{item.title}</h3>
-                  <p className="mt-3 text-white/70">{item.text}</p>
+              {threats.map((t) => (
+                <div key={t.id} className="p-6 border border-white/10 rounded-xl">
+                  <h3 className="text-xl font-bold">{t.title}</h3>
+                  <p className="mt-3 text-white/70">{t.text}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* WHY IT MATTERS */}
-        <section className="py-20 text-center">
-          <h2 className="text-3xl font-bold">
-            Why It Matters
-          </h2>
+        {/* CTA */}
+        <section className="py-16 text-center bg-[#11130f]">
+          <h2 className="text-3xl font-bold">Explore More</h2>
 
-          <p className="mt-6 max-w-2xl mx-auto text-white/70">
-            The clouded leopard is more than a rare cat. It is a symbol of Bangladesh’s
-            remaining forest wilderness. Protecting this species also protects forest
-            biodiversity, ecological balance, and the habitats that support countless
-            other animals and plant life.
-          </p>
-        </section>
-
-        {/* RELATED LINKS */}
-        <section className="py-16 bg-[#11130f] text-center">
-          <h2 className="text-3xl font-bold">
-            Explore More
-          </h2>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-6 flex justify-center gap-4">
             <Link href="/species/clouded-leopard" className="text-[#f4c542]">
-              Clouded Leopard →
+              Species Profile →
             </Link>
-
-            <Link href="/insights/clouded-leopard-threats" className="text-[#f4c542]">
-  Clouded Leopard Threats →
-</Link>
-            
             <Link href="/insights/threats-to-wildlife-bangladesh" className="text-[#f4c542]">
               Wildlife Threats →
             </Link>
