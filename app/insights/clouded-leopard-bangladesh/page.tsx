@@ -167,6 +167,126 @@ export default function Page() {
           </div>
         </section>
 
+        {/* RESEARCH GAPS */}
+<section className="bg-[#11130f] py-20">
+  <div className="mx-auto max-w-6xl px-6">
+
+    <div className="max-w-3xl">
+      <h2 className="text-3xl font-bold">
+        Research Gaps & Knowledge Limitations
+      </h2>
+
+      <p className="mt-6 leading-8 text-white/72">
+        Although there have been confirmed sightings, the Clouded Leopard in
+        Bangladesh remains critically understudied. Most available knowledge is
+        based on scattered records, highlighting major scientific gaps that must
+        be addressed for effective conservation.
+      </p>
+    </div>
+
+    {/* GRID */}
+    <div className="mt-12 grid gap-8 md:grid-cols-2">
+
+      {/* FOUNDATIONAL */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Foundational Knowledge & Taxonomy
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• No reliable population estimate or baseline data</li>
+          <li>• Population trends remain completely unknown</li>
+          <li>• Subspecies identity has not been genetically verified</li>
+        </ul>
+      </div>
+
+      {/* DISTRIBUTION */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Distribution & Habitat Ecology
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• True distribution range remains uncertain</li>
+          <li>• Habitat preferences and movement patterns unknown</li>
+          <li>• Fragmentation impacts not studied</li>
+        </ul>
+      </div>
+
+      {/* ECOLOGY */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Population Ecology & Behavior
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• No Bangladesh-specific data on diet or reproduction</li>
+          <li>• Survival rates and mortality causes unknown</li>
+          <li>• No behavioral or ecological field studies</li>
+        </ul>
+      </div>
+
+      {/* THREATS */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Threats & Human Interaction
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• Poaching and trade pressure not quantified</li>
+          <li>• Human-wildlife conflict not studied</li>
+          <li>• Local ecological knowledge undocumented</li>
+        </ul>
+      </div>
+
+      {/* POLICY */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Conservation & Policy
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• No national conservation action plan</li>
+          <li>• Legal protection clarity is limited</li>
+          <li>• Weak enforcement against poaching risks</li>
+        </ul>
+      </div>
+
+      {/* METHODS */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Research & Methodological Gaps
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• Lack of systematic camera trap surveys</li>
+          <li>• No long-term monitoring programs</li>
+          <li>• Absence of genetic sampling and DNA data</li>
+        </ul>
+      </div>
+
+    </div>
+
+    {/* SUMMARY */}
+    <div className="mt-12 max-w-4xl space-y-5 leading-8 text-white/72">
+      <p>
+        These gaps highlight that the Clouded Leopard is not only rare but also
+        scientifically underrepresented. Without basic population, ecological,
+        and threat data, conservation strategies remain incomplete and uncertain.
+      </p>
+
+      <p>
+        Addressing these challenges requires systematic camera-trap surveys,
+        genetic research, habitat monitoring, and stronger integration of local
+        communities into conservation efforts. Protecting the species depends not
+        only on preserving forests, but also on understanding how it survives
+        within them.
+      </p>
+    </div>
+
+  </div>
+</section>
+        
         {/* THREATS */}
         <section className="py-20">
           <div className="max-w-6xl mx-auto px-6">
