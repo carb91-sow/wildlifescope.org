@@ -112,23 +112,6 @@ export const species: Species[] = [
   },
 
   {
-    id: "ganges-dolphin",
-    name: "Ganges River Dolphin",
-    scientificName: "Platanista gangetica",
-    status: "Endangered",
-    region: "Bangladesh Rivers",
-    habitat: "Freshwater Rivers",
-    population: "~1,200-1,800",
-    trend: "Decreasing",
-    threat: "River pollution & fishing net entanglement",
-    importance:
-      "An indicator species for the health of freshwater ecosystems.",
-    image: "/images/ganges-dolphin.jpg",
-    description:
-      "A freshwater dolphin found in the Ganges-Brahmaputra river system, nearly blind and using echolocation.",
-  },
-
-  {
     id: "asian-elephant",
     name: "Asian Elephant",
     scientificName: "Elephas maximus",
@@ -144,41 +127,7 @@ export const species: Species[] = [
     description:
       "Bangladesh's largest land mammal, facing habitat fragmentation and human-elephant conflict.",
   },
-
-  {
-    id: "saltwater-crocodile",
-    name: "Saltwater Crocodile",
-    scientificName: "Crocodylus porosus",
-    status: "Critically Endangered",
-    region: "Sundarbans, Bangladesh",
-    habitat: "Estuarine Waters",
-    population: "~150-200",
-    trend: "Decreasing",
-    threat: "Habitat disturbance & nesting site loss",
-    importance:
-      "Helps maintain balance in coastal and estuarine food chains.",
-    image: "/images/saltwater-crocodile.jpg",
-    description:
-      "The world's largest living reptile, found in the estuarine waters of the Sundarbans.",
-  },
-
-  {
-    id: "hoolock-gibbon",
-    name: "Western Hoolock Gibbon",
-    scientificName: "Hoolock hoolock",
-    status: "Endangered",
-    region: "Sylhet Division",
-    habitat: "Evergreen Forest",
-    population: "~200-300",
-    trend: "Decreasing",
-    threat: "Deforestation & forest fragmentation",
-    importance:
-      "Bangladesh's only ape, vital for forest biodiversity awareness.",
-    image: "/images/hoolock-gibbon.jpg",
-    description:
-      "Bangladesh's only ape species, known for their loud morning calls and acrobatic movement.",
-  },
-
+  
   {
   id: "asian-golden-cat",
   name: "Asian Golden Cat",
@@ -223,22 +172,5 @@ export const species: Species[] = [
   insightTitle: "Indian Leopard in Bangladesh",
   insightDescription:
     "Explore the habitat, ecological role, threats, and conservation importance of the Indian Leopard in Bangladesh.",
-}
-  
-  {
-    id: "gharial",
-    name: "Gharial",
-    scientificName: "Gavialis gangeticus",
-    status: "Critically Endangered",
-    region: "Bangladesh Rivers",
-    habitat: "Large River Systems",
-    population: "~100",
-    trend: "Decreasing",
-    threat: "River degradation & loss of nesting habitat",
-    importance:
-      "A rare river reptile that reflects the health of aquatic ecosystems.",
-    image: "/images/gharial.jpg",
-    description:
-      "A fish-eating crocodilian with a distinctive long, narrow snout, critically endangered in Bangladesh.",
-  },
+},
 ]
