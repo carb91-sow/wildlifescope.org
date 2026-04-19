@@ -99,9 +99,21 @@ export default function SpeciesPage() {
           </div>
         </section>
 
-        {/* THREATS SECTION */}
-        <section className="bg-[#0f110d] py-16">
-          <div className="mx-auto max-w-6xl px-6">
+        {/* THREATS SECTION WITH BACKGROUND */}
+        <section className="relative overflow-hidden py-16">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/threats-bg.jpg"
+              alt="Deforestation and wildlife habitat loss"
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+          </div>
+
+          <div className="absolute inset-0 bg-black/75" />
+
+          <div className="relative mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <h2 className="text-3xl font-bold">Major Threats to Wildlife</h2>
 
@@ -123,7 +135,7 @@ export default function SpeciesPage() {
                 <Link
                   key={item}
                   href="/insights/threats-to-wildlife-bangladesh"
-                  className="rounded-xl border border-white/10 p-6 transition-colors hover:border-[#f4c542]/40"
+                  className="rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-sm transition-colors hover:border-[#f4c542]/40 hover:bg-black/40"
                 >
                   {item}
                 </Link>
