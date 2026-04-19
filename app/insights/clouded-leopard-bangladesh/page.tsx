@@ -1,9 +1,10 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Clouded Leopard Bangladesh | Wildlife Scope",
   description:
     "Discover the rare clouded leopard in Bangladesh, its habitat in the Chittagong Hill Tracts, unique adaptations, major threats, and the conservation efforts working to protect this elusive forest predator.",
@@ -15,6 +16,29 @@ export const metadata = {
     "Bangladesh forest predator",
     "wildlife conservation Bangladesh",
   ],
+  openGraph: {
+    title: "Clouded Leopard Bangladesh | Wildlife Scope",
+    description:
+      "Discover the rare clouded leopard in Bangladesh, its habitat in the Chittagong Hill Tracts, unique adaptations, major threats, and the conservation efforts working to protect this elusive forest predator.",
+    url: "https://www.wildlifescope.org/insights/clouded-leopard-bangladesh",
+    siteName: "Wildlife Scope",
+    images: [
+      {
+        url: "/images/clouded-leopard.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Clouded leopard in the forests of Bangladesh",
+      },
+    ],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clouded Leopard Bangladesh | Wildlife Scope",
+    description:
+      "Discover the rare clouded leopard in Bangladesh, its habitat in the Chittagong Hill Tracts, unique adaptations, major threats, and conservation efforts.",
+    images: ["/images/clouded-leopard.jpg"],
+  },
 }
 
 export default function CloudedLeopardInsightPage() {
@@ -62,7 +86,7 @@ export default function CloudedLeopardInsightPage() {
 
         <section className="py-20">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
-            <article className="max-w-none prose prose-invert prose-headings:text-white prose-p:text-white/72 prose-strong:text-white">
+            <article className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-white/72 prose-strong:text-white">
               <h2>The Ghost of the Canopy</h2>
               <p>
                 In the dense, rain-soaked forests of southeastern Bangladesh, the
@@ -82,27 +106,28 @@ export default function CloudedLeopardInsightPage() {
               <h2>Species Profile: A Predator Between Two Worlds</h2>
               <p>
                 Scientifically known as <em>Neofelis nebulosa</em>, the clouded
-                leopard occupies a unique place in the cat family. It is not a true
-                leopard, but a distinct species that bridges the traits of both big
-                and small cats. In Bangladesh, it is often regarded as a rare apex
-                forest predator, reflecting its ecological importance in wild forest
-                landscapes.
+                leopard occupies a unique place in the cat family. It is not a
+                true leopard, but a distinct species that bridges the traits of
+                both big and small cats. In Bangladesh, it is often regarded as a
+                rare apex forest predator, reflecting its ecological importance in
+                wild forest landscapes.
               </p>
 
               <h2>Distribution and Habitat</h2>
               <p>
-                Historically, clouded leopards were reported from several forested
-                regions of Bangladesh, including Mymensingh, Sylhet, and Cox’s
-                Bazar. Today, their most important remaining refuge appears to be
-                the Sangu-Matamuhari forest range in the Chittagong Hill Tracts.
+                Historically, clouded leopards were reported from several
+                forested regions of Bangladesh, including Mymensingh, Sylhet, and
+                Cox’s Bazar. Today, their most important remaining refuge appears
+                to be the Sangu-Matamuhari forest range in the Chittagong Hill
+                Tracts.
               </p>
 
               <p>
-                These cats depend on dense tropical forest with strong canopy cover,
-                rugged terrain, and healthy prey populations. Other forest areas
-                such as Lawachara National Park and Kaptai National Park may still
-                offer occasional refuge, but confirmed sightings remain extremely
-                rare.
+                These cats depend on dense tropical forest with strong canopy
+                cover, rugged terrain, and healthy prey populations. Other forest
+                areas such as Lawachara National Park and Kaptai National Park
+                may still offer occasional refuge, but confirmed sightings remain
+                extremely rare.
               </p>
 
               <h2>Built for the Trees</h2>
@@ -110,78 +135,80 @@ export default function CloudedLeopardInsightPage() {
                 The clouded leopard is one of the most specialized climbers among
                 all wild cats. Its large cloud-shaped markings help it blend into
                 dappled forest light, while its long tail provides balance in the
-                canopy. Flexible ankle joints allow it to descend trees headfirst,
-                hang from branches, and move with extraordinary agility.
+                canopy. Flexible ankle joints allow it to descend trees
+                headfirst, hang from branches, and move with extraordinary
+                agility.
               </p>
 
               <p>
-                Despite being much smaller than a tiger, it has exceptionally long
-                canine teeth relative to its skull size and can open its jaws wider
-                than most other cats. These powerful adaptations make it a highly
-                efficient predator in forest ecosystems.
+                Despite being much smaller than a tiger, it has exceptionally
+                long canine teeth relative to its skull size and can open its
+                jaws wider than most other cats. These powerful adaptations make
+                it a highly efficient predator in forest ecosystems.
               </p>
 
               <h2>Diet and Behavior</h2>
               <p>
-                Clouded leopards are solitary and mostly nocturnal. They hunt both
-                on the ground and in trees, preying on animals such as monkeys,
-                squirrels, birds, wild pigs, and small deer. Their stealth,
-                strength, and climbing skill make them one of the most effective
-                ambush hunters in tropical forests.
+                Clouded leopards are solitary and mostly nocturnal. They hunt
+                both on the ground and in trees, preying on animals such as
+                monkeys, squirrels, birds, wild pigs, and small deer. Their
+                stealth, strength, and climbing skill make them one of the most
+                effective ambush hunters in tropical forests.
               </p>
 
               <p>
-                Although they are powerful predators, they are shy and rarely pose a
-                threat to people. Their secretive behavior is one reason why they
-                are so seldom seen in the wild.
+                Although they are powerful predators, they are shy and rarely
+                pose a threat to people. Their secretive behavior is one reason
+                why they are so seldom seen in the wild.
               </p>
 
               <h2>Threats to Survival</h2>
               <p>
                 The clouded leopard faces severe pressure in Bangladesh. Habitat
-                loss caused by deforestation, logging, agricultural expansion, and
-                infrastructure development continues to shrink and fragment its
-                forest home. As habitat disappears, prey declines and populations
-                become increasingly isolated.
+                loss caused by deforestation, logging, agricultural expansion,
+                and infrastructure development continues to shrink and fragment
+                its forest home. As habitat disappears, prey declines and
+                populations become increasingly isolated.
               </p>
 
               <p>
                 Illegal poaching and wildlife trade add to these threats. The
-                species is targeted for its striking coat, while bones and teeth may
-                also enter illegal trade networks. Limited research, weak
-                enforcement, and the absence of species-specific conservation action
-                have made its situation even more precarious.
+                species is targeted for its striking coat, while bones and teeth
+                may also enter illegal trade networks. Limited research, weak
+                enforcement, and the absence of species-specific conservation
+                action have made its situation even more precarious.
               </p>
 
               <h2>Conservation Efforts</h2>
               <p>
                 Despite these challenges, there is still hope. Recent camera trap
-                records have provided clear evidence that clouded leopards continue
-                to survive in Bangladesh. This has renewed attention toward the need
-                for targeted conservation.
+                records have provided clear evidence that clouded leopards
+                continue to survive in Bangladesh. This has renewed attention
+                toward the need for targeted conservation.
               </p>
 
               <p>
-                New initiatives, including transboundary conservation efforts across
-                the India-Bangladesh border, are working to improve ecological
-                monitoring, reduce poaching, and involve local communities in forest
-                protection. Conservation groups are also raising awareness and
-                advocating for stronger habitat safeguards in critical forest areas.
+                New initiatives, including transboundary conservation efforts
+                across the India-Bangladesh border, are working to improve
+                ecological monitoring, reduce poaching, and involve local
+                communities in forest protection. Conservation groups are also
+                raising awareness and advocating for stronger habitat safeguards
+                in critical forest areas.
               </p>
 
               <h2>Why the Clouded Leopard Matters</h2>
               <p>
-                The clouded leopard is more than a rare wild cat. It is a flagship
-                species for the health of Bangladesh’s forests. Its presence signals
-                the survival of rich, functioning ecosystems filled with diverse
-                plants and animals.
+                The clouded leopard is more than a rare wild cat. It is a
+                flagship species for the health of Bangladesh’s forests. Its
+                presence signals the survival of rich, functioning ecosystems
+                filled with diverse plants and animals.
               </p>
 
               <p>
                 Protecting the clouded leopard means protecting the forests,
-                watersheds, biodiversity, and ecological balance that support both
-                wildlife and people. Its future is closely tied to the future of
-                Bangladesh’s remaining wild landscapes.
+                watersheds, biodiversity, and ecological balance that support
+                both wildlife and people. Its future is closely tied to the
+                future of Bangladesh’s remaining wild landscapes.
               </p>
 
               <h2>Conclusion</h2>
@@ -189,14 +216,14 @@ export default function CloudedLeopardInsightPage() {
                 The clouded leopard still survives in the shadowed forests of
                 Bangladesh, but its future is uncertain. Stronger conservation
                 action, habitat protection, anti-poaching measures, and community
-                stewardship are all essential if this extraordinary predator is to
-                endure.
+                stewardship are all essential if this extraordinary predator is
+                to endure.
               </p>
 
               <p>
                 The phantom of the canopy has not disappeared yet. With dedicated
-                effort, it can continue to move silently through Bangladesh’s wild
-                forests for generations to come.
+                effort, it can continue to move silently through Bangladesh’s
+                wild forests for generations to come.
               </p>
             </article>
           </div>
