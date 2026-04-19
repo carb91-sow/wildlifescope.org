@@ -203,6 +203,29 @@ export const species: Species[] = [
 },
 
   {
+  id: "indian-leopard",
+  name: "Indian Leopard",
+  scientificName: "Panthera pardus fusca",
+  status: "Vulnerable",
+  region: "Chittagong Hill Tracts",
+  habitat: "Hill Forests and Dense Woodlands",
+  population: "Unknown",
+  trend: "Decreasing",
+  threat: "Habitat loss, fragmentation & human-leopard conflict",
+  importance:
+    "A top predator that helps maintain ecological balance in forest ecosystems.",
+  image: "/images/indian-leopard.jpg",
+  description:
+    "The Indian Leopard is a powerful and elusive wild cat that survives in forested landscapes and plays a key role in maintaining biodiversity.",
+  featured: false,
+
+  insight: "/insights/indian-leopard-bangladesh",
+  insightTitle: "Indian Leopard in Bangladesh",
+  insightDescription:
+    "Explore the habitat, ecological role, threats, and conservation importance of the Indian Leopard in Bangladesh.",
+}
+  
+  {
     id: "gharial",
     name: "Gharial",
     scientificName: "Gavialis gangeticus",
