@@ -132,7 +132,7 @@ export const species: Species[] = [
   insightTitle: "Asian Palm Civet in Bangladesh",
   insightDescription:
     "Explore the habitat, ecological role, threats, and conservation importance of the Asian Palm Civet in Bangladesh.",
-}
+},
   
   {
   id: "asian-golden-cat",
