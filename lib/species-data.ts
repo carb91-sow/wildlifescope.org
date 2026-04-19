@@ -180,6 +180,29 @@ export const species: Species[] = [
   },
 
   {
+  id: "asian-golden-cat",
+  name: "Asian Golden Cat",
+  scientificName: "Catopuma temminckii",
+  status: "Near Threatened",
+  region: "Chittagong Hill Tracts",
+  habitat: "Tropical and Hill Forests",
+  population: "Unknown",
+  trend: "Decreasing",
+  threat: "Deforestation, habitat fragmentation & hunting",
+  importance:
+    "A rare forest predator that reflects the health of Bangladesh’s remaining hill forests.",
+  image: "/images/asian-golden-cat.jpg",
+  description:
+    "The Asian Golden Cat is a rare and powerful wild feline of forest ecosystems, known for its striking coat and elusive behavior.",
+  featured: false,
+
+  insight: "/insights/asian-golden-cat-bangladesh",
+  insightTitle: "Asian Golden Cat in Bangladesh",
+  insightDescription:
+    "Explore the habitat, threats, and conservation importance of the Asian Golden Cat in Bangladesh.",
+},
+
+  {
     id: "gharial",
     name: "Gharial",
     scientificName: "Gavialis gangeticus",
