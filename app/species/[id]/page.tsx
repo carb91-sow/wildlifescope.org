@@ -263,6 +263,27 @@ export default async function SpeciesDetailPage({
                 </Link>
               </div>
             )}
+
+            {item.id === "clouded-leopard" && (
+              <div className="mt-10 rounded-[28px] border border-[#f4c542]/20 bg-[#f4c542]/10 p-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#f4c542]">
+                  Featured Insight
+                </p>
+                <h2 className="mt-3 font-serif text-2xl font-bold text-white">
+                  Clouded Leopard in Bangladesh
+                </h2>
+                <p className="mt-4 max-w-2xl leading-8 text-white/72">
+                  Discover habitat, threats, and conservation efforts for the
+                  Clouded Leopard in Bangladesh.
+                </p>
+                <Link
+                  href="/insights/clouded-leopard-bangladesh"
+                  className="mt-6 inline-flex rounded-full border border-[#f4c542]/30 bg-[#f4c542]/10 px-5 py-3 text-sm font-medium text-[#f4c542] transition-colors hover:bg-[#f4c542]/20"
+                >
+                  Read full article →
+                </Link>
+              </div>
+            )}
           </div>
         </section>
       </main>
