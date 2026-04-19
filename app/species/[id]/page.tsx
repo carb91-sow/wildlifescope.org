@@ -3,129 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-
-const species = [
-  {
-    id: "bengal-tiger",
-    name: "Royal Bengal Tiger",
-    scientificName: "Panthera tigris tigris",
-    status: "Endangered",
-    region: "Sundarbans, Bangladesh",
-    habitat: "Mangrove Forest",
-    population: "~114",
-    trend: "Decreasing",
-    threat: "Habitat loss & human-wildlife conflict",
-    importance: "Top predator maintaining ecosystem balance in the Sundarbans",
-    image: "/images/bengal-tiger.jpg",
-    description:
-      "The iconic tiger of the Sundarbans mangrove forest, adapted to swimming and hunting in tidal waterways.",
-  },
-  {
-    id: "ganges-dolphin",
-    name: "Ganges River Dolphin",
-    scientificName: "Platanista gangetica",
-    status: "Endangered",
-    region: "Bangladesh Rivers",
-    habitat: "Freshwater Rivers",
-    population: "~1,200-1,800",
-    trend: "Decreasing",
-    threat: "River pollution & fishing net entanglement",
-    importance: "An indicator species for the health of freshwater ecosystems.",
-    image: "/images/ganges-dolphin.jpg",
-    description:
-      "A freshwater dolphin found in the Ganges-Brahmaputra river system, nearly blind and using echolocation.",
-  },
-  {
-    id: "asian-elephant",
-    name: "Asian Elephant",
-    scientificName: "Elephas maximus",
-    status: "Endangered",
-    region: "Chittagong Hill Tracts",
-    habitat: "Hill Forests",
-    population: "~268",
-    trend: "Decreasing",
-    threat: "Habitat fragmentation & human-elephant conflict",
-    importance: "A keystone species that shapes and supports forest ecosystems.",
-    image: "/images/asian-elephant.jpg",
-    description:
-      "Bangladesh's largest land mammal, facing habitat fragmentation and human-elephant conflict.",
-  },
-  {
-    id: "saltwater-crocodile",
-    name: "Saltwater Crocodile",
-    scientificName: "Crocodylus porosus",
-    status: "Critically Endangered",
-    region: "Sundarbans, Bangladesh",
-    habitat: "Estuarine Waters",
-    population: "~150-200",
-    trend: "Decreasing",
-    threat: "Habitat disturbance & nesting site loss",
-    importance: "Helps maintain balance in coastal and estuarine food chains.",
-    image: "/images/saltwater-crocodile.jpg",
-    description:
-      "The world's largest living reptile, found in the estuarine waters of the Sundarbans.",
-  },
-  {
-    id: "fishing-cat",
-    name: "Fishing Cat",
-    scientificName: "Prionailurus viverrinus",
-    status: "Vulnerable",
-    region: "Bangladesh Wetlands",
-    habitat: "Wetlands",
-    population: "Unknown",
-    trend: "Unknown",
-    threat: "Wetland destruction & pollution",
-    importance: "A unique wetland predator important for ecological balance.",
-    image: "/images/fishing-cat.jpg",
-    description:
-      "A medium-sized wild cat uniquely adapted to wetland habitats, skilled at catching fish.",
-  },
-  {
-    id: "hoolock-gibbon",
-    name: "Western Hoolock Gibbon",
-    scientificName: "Hoolock hoolock",
-    status: "Endangered",
-    region: "Sylhet Division",
-    habitat: "Evergreen Forest",
-    population: "~200-300",
-    trend: "Decreasing",
-    threat: "Deforestation & forest fragmentation",
-    importance: "Bangladesh's only ape, vital for forest biodiversity awareness.",
-    image: "/images/hoolock-gibbon.jpg",
-    description:
-      "Bangladesh's only ape species, known for their loud morning calls and acrobatic movement.",
-  },
-  {
-    id: "gharial",
-    name: "Gharial",
-    scientificName: "Gavialis gangeticus",
-    status: "Critically Endangered",
-    region: "Bangladesh Rivers",
-    habitat: "Large River Systems",
-    population: "~100",
-    trend: "Decreasing",
-    threat: "River degradation & loss of nesting habitat",
-    importance: "A rare river reptile that reflects the health of aquatic ecosystems.",
-    image: "/images/gharial.jpg",
-    description:
-      "A fish-eating crocodilian with a distinctive long, narrow snout, critically endangered in Bangladesh.",
-  },
-  {
-    id: "clouded-leopard",
-    name: "Clouded Leopard",
-    scientificName: "Neofelis nebulosa",
-    status: "Vulnerable",
-    region: "Chittagong Hill Tracts",
-    habitat: "Tropical Forest",
-    population: "Unknown",
-    trend: "Unknown",
-    threat: "Forest loss & habitat fragmentation",
-    importance: "A rare forest predator representing the richness of Bangladesh's wild forests.",
-    image: "/images/clouded-leopard.jpg",
-    description:
-      "A secretive forest cat with distinctive cloud-shaped markings, rarely seen in Bangladesh's forests.",
-  },
-]
+import { species } from "@/lib/species-data"
 
 export function generateStaticParams() {
   return species.map((item) => ({
@@ -164,12 +42,15 @@ export default async function SpeciesDetailPage({
                 <p className="text-sm uppercase tracking-[0.3em] text-[#f4c542]">
                   Species Profile
                 </p>
+
                 <h1 className="mt-4 font-serif text-4xl font-bold md:text-6xl">
                   {item.name}
                 </h1>
+
                 <p className="mt-4 text-lg italic text-white/65">
                   {item.scientificName}
                 </p>
+
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">
                   {item.description}
                 </p>
@@ -243,20 +124,23 @@ export default async function SpeciesDetailPage({
               </div>
             </div>
 
-            {item.id === "bengal-tiger" && (
+            {item.insight && (
               <div className="mt-10 rounded-[28px] border border-[#f4c542]/20 bg-[#f4c542]/10 p-8">
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#f4c542]">
                   Featured Insight
                 </p>
+
                 <h2 className="mt-3 font-serif text-2xl font-bold text-white">
-                  How Bengal Tigers Maintain Ecosystem Balance in the Sundarbans
+                  {item.insightTitle || `Learn More About ${item.name}`}
                 </h2>
+
                 <p className="mt-4 max-w-2xl leading-8 text-white/72">
-                  Explore how Bengal tigers regulate prey populations, reduce
-                  overgrazing, and support mangrove ecosystem stability.
+                  {item.insightDescription ||
+                    `Explore threats, habitat, and conservation efforts related to ${item.name}.`}
                 </p>
+
                 <Link
-                  href="/insights/tiger-role-ecosystem-sundarbans"
+                  href={item.insight}
                   className="mt-6 inline-flex rounded-full border border-[#f4c542]/30 bg-[#f4c542]/10 px-5 py-3 text-sm font-medium text-[#f4c542] transition-colors hover:bg-[#f4c542]/20"
                 >
                   Read full article →
@@ -264,46 +148,18 @@ export default async function SpeciesDetailPage({
               </div>
             )}
 
-            {item.id === "clouded-leopard" && (
-              <div className="mt-10 rounded-[28px] border border-[#f4c542]/20 bg-[#f4c542]/10 p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#f4c542]">
-                  Featured Insight
-                </p>
-                <h2 className="mt-3 font-serif text-2xl font-bold text-white">
-                  Clouded Leopard in Bangladesh
-                </h2>
-                <p className="mt-4 max-w-2xl leading-8 text-white/72">
-                  Discover habitat, threats, and conservation efforts for the
-                  Clouded Leopard in Bangladesh.
-                </p>
-                <Link
-                  href="/insights/clouded-leopard-bangladesh"
-                  className="mt-6 inline-flex rounded-full border border-[#f4c542]/30 bg-[#f4c542]/10 px-5 py-3 text-sm font-medium text-[#f4c542] transition-colors hover:bg-[#f4c542]/20"
-                >
-                  Read full article →
-                </Link>
-             </div>
-            )}
-               {item.id === "fishing-cat" && (
-  <div className="mt-10 rounded-[28px] border border-[#f4c542]/20 bg-[#f4c542]/10 p-8">
-    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#f4c542]">
-      Featured Insight
-    </p>
-    <h2 className="mt-3 font-serif text-2xl font-bold text-white">
-      Fishing Cat Threats in Bangladesh
-    </h2>
-    <p className="mt-4 max-w-2xl leading-8 text-white/72">
-      Explore how wetland destruction, pollution, and habitat loss are threatening
-      the Fishing Cat in Bangladesh and why protecting wetlands matters for its survival.
-    </p>
-    <Link
-      href="/insights/fishing-cat-threats"
-      className="mt-6 inline-flex rounded-full border border-[#f4c542]/30 bg-[#f4c542]/10 px-5 py-3 text-sm font-medium text-[#f4c542] transition-colors hover:bg-[#f4c542]/20"
-    >
-      Read full article →
-    </Link>
-  </div>
-)}
+            <div className="mt-12 rounded-[28px] border border-white/10 bg-[#141611] p-8">
+              <h2 className="font-serif text-2xl font-bold text-white">
+                Conservation Overview
+              </h2>
+
+              <p className="mt-4 max-w-3xl leading-8 text-white/72">
+                Protecting {item.name} means protecting the ecosystems it depends
+                on. Habitat conservation, stronger awareness, and long-term
+                monitoring all play an important role in ensuring this species
+                continues to survive in Bangladesh.
+              </p>
+            </div>
           </div>
         </section>
       </main>
