@@ -80,7 +80,6 @@ export default function Page() {
       <Header />
 
       <main className="bg-[#0b0d09] pt-20 text-white">
-        {/* HERO */}
         <section className="border-b border-white/10 py-20">
           <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
             <div>
@@ -93,7 +92,7 @@ export default function Page() {
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">
-                The marbled cat is one of Bangladesh’s most mysterious wild
+                The marbled cat is one of Bangladesh&apos;s most mysterious wild
                 felines. Beautiful, elusive, and rarely documented, it survives
                 in shrinking forest habitats where scientific knowledge remains
                 dangerously limited.
@@ -125,7 +124,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* KEY INSIGHTS */}
         <section className="bg-[#11130f] py-16">
           <div className="mx-auto max-w-5xl px-6">
             <h2 className="text-3xl font-bold">Key Insights</h2>
@@ -144,7 +142,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* INTRO + QUICK FACTS */}
         <section className="py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
@@ -157,7 +154,7 @@ export default function Page() {
                 public awareness and conservation planning. That invisibility is
                 part of the problem. The species is not only rare, but also
                 understudied, which makes it harder to protect before populations
-                decline further. :contentReference[oaicite:1]{index=1}
+                decline further.
               </p>
 
               <p className="mt-6 max-w-3xl leading-8 text-white/72">
@@ -167,14 +164,14 @@ export default function Page() {
                 presence. This means the marbled cat could be more widespread
                 than currently known, or it could already be in serious decline.
                 Right now, the country simply does not have enough data to say
-                with confidence. :contentReference[oaicite:2]{index=2}
+                with confidence.
               </p>
 
               <p className="mt-6 max-w-3xl leading-8 text-white/72">
                 That is why the marbled cat represents more than a single rare
                 animal. It symbolizes a wider conservation blind spot: species
                 can disappear from landscapes long before science, policy, or
-                the public fully notices. :contentReference[oaicite:3]{index=3}
+                the public fully notices.
               </p>
             </div>
 
@@ -225,7 +222,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* SIGHTINGS TIMELINE */}
         <section className="bg-[#11130f] py-20">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="text-3xl font-bold">Why the Marbled Cat Matters</h2>
@@ -254,7 +250,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* THREATS */}
         <section className="py-20">
           <div className="mx-auto max-w-6xl px-6">
             <div className="max-w-3xl">
@@ -265,7 +260,7 @@ export default function Page() {
                 The threats facing the marbled cat are not always dramatic or
                 visible, but they are serious. Forest loss, weak monitoring, and
                 limited policy attention together create a quiet conservation
-                crisis. :contentReference[oaicite:4]{index=4}
+                crisis.
               </p>
             </div>
 
@@ -288,7 +283,7 @@ export default function Page() {
                 tree cover in exactly the landscapes where the marbled cat is
                 found. In the Chittagong Hill Tracts, forest decline, land-use
                 change, and settlement expansion place continuous pressure on
-                remaining habitat. :contentReference[oaicite:5]{index=5}
+                remaining habitat.
               </p>
 
               <p>
@@ -297,7 +292,7 @@ export default function Page() {
                 and expose rare species to greater risk from people, roads, and
                 reduced ecological connectivity. The reported road mortality in
                 Chattogram shows how infrastructure expansion can become a direct
-                threat for elusive forest wildlife. :contentReference[oaicite:6]{index=6}
+                threat for elusive forest wildlife.
               </p>
 
               <p>
@@ -306,13 +301,12 @@ export default function Page() {
                 data-deficient species, including the marbled cat. Without field
                 surveys, population baselines, and habitat mapping, protection
                 tends to remain generic and reactive rather than targeted and
-                effective. :contentReference[oaicite:7]{index=7}
+                effective.
               </p>
             </div>
           </div>
         </section>
 
-        {/* CONSERVATION GAP */}
         <section className="bg-[#11130f] py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1fr_0.95fr]">
             <div>
@@ -323,10 +317,10 @@ export default function Page() {
               <p className="mt-6 max-w-3xl leading-8 text-white/72">
                 Although the marbled cat is legally protected, legal protection
                 alone is not enough. Enforcement remains limited, field capacity
-                is weak, and much of the species’ likely habitat exists outside
-                protected areas. That means the marbled cat may be surviving in
-                landscapes where laws are harder to implement and habitat change
-                happens quickly. :contentReference[oaicite:8]{index=8}
+                is weak, and much of the species&apos; likely habitat exists
+                outside protected areas. That means the marbled cat may be
+                surviving in landscapes where laws are harder to implement and
+                habitat change happens quickly.
               </p>
 
               <p className="mt-6 max-w-3xl leading-8 text-white/72">
@@ -335,7 +329,7 @@ export default function Page() {
                 and less visible felines without the same dedicated attention.
                 Yet these species share the same forests, face the same habitat
                 threats, and need the same urgency before their populations fall
-                beyond recovery. :contentReference[oaicite:9]{index=9}
+                beyond recovery.
               </p>
             </div>
 
@@ -353,13 +347,12 @@ export default function Page() {
               <p className="mt-5 leading-8 text-white/78">
                 If research is delayed for years, Bangladesh may reach the next
                 Red List cycle still not knowing whether the marbled cat is
-                stable, declining, or already in severe trouble. :contentReference[oaicite:10]{index=10}
+                stable, declining, or already in severe trouble.
               </p>
             </div>
           </div>
         </section>
 
-        {/* RECOMMENDATIONS */}
         <section className="py-20">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="text-3xl font-bold">What Should Happen Next</h2>
@@ -390,13 +383,12 @@ export default function Page() {
           </div>
         </section>
 
-        {/* CTA / RELATED */}
         <section className="bg-[#11130f] py-16 text-center">
           <div className="mx-auto max-w-4xl px-6">
             <h2 className="text-3xl font-bold">Explore More</h2>
             <p className="mx-auto mt-4 max-w-2xl text-white/68">
               Continue exploring the species, habitats, and conservation stories
-              shaping Bangladesh’s wildlife future.
+              shaping Bangladesh&apos;s wildlife future.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
