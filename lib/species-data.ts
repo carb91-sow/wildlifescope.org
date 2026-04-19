@@ -13,7 +13,6 @@ export type Species = {
   description: string
   featured?: boolean
 
-  // 🔥 dynamic insight system
   insight?: string
   insightTitle?: string
   insightDescription?: string
@@ -84,34 +83,34 @@ export const species: Species[] = [
     featured: true,
 
     insight: "/insights/fishing-cat-threats",
-    insightTitle: "Fishing Cat: Threats and Conservation in Bangladesh",
+    insightTitle: "Bangladesh’s Fishing Cat: A Wetland Species Under Threat",
     insightDescription:
-      "Explore how wetland destruction, pollution, and habitat loss are threatening the Fishing Cat in Bangladesh and what conservation efforts can help protect it.",
+      "Discover how habitat loss, human conflict, illegal captivity, and pollution are pushing Bangladesh’s fishing cat toward decline.",
   },
 
   {
-  id: "marbled-cat",
-  name: "Marbled Cat",
-  scientificName: "Pardofelis marmorata",
-  status: "Near Threatened",
-  region: "Chittagong Hill Tracts",
-  habitat: "Tropical Forest",
-  population: "Unknown",
-  trend: "Decreasing",
-  threat: "Deforestation & habitat fragmentation",
-  importance:
-    "A rare forest cat that reflects the health of Bangladesh’s remaining hill forests.",
-  image: "/images/marbled-cat.jpg",
-  description:
-    "The marbled cat is a small and elusive wild feline of dense forests, known for its striking cloud-like coat patterns and strong climbing ability.",
-  featured: false,
+    id: "marbled-cat",
+    name: "Marbled Cat",
+    scientificName: "Pardofelis marmorata",
+    status: "Near Threatened",
+    region: "Chittagong Hill Tracts",
+    habitat: "Tropical Forest",
+    population: "Unknown",
+    trend: "Decreasing",
+    threat: "Deforestation & habitat fragmentation",
+    importance:
+      "A rare forest cat that reflects the health of Bangladesh’s remaining hill forests.",
+    image: "/images/marbled-cat.jpg",
+    description:
+      "The marbled cat is a small and elusive wild feline of dense forests, known for its striking cloud-like coat patterns and strong climbing ability.",
+    featured: false,
 
-  insight: "/insights/marbled-cat-bangladesh",
-  insightTitle: "Marbled Cat in Bangladesh: A Rare Forest Hunter at Risk",
-  insightDescription:
-    "Learn about the marbled cat’s habitat, ecological role, and the growing threats from forest loss and fragmentation in Bangladesh.",
-}
-  
+    insight: "/insights/marbled-cat-bangladesh",
+    insightTitle: "Marbled Cat in Bangladesh: A Rare Forest Hunter at Risk",
+    insightDescription:
+      "Learn about the marbled cat’s habitat, ecological role, and the growing threats from forest loss and fragmentation in Bangladesh.",
+  },
+
   {
     id: "ganges-dolphin",
     name: "Ganges River Dolphin",
