@@ -59,15 +59,9 @@ function SpeciesCard({ species }: { species: Species }) {
           </p>
 
           <div className="mt-4 space-y-1 text-xs text-white/60">
-            <p>
-              <strong>Habitat:</strong> {species.habitat}
-            </p>
-            <p>
-              <strong>Trend:</strong> {species.trend}
-            </p>
-            <p>
-              <strong>Threat:</strong> {species.threat}
-            </p>
+            <p><strong>Habitat:</strong> {species.habitat}</p>
+            <p><strong>Trend:</strong> {species.trend}</p>
+            <p><strong>Threat:</strong> {species.threat}</p>
           </div>
 
           <p className="mt-3 text-xs italic text-[#f4c542]">
@@ -87,6 +81,7 @@ export default function SpeciesPage() {
       <Header />
 
       <main className="bg-[#0b0d09] pt-20 text-white">
+
         {/* HERO */}
         <section className="py-20 text-center">
           <div className="mx-auto max-w-4xl px-6">
@@ -99,23 +94,29 @@ export default function SpeciesPage() {
           </div>
         </section>
 
-        {/* THREATS SECTION WITH BACKGROUND */}
+        {/* 🔥 THREATS SECTION WITH REAL IMAGE */}
         <section className="relative overflow-hidden py-16">
+          
+          {/* Background Image */}
           <div className="absolute inset-0">
             <Image
               src="/images/threats-bg.jpg"
               alt="Deforestation and wildlife habitat loss"
               fill
-              className="object-cover opacity-40"
+              className="object-cover opacity-85"
               priority
             />
           </div>
 
-          <div className="absolute inset-0 bg-black/75" />
+          {/* Light overlay (so image is visible) */}
+          <div className="absolute inset-0 bg-black/40" />
 
+          {/* Content */}
           <div className="relative mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <h2 className="text-3xl font-bold">Major Threats to Wildlife</h2>
+              <h2 className="text-3xl font-bold">
+                Major Threats to Wildlife
+              </h2>
 
               <Link
                 href="/insights/threats-to-wildlife-bangladesh"
@@ -135,7 +136,7 @@ export default function SpeciesPage() {
                 <Link
                   key={item}
                   href="/insights/threats-to-wildlife-bangladesh"
-                  className="rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-sm transition-colors hover:border-[#f4c542]/40 hover:bg-black/40"
+                  className="rounded-xl border border-white/10 bg-black/20 p-6 backdrop-blur-sm transition-all hover:border-[#f4c542]/40 hover:bg-black/30"
                 >
                   {item}
                 </Link>
@@ -144,7 +145,7 @@ export default function SpeciesPage() {
           </div>
         </section>
 
-        {/* FEATURED BLOG SECTION */}
+        {/* FEATURED BLOG */}
         <section className="py-16">
           <div className="mx-auto max-w-6xl px-6">
             <div className="rounded-2xl border border-white/10 bg-[#141611] p-8">
@@ -159,7 +160,7 @@ export default function SpeciesPage() {
 
               <Link
                 href="/insights/threats-to-wildlife-bangladesh"
-                className="mt-6 inline-block text-[#f4c542] transition-colors hover:text-[#ffd76a]"
+                className="mt-6 inline-block text-[#f4c542] hover:text-[#ffd76a]"
               >
                 Read full insight →
               </Link>
@@ -217,16 +218,14 @@ export default function SpeciesPage() {
                 "Spread awareness",
                 "Protect habitats",
               ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-xl border border-white/10 p-6"
-                >
+                <div key={item} className="rounded-xl border border-white/10 p-6">
                   {item}
                 </div>
               ))}
             </div>
           </div>
         </section>
+
       </main>
 
       <Footer />
