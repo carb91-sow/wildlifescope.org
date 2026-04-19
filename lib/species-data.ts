@@ -179,4 +179,27 @@ export const species: Species[] = [
   insightDescription:
     "Explore the habitat, ecological role, threats, and conservation importance of the Indian Leopard in Bangladesh.",
 },
+
+  {
+  id: "binturong",
+  name: "Binturong",
+  scientificName: "Arctictis binturong",
+  status: "Vulnerable",
+  region: "Chittagong Hill Tracts",
+  habitat: "Dense Forest Canopy",
+  population: "Unknown",
+  trend: "Decreasing",
+  threat: "Deforestation & habitat fragmentation",
+  importance:
+    "A key seed disperser that supports forest regeneration.",
+  image: "/images/binturong.jpg",
+  description:
+    "The Binturong is a rare tree-dwelling mammal that plays a crucial role in maintaining forest ecosystems.",
+  featured: false,
+
+  insight: "/insights/binturong-bangladesh",
+  insightTitle: "Binturong in Bangladesh",
+  insightDescription:
+    "Explore the habitat, ecological role, threats, and conservation importance of the Binturong in Bangladesh.",
+},
 ]
