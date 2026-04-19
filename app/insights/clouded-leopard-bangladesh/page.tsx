@@ -162,6 +162,10 @@ export default function Page() {
               Clouded Leopard →
             </Link>
 
+            <Link href="/insights/clouded-leopard-threats" className="text-[#f4c542]">
+  Clouded Leopard Threats →
+</Link>
+            
             <Link href="/insights/threats-to-wildlife-bangladesh" className="text-[#f4c542]">
               Wildlife Threats →
             </Link>
