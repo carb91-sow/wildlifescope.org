@@ -181,6 +181,125 @@ export default function Page() {
           </div>
         </section>
 
+        {/* RESEARCH GAPS */}
+<section className="bg-[#11130f] py-20">
+  <div className="mx-auto max-w-6xl px-6">
+
+    <div className="max-w-3xl">
+      <h2 className="text-3xl font-bold">
+        Research Gaps & Knowledge Limitations in Bangladesh
+      </h2>
+
+      <p className="mt-6 leading-8 text-white/72">
+        The current understanding of the Burmese Ferret-badger in Bangladesh is
+        extremely limited and based on only a handful of confirmed records.
+        This highlights major scientific and conservation gaps that must be
+        addressed to properly protect the species and its habitat.
+      </p>
+    </div>
+
+    {/* GRID */}
+    <div className="mt-12 grid gap-8 md:grid-cols-2">
+
+      {/* TAXONOMY */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Taxonomy & Identification
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• Difficult to distinguish from similar species without genetic testing</li>
+          <li>• No confirmed presence of other Melogale species in Bangladesh</li>
+          <li>• Subspecies classification remains unverified</li>
+        </ul>
+      </div>
+
+      {/* DISTRIBUTION */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Distribution & Habitat
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• Confirmed only in Patharia Hill RF and Chittagong Hill Tracts</li>
+          <li>• Presence in other forests remains unknown</li>
+          <li>• No data on habitat preference or fragmentation impact</li>
+        </ul>
+      </div>
+
+      {/* POPULATION */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Population Status
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• No population estimates exist</li>
+          <li>• Abundance and density are unknown</li>
+          <li>• Population trends have never been studied</li>
+        </ul>
+      </div>
+
+      {/* ECOLOGY */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Ecology & Behavior
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• No Bangladesh-specific studies on diet or activity</li>
+          <li>• Home range and reproduction unknown</li>
+          <li>• Social and genetic structure not studied</li>
+        </ul>
+      </div>
+
+      {/* THREATS */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Threat Understanding
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• Local threats not well documented</li>
+          <li>• Hunting and snaring impacts unclear</li>
+          <li>• No research on disease or health risks</li>
+        </ul>
+      </div>
+
+      {/* POLICY */}
+      <div className="rounded-2xl border border-white/10 bg-[#141611] p-6">
+        <h3 className="text-xl font-bold text-[#f4c542]">
+          Conservation & Policy
+        </h3>
+
+        <ul className="mt-4 space-y-3 text-white/75 leading-7">
+          <li>• Not listed under Bangladesh wildlife protection law</li>
+          <li>• No national conservation assessment</li>
+          <li>• No dedicated conservation plan</li>
+        </ul>
+      </div>
+
+    </div>
+
+    {/* SUMMARY */}
+    <div className="mt-12 max-w-4xl space-y-5 leading-8 text-white/72">
+      <p>
+        These gaps show that the Ferret-Badger is not just a rare species — it is
+        a largely unstudied one. Without basic ecological and population data,
+        conservation efforts cannot be properly designed or targeted.
+      </p>
+
+      <p>
+        Addressing these challenges requires systematic camera trap surveys,
+        genetic sampling, long-term ecological research, and stronger legal
+        recognition. Protecting its habitat is critical, but understanding the
+        species itself is equally important.
+      </p>
+    </div>
+
+  </div>
+</section>
+        
         {/* THREATS */}
         <section className="py-20 bg-[#11130f]">
           <div className="max-w-6xl mx-auto px-6">
