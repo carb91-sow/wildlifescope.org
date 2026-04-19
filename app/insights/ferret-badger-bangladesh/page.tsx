@@ -5,58 +5,77 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Ferret-Badger Bangladesh | Sightings, Ecological Role & Conservation",
+  title: "Ferret-Badger Bangladesh | Latest Evidence, Ecological Niche & Conservation",
   description:
-    "Explore the Ferret-Badger in Bangladesh, including its habitat, ecological niche, threats, and why this small nocturnal mammal is important for forest ecosystems.",
+    "Explore the Ferret-Badger in Bangladesh, including its ecological niche, latest evidence, threats, and why this small nocturnal mammal matters for forest ecosystems.",
 }
 
 const keyPoints = [
-  "Ferret-Badgers are small nocturnal mammals found in forested regions of Bangladesh.",
-  "They are rarely seen, making confirmed records limited and scattered.",
-  "They play an important ecological role as insect predators.",
-  "Habitat loss and fragmentation are major threats.",
-  "Low awareness means the species receives little conservation attention.",
+  "Ferret-Badgers are small, nocturnal carnivores found in forested regions of Bangladesh.",
+  "They are rarely recorded, making their national status poorly understood.",
+  "They play an ecological role as insect and small-prey predators.",
+  "Habitat loss and fragmentation are key threats.",
+  "Low awareness limits conservation attention for this species.",
+]
+
+const highlights = [
+  {
+    label: "Nocturnal mammal",
+    text: "Ferret-Badgers are active mostly at night, which makes them difficult to observe in the wild.",
+  },
+  {
+    label: "Insect predator",
+    text: "They help regulate insect and invertebrate populations in forest ecosystems.",
+  },
+  {
+    label: "Ground-level species",
+    text: "They live and move mainly along the forest floor rather than in the canopy.",
+  },
+  {
+    label: "Hidden biodiversity",
+    text: "They represent the overlooked layer of biodiversity that supports ecosystem stability.",
+  },
 ]
 
 const latestBangladeshInfo = [
   {
-    label: "Current status",
-    title: "Rare and poorly documented",
-    text: "In Bangladesh, Ferret-Badger records are limited and scattered, with most knowledge based on occasional sightings and regional studies.",
+    label: "Current evidence",
+    title: "Limited and scattered records",
+    text: "Available information on Ferret-Badgers in Bangladesh comes from occasional sightings and regional wildlife records rather than consistent monitoring.",
   },
   {
-    label: "Why sightings are rare",
-    title: "Nocturnal and secretive",
-    text: "The species is active mostly at night and lives in dense vegetation, making detection extremely difficult.",
+    label: "Why records are rare",
+    title: "Low detectability",
+    text: "The species is nocturnal, secretive, and lives in dense vegetation, making it extremely difficult to document.",
   },
   {
     label: "Best interpretation",
-    title: "Presence but low visibility",
-    text: "Available information suggests the species still exists in suitable habitats, but lack of monitoring means its true status is unclear.",
+    title: "Presence without clarity",
+    text: "Evidence suggests the species persists in suitable forest habitats, but population size and distribution remain unclear.",
   },
   {
     label: "Conservation signal",
-    title: "Needs more research",
-    text: "The lack of recent strong records highlights the need for better surveys and monitoring rather than indicating absence.",
+    title: "Need for better monitoring",
+    text: "The lack of strong recent records highlights the need for targeted research rather than indicating absence.",
   },
 ]
 
 const nichePoints = [
   {
-    title: "Nocturnal insectivore",
-    text: "Ferret-Badgers primarily feed on insects, small animals, and invertebrates, helping control pest populations in forest ecosystems.",
+    title: "Nocturnal insectivore niche",
+    text: "Ferret-Badgers feed on insects, invertebrates, and small animals, helping maintain balance in forest floor ecosystems.",
   },
   {
-    title: "Ground-level forest species",
-    text: "Unlike fully arboreal mammals, they operate mostly on the forest floor, using burrows and dense vegetation for shelter.",
+    title: "Forest-floor specialist",
+    text: "They rely on ground-level vegetation, burrows, and dense cover for shelter and hunting.",
   },
   {
-    title: "Part of the hidden ecosystem",
-    text: "They contribute to ecological balance quietly, without being easily observed like larger mammals.",
+    title: "Part of the hidden food web",
+    text: "Their role is subtle but important, linking insect populations and small prey to larger ecological processes.",
   },
   {
     title: "Indicator of understory health",
-    text: "Their presence suggests functioning forest floor ecosystems with sufficient prey and cover.",
+    text: "Their presence suggests that forest floor conditions remain suitable for small mammals and prey species.",
   },
 ]
 
@@ -64,31 +83,31 @@ const threats = [
   {
     id: "habitat-loss",
     title: "Habitat loss",
-    text: "Deforestation and land conversion reduce the forest cover needed for shelter and foraging.",
+    text: "Deforestation reduces shelter and feeding areas required for survival.",
   },
   {
     id: "fragmentation",
     title: "Habitat fragmentation",
-    text: "Breaking forests into smaller patches disrupts movement and increases vulnerability.",
-  },
-  {
-    id: "low-awareness",
-    title: "Low awareness",
-    text: "Because they are not well known, Ferret-Badgers receive less conservation attention.",
+    text: "Breaking forests into smaller patches limits movement and increases risk.",
   },
   {
     id: "disturbance",
     title: "Human disturbance",
-    text: "Expansion of settlements and agriculture increases disturbance in forest-edge habitats.",
+    text: "Expanding agriculture and settlements disturb forest floor habitats.",
+  },
+  {
+    id: "low-awareness",
+    title: "Low awareness",
+    text: "The species is often ignored in conservation planning due to limited public recognition.",
   },
 ]
 
 const actions = [
-  "Protect forest habitats and maintain ground-level vegetation.",
-  "Support wildlife surveys and night-time monitoring.",
-  "Increase awareness of lesser-known mammals.",
+  "Protect forest habitats and ground vegetation layers.",
+  "Increase monitoring using camera traps and field surveys.",
+  "Raise awareness about lesser-known mammals.",
   "Reduce habitat fragmentation across forest landscapes.",
-  "Include small carnivores in conservation planning.",
+  "Include small carnivores in conservation strategies.",
 ]
 
 export default function Page() {
@@ -100,40 +119,43 @@ export default function Page() {
 
         {/* HERO */}
         <section className="border-b border-white/10 py-20">
-          <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <p className="text-sm uppercase tracking-[0.28em] text-[#f4c542]">
-                Nocturnal Forest Mammal
+                Nocturnal Forest Carnivore
               </p>
 
               <h1 className="mt-4 text-5xl font-bold">
-                Ferret-Badger in Bangladesh
+                Ferret-Badger in Bangladesh: Hidden, Rare, and Ecologically Important
               </h1>
 
               <p className="mt-6 text-white/70">
-                The Ferret-Badger is one of Bangladesh’s least known wild
-                mammals. Small, nocturnal, and rarely seen, it plays a quiet
-                but important role in maintaining ecological balance within
-                forest ecosystems.
+                The Ferret-Badger is one of Bangladesh’s least visible wild
+                mammals. Small, nocturnal, and elusive, it operates within the
+                forest floor ecosystem, quietly contributing to ecological
+                balance while remaining largely unknown.
               </p>
             </div>
 
-            <Image
-              src="/images/ferret-badger.jpg"
-              alt="Ferret-Badger in forest"
-              width={1200}
-              height={800}
-              className="rounded-xl"
-            />
+            <div className="overflow-hidden rounded-xl border border-white/10">
+              <Image
+                src="/images/ferret-badger.jpg"
+                alt="Ferret-Badger in forest habitat"
+                width={1200}
+                height={800}
+                className="h-full w-full object-cover"
+                priority
+              />
+            </div>
           </div>
         </section>
 
         {/* KEY INSIGHTS */}
-        <section className="py-16 bg-[#11130f]">
+        <section className="bg-[#11130f] py-16">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-3xl font-bold">Key Insights</h2>
 
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-8 space-y-3">
               {keyPoints.map((point) => (
                 <li key={point} className="flex gap-3">
                   <span className="w-2 h-2 mt-2 bg-[#f4c542] rounded-full"></span>
@@ -148,29 +170,29 @@ export default function Page() {
         <section className="py-20">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold">
-              A Hidden Mammal of the Forest Floor
+              A Hidden Component of Forest Ecosystems
             </h2>
 
             <p className="mt-6 text-white/70 max-w-3xl leading-8">
-              Ferret-Badgers are small carnivorous mammals that live mostly on
-              the forest floor. Unlike more visible wildlife, they operate in
-              the background of ecosystems, hunting insects and small prey while
-              remaining largely unseen.
+              Ferret-Badgers are small carnivorous mammals that live close to
+              the forest floor. Unlike larger and more visible species, they
+              operate quietly within the ecosystem, feeding on insects and small
+              animals and contributing to ecological balance in subtle ways.
             </p>
 
             <p className="mt-6 text-white/70 max-w-3xl leading-8">
-              Their role may seem subtle, but it is essential. By controlling
-              insect populations and contributing to food webs, they help
-              maintain balance in forest ecosystems.
+              Their role may not attract attention, but it is essential. Forest
+              ecosystems depend on a wide range of species, including those that
+              regulate insect populations and maintain food web stability.
             </p>
           </div>
         </section>
 
         {/* LATEST BANGLADESH INFO */}
-        <section className="py-20 bg-[#11130f]">
+        <section className="bg-[#11130f] py-20">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold">
-              Bangladesh Status & Sightings Context
+              Latest Bangladesh Evidence
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6 mt-8">
@@ -203,11 +225,9 @@ export default function Page() {
         </section>
 
         {/* THREATS */}
-        <section className="py-20 bg-[#11130f]">
+        <section className="bg-[#11130f] py-20">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-bold">
-              Major Threats
-            </h2>
+            <h2 className="text-3xl font-bold">Major Threats</h2>
 
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               {threats.map((item) => (
@@ -223,9 +243,7 @@ export default function Page() {
         {/* ACTION */}
         <section className="py-20">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-bold">
-              What Needs to Happen
-            </h2>
+            <h2 className="text-3xl font-bold">What Needs to Happen Next</h2>
 
             <ul className="mt-6 space-y-3">
               {actions.map((item) => (
@@ -238,7 +256,7 @@ export default function Page() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 text-center">
+        <section className="bg-[#11130f] py-16 text-center">
           <h2 className="text-3xl font-bold">Explore More</h2>
 
           <div className="mt-8 flex justify-center gap-4">
