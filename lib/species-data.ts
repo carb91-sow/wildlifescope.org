@@ -202,4 +202,27 @@ export const species: Species[] = [
   insightDescription:
     "Explore the habitat, ecological role, threats, and conservation importance of the Binturong in Bangladesh.",
 },
+
+  {
+  id: "ferret-badger",
+  name: "Ferret-Badger",
+  scientificName: "Melogale sp.",
+  status: "Data Deficient",
+  region: "Hill forests of Bangladesh",
+  habitat: "Forest floor and dense vegetation",
+  population: "Unknown",
+  trend: "Unknown",
+  threat: "Habitat loss & low awareness",
+  importance:
+    "A small nocturnal predator that helps control insect populations.",
+  image: "/images/ferret-badger.jpg",
+  description:
+    "A rare and elusive nocturnal mammal found in forest ecosystems.",
+  featured: false,
+
+  insight: "/insights/ferret-badger-bangladesh",
+  insightTitle: "Ferret-Badger in Bangladesh",
+  insightDescription:
+    "Explore the habitat, ecological role, and conservation importance of the Ferret-Badger in Bangladesh.",
+},
 ]
